@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1567983222151AF6009FFFFE /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1567983122151AF6009FFFFE /* RegisterViewController.swift */; };
 		1582CFE3220E243A00EF8AA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582CFE2220E243A00EF8AA7 /* AppDelegate.swift */; };
 		1582CFE5220E243A00EF8AA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582CFE4220E243A00EF8AA7 /* ViewController.swift */; };
 		1582CFE8220E243A00EF8AA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1582CFE6220E243A00EF8AA7 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1567983122151AF6009FFFFE /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		1582CFDF220E243A00EF8AA7 /* FixIN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FixIN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1582CFE2220E243A00EF8AA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1582CFE4220E243A00EF8AA7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				1582CFE9220E244100EF8AA7 /* Assets.xcassets */,
 				1582CFEB220E244100EF8AA7 /* LaunchScreen.storyboard */,
 				1582CFEE220E244100EF8AA7 /* Info.plist */,
+				1567983122151AF6009FFFFE /* RegisterViewController.swift */,
 			);
 			path = FixIN;
 			sourceTree = "<group>";
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1567983222151AF6009FFFFE /* RegisterViewController.swift in Sources */,
 				1582CFE5220E243A00EF8AA7 /* ViewController.swift in Sources */,
 				1582CFE3220E243A00EF8AA7 /* AppDelegate.swift in Sources */,
 			);
