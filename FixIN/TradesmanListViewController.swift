@@ -11,8 +11,14 @@ import UIKit
 class TradesmanListViewController: UIViewController {
 
     @IBOutlet weak var tradesmanTitleLabel: UILabel!
-    
     var detailLabelString: String?
+    
+    @IBOutlet weak var leadingC: NSLayoutConstraint!
+    @IBOutlet weak var trailingC: NSLayoutConstraint!
+    
+    @IBOutlet weak var backButtonTapped: UIBarButtonItem!
+    
+    var menuIsVisible = false
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -32,6 +38,26 @@ class TradesmanListViewController: UIViewController {
     }
     
 
+    @IBAction func menuButtonTapped(_ sender: Any) {
+        
+        if !menuIsVisible {
+            leadingC.constant = 200
+            
+            trailingC.constant = 0
+            menuIsVisible = true
+            
+        } else {
+            leadingC.constant = 0
+            trailingC.constant = 0
+            
+            menuIsVisible = false
+        }
+        
+        UIView.animate( withDuration: 0.2, delay: 0.0, options: .curveLinear, animations: {self.view.layoutIfNeeded()} )
+        
+    }
+    
+    
     /*
     // MARK: - Navigation
 

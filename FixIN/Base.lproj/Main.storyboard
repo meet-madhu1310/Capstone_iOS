@@ -282,56 +282,141 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2p0-Bh-m2k">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <items>
-                                    <navigationItem title="Tradesman" id="ZBO-G8-xXQ">
-                                        <leftBarButtonItems>
-                                            <barButtonItem image="BackButton" id="qET-z0-cms">
-                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <connections>
-                                                    <segue destination="O9T-TQ-W72" kind="show" id="dx9-XK-pIu"/>
-                                                </connections>
-                                            </barButtonItem>
-                                            <barButtonItem image="HamburgerMenu" id="eae-OH-rrD">
-                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </barButtonItem>
-                                        </leftBarButtonItems>
-                                        <barButtonItem key="rightBarButtonItem" image="Notification" id="CJU-6y-jqR">
-                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tradesman" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQn-Uy-6UR">
-                                <rect key="frame" x="0.0" y="64" width="375" height="70"/>
-                                <color key="backgroundColor" red="0.032930017579999998" green="0.55095970809999995" blue="0.075581282299999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kv7-B8-Z9b" userLabel="SideMenuView">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0jw-C6-Xpm">
+                                        <rect key="frame" x="20" y="50" width="160" height="150"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUc-dQ-Bgo">
+                                                <rect key="frame" x="0.0" y="0.0" width="160" height="54"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="Red">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cOQ-9q-JZw">
+                                                <rect key="frame" x="0.0" y="54" width="160" height="48"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="Pink">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oBB-RG-Uib">
+                                                <rect key="frame" x="0.0" y="102" width="160" height="48"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="Orange">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="160" id="AmE-XC-hAP"/>
+                                            <constraint firstAttribute="height" constant="150" id="yov-O3-iYP"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.45009386540000001" green="0.98132258650000004" blue="0.4743030667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="Sd1-1o-e0Q"/>
+                                    <constraint firstItem="0jw-C6-Xpm" firstAttribute="top" secondItem="kv7-B8-Z9b" secondAttribute="top" constant="50" id="u7y-64-5tZ"/>
+                                    <constraint firstItem="0jw-C6-Xpm" firstAttribute="leading" secondItem="kv7-B8-Z9b" secondAttribute="leading" constant="20" id="vNA-Zx-cbz"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pfp-zp-OoK" userLabel="ContentView">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tradesman" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQn-Uy-6UR">
+                                        <rect key="frame" x="0.0" y="44" width="375" height="70"/>
+                                        <color key="backgroundColor" red="0.032930017579999998" green="0.55095970809999995" blue="0.075581282299999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="PFm-Yw-Be6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2p0-Bh-m2k" userLabel="Top Navigation">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <items>
+                                            <navigationItem title="Tradesman" id="ZBO-G8-xXQ">
+                                                <leftBarButtonItems>
+                                                    <barButtonItem image="BackButton" style="plain" id="qET-z0-cms" userLabel="BackButton">
+                                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <connections>
+                                                            <segue destination="O9T-TQ-W72" kind="show" id="dx9-XK-pIu"/>
+                                                        </connections>
+                                                    </barButtonItem>
+                                                    <barButtonItem image="HamburgerMenu" style="plain" id="eae-OH-rrD" userLabel="MenuButton">
+                                                        <inset key="largeContentSizeImageInsets" minX="-1" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <connections>
+                                                            <action selector="menuButtonTapped:" destination="dSK-9L-4Bu" id="xiu-B8-orc"/>
+                                                        </connections>
+                                                    </barButtonItem>
+                                                </leftBarButtonItems>
+                                                <barButtonItem key="rightBarButtonItem" image="Notification" id="CJU-6y-jqR" userLabel="NotificationButton">
+                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </barButtonItem>
+                                            </navigationItem>
+                                        </items>
+                                    </navigationBar>
+                                    <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oVk-DY-pub" userLabel="Bottom Navigation">
+                                        <rect key="frame" x="0.0" y="603" width="375" height="44"/>
+                                        <items>
+                                            <navigationItem id="2be-sM-pyC">
+                                                <barButtonItem key="leftBarButtonItem" title="Location" width="150" id="H5S-at-3be">
+                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </barButtonItem>
+                                                <rightBarButtonItems>
+                                                    <barButtonItem title="More Filters" width="150" id="wT8-y8-uh6">
+                                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </barButtonItem>
+                                                    <barButtonItem systemItem="search" id="Kfe-Gb-5I9">
+                                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </barButtonItem>
+                                                </rightBarButtonItems>
+                                            </navigationItem>
+                                        </items>
+                                    </navigationBar>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="2p0-Bh-m2k" secondAttribute="trailing" id="18W-OW-OLP"/>
+                                    <constraint firstItem="aQn-Uy-6UR" firstAttribute="top" secondItem="2p0-Bh-m2k" secondAttribute="bottom" id="7ek-5t-fi9"/>
+                                    <constraint firstAttribute="bottom" secondItem="oVk-DY-pub" secondAttribute="bottom" id="Be9-OH-gHN"/>
+                                    <constraint firstItem="2p0-Bh-m2k" firstAttribute="trailing" secondItem="aQn-Uy-6UR" secondAttribute="trailing" id="CT1-kv-fme"/>
+                                    <constraint firstItem="2p0-Bh-m2k" firstAttribute="leading" secondItem="oVk-DY-pub" secondAttribute="leading" id="Oep-BZ-MTW"/>
+                                    <constraint firstItem="2p0-Bh-m2k" firstAttribute="trailing" secondItem="oVk-DY-pub" secondAttribute="trailing" id="ZTe-dh-B1q"/>
+                                    <constraint firstItem="2p0-Bh-m2k" firstAttribute="leading" secondItem="aQn-Uy-6UR" secondAttribute="leading" id="abS-iM-EEe"/>
+                                    <constraint firstItem="2p0-Bh-m2k" firstAttribute="top" secondItem="Pfp-zp-OoK" secondAttribute="top" id="ayd-Ob-hSZ"/>
+                                    <constraint firstItem="2p0-Bh-m2k" firstAttribute="leading" secondItem="Pfp-zp-OoK" secondAttribute="leading" id="xsP-hr-2hd"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="aQn-Uy-6UR" firstAttribute="leading" secondItem="CtA-NJ-c9p" secondAttribute="leading" id="2YY-K7-ngq"/>
-                            <constraint firstItem="2p0-Bh-m2k" firstAttribute="top" secondItem="CtA-NJ-c9p" secondAttribute="top" id="4c2-67-ZsO"/>
-                            <constraint firstItem="2p0-Bh-m2k" firstAttribute="leading" secondItem="CtA-NJ-c9p" secondAttribute="leading" id="ebN-u5-VZl"/>
-                            <constraint firstItem="CtA-NJ-c9p" firstAttribute="trailing" secondItem="aQn-Uy-6UR" secondAttribute="trailing" id="iZ6-RY-Y38"/>
-                            <constraint firstItem="aQn-Uy-6UR" firstAttribute="top" secondItem="2p0-Bh-m2k" secondAttribute="bottom" id="qXr-HY-3qX"/>
-                            <constraint firstItem="2p0-Bh-m2k" firstAttribute="trailing" secondItem="CtA-NJ-c9p" secondAttribute="trailing" id="ufh-7g-Wcg"/>
+                            <constraint firstItem="kv7-B8-Z9b" firstAttribute="trailing" secondItem="CtA-NJ-c9p" secondAttribute="trailing" id="4e5-xd-EV6"/>
+                            <constraint firstItem="Pfp-zp-OoK" firstAttribute="leading" secondItem="CtA-NJ-c9p" secondAttribute="leading" id="CFj-J1-ChH" userLabel="LeadingC"/>
+                            <constraint firstItem="kv7-B8-Z9b" firstAttribute="leading" secondItem="CtA-NJ-c9p" secondAttribute="leading" id="JoD-Th-Ut4"/>
+                            <constraint firstItem="Pfp-zp-OoK" firstAttribute="trailing" secondItem="CtA-NJ-c9p" secondAttribute="trailing" id="Xcw-OW-cSM" userLabel="TrailingC"/>
+                            <constraint firstItem="Pfp-zp-OoK" firstAttribute="top" secondItem="CtA-NJ-c9p" secondAttribute="top" id="kOJ-bW-ush"/>
+                            <constraint firstItem="CtA-NJ-c9p" firstAttribute="bottom" secondItem="Pfp-zp-OoK" secondAttribute="bottom" id="kQ9-bh-1m5"/>
+                            <constraint firstItem="kv7-B8-Z9b" firstAttribute="top" secondItem="CtA-NJ-c9p" secondAttribute="top" id="pmE-tm-yd3"/>
+                            <constraint firstItem="CtA-NJ-c9p" firstAttribute="bottom" secondItem="kv7-B8-Z9b" secondAttribute="bottom" id="yr1-Qz-wmJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CtA-NJ-c9p"/>
                     </view>
                     <connections>
+                        <outlet property="backButtonTapped" destination="qET-z0-cms" id="WWw-cg-b0c"/>
+                        <outlet property="leadingC" destination="CFj-J1-ChH" id="3BP-GN-fCe"/>
                         <outlet property="tradesmanTitleLabel" destination="aQn-Uy-6UR" id="c1h-2k-xqG"/>
+                        <outlet property="trailingC" destination="Xcw-OW-cSM" id="UeD-2f-qjw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XBy-jZ-amT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5441" y="834"/>
+            <point key="canvasLocation" x="5440.8000000000002" y="833.43328335832086"/>
         </scene>
         <!--RegisterView-->
         <scene sceneID="sJv-O7-5FN">
