@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class RegisterViewController: UIViewController {
 
@@ -17,6 +18,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var phoneNumberTextField: UITextField!
     @IBOutlet weak var emailAddressTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var confirmPasswordTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +29,7 @@ class RegisterViewController: UIViewController {
         phoneNumberTextField.setBottomBorder()
         emailAddressTextField.setBottomBorder()
         passwordTextField.setBottomBorder()
+        confirmPasswordTextField.setBottomBorder()
 
         // Do any additional setup after loading the view.
     }
@@ -41,6 +44,41 @@ class RegisterViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    @IBAction func createButtonTapped(_ sender: Any) {
+        
+//        var fName = firstNameTextField.text
+//        var lName = lastNameTextField.text
+//        var phone = phoneNumberTextField.text
+        
+        
+        if passwordTextField.text != confirmPasswordTextField.text {
+            let alertController = UIAlertController(title: "Password Incorrect", message: "Please re-type your password", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            
+            alertController.addAction(defaultAction)
+            self.present(alertController, animated: true, completion: nil)
+        } else {
+            
+            Auth.auth().createUser(withEmail: emailAddressTextField.text!, password: passwordTextField.text!) {
+                (user, error) in
+                if error == nil {
+                    self.performSegue(withIdentifier: "createTo_home_segue", sender: self)
+                } else {
+                    let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    
+                    alertController.addAction(defaultAction)
+                    self.present(alertController, animated: true, completion: nil)
+                }
+            }
+            
+        }
+        
+    }
+    
+    
 
 }
 

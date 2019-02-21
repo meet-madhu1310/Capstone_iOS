@@ -32,7 +32,7 @@
                                         <rect key="frame" x="150" y="198.5" width="75" height="75"/>
                                         <state key="normal" image="RightArrow"/>
                                         <connections>
-                                            <segue destination="gD3-lx-dje" kind="show" identifier="tradesmanDegue" id="Kvb-FF-bRF"/>
+                                            <segue destination="gD3-lx-dje" kind="showDetail" identifier="tradesman_segue" id="Kvb-FF-bRF"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -59,7 +59,7 @@
                                         <rect key="frame" x="150" y="188.5" width="75" height="75"/>
                                         <state key="normal" image="RightArrow"/>
                                         <connections>
-                                            <segue destination="xjd-Tt-rxZ" kind="presentation" id="AJY-lx-vxM"/>
+                                            <segue destination="xjd-Tt-rxZ" kind="presentation" id="47h-qq-Uod"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -134,7 +134,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Create Account"/>
                                 <connections>
-                                    <segue destination="9un-UT-9eM" kind="show" id="p3l-Ug-JEV"/>
+                                    <action selector="createAccountButtonTapped:" destination="xjd-Tt-rxZ" eventType="touchUpInside" id="hpW-2e-9XY"/>
+                                    <segue destination="9un-UT-9eM" kind="show" identifier="createAccount_segue" id="p3l-Ug-JEV"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P94-Ev-XH0" userLabel="LetsGoView">
@@ -153,7 +154,8 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <state key="normal" image="DownArrow"/>
                                         <connections>
-                                            <segue destination="O9T-TQ-W72" kind="show" id="Tas-sm-dUo"/>
+                                            <action selector="loginButtonTapped:" destination="xjd-Tt-rxZ" eventType="touchUpInside" id="SYx-dK-RFz"/>
+                                            <segue destination="O9T-TQ-W72" kind="presentation" identifier="loginTo_home_segue" id="C0M-59-cRv"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -166,7 +168,8 @@
                                         <barButtonItem key="leftBarButtonItem" title="Item" image="BackButton" id="Yd8-hY-UTd">
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
-                                                <segue destination="BYZ-38-t0r" kind="show" id="v2f-bV-etP"/>
+                                                <action selector="itemBackTapped:" destination="xjd-Tt-rxZ" id="Vf1-Rk-dUs"/>
+                                                <segue destination="BYZ-38-t0r" kind="presentation" identifier="backTo_home_segue" id="vfA-XI-OCe"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -306,9 +309,13 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oBB-RG-Uib">
                                                 <rect key="frame" x="0.0" y="102" width="160" height="48"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                <state key="normal" title="Orange">
+                                                <state key="normal" title="Logout">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="logoutButtonTapped:" destination="dSK-9L-4Bu" eventType="touchUpInside" id="zaJ-qd-KLG"/>
+                                                    <segue destination="xjd-Tt-rxZ" kind="presentation" identifier="logout_segue" id="jfU-XB-uFL"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -478,29 +485,30 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LNe-pn-77u" userLabel="CreateView">
-                                <rect key="frame" x="0.0" y="487" width="375" height="180"/>
+                                <rect key="frame" x="0.0" y="533" width="375" height="134"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aSc-iz-f5q">
-                                        <rect key="frame" x="124" y="20" width="127.5" height="54"/>
+                                        <rect key="frame" x="123.5" y="5" width="128" height="54"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gSE-pS-O7K">
-                                        <rect key="frame" x="150" y="70" width="75" height="75"/>
+                                        <rect key="frame" x="150" y="44" width="75" height="75"/>
                                         <state key="normal" image="DownArrow"/>
                                         <connections>
-                                            <segue destination="O9T-TQ-W72" kind="show" id="k4G-gx-cLt"/>
+                                            <action selector="createButtonTapped:" destination="9un-UT-9eM" eventType="touchUpInside" id="eMq-eB-194"/>
+                                            <segue destination="O9T-TQ-W72" kind="show" identifier="createTo_home_segue" id="k4G-gx-cLt"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="gSE-pS-O7K" secondAttribute="bottom" constant="15" id="Ivv-79-akp"/>
                                     <constraint firstItem="aSc-iz-f5q" firstAttribute="centerX" secondItem="LNe-pn-77u" secondAttribute="centerX" id="LJj-Ee-Dnf"/>
-                                    <constraint firstItem="aSc-iz-f5q" firstAttribute="top" secondItem="LNe-pn-77u" secondAttribute="top" constant="20" id="giI-Ir-lAW"/>
+                                    <constraint firstItem="gSE-pS-O7K" firstAttribute="centerX" secondItem="LNe-pn-77u" secondAttribute="centerX" id="Nhd-qf-1Cf"/>
+                                    <constraint firstItem="aSc-iz-f5q" firstAttribute="top" secondItem="LNe-pn-77u" secondAttribute="top" constant="5" id="giI-Ir-lAW"/>
                                     <constraint firstItem="aSc-iz-f5q" firstAttribute="centerX" secondItem="LNe-pn-77u" secondAttribute="centerX" id="lIm-Cz-4Yj"/>
-                                    <constraint firstAttribute="bottom" secondItem="gSE-pS-O7K" secondAttribute="bottom" constant="35" id="sRp-0V-iUY"/>
-                                    <constraint firstItem="gSE-pS-O7K" firstAttribute="centerX" secondItem="LNe-pn-77u" secondAttribute="centerX" id="wgw-aB-TDN"/>
                                 </constraints>
                             </view>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ptI-8c-XIY">
@@ -510,18 +518,28 @@
                                         <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="4Sa-3G-UV4">
                                             <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
-                                                <segue destination="xjd-Tt-rxZ" kind="presentation" id="UZ0-sQ-kua"/>
+                                                <segue destination="xjd-Tt-rxZ" kind="presentation" identifier="cancel_segue" id="UZ0-sQ-kua"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="confirm password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1YQ-lh-5vz">
+                                <rect key="frame" x="16" y="477" width="343" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="A5X-8Z-XCh"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="5UM-4J-1cL" firstAttribute="trailing" secondItem="uIi-HE-EY5" secondAttribute="trailing" constant="16" id="4HK-2X-s2g"/>
                             <constraint firstItem="Dco-lM-qsV" firstAttribute="top" secondItem="PUg-Sj-C3H" secondAttribute="bottom" constant="10" id="6Yt-TH-i2b"/>
                             <constraint firstItem="ptI-8c-XIY" firstAttribute="leading" secondItem="5UM-4J-1cL" secondAttribute="leading" id="94b-SR-IrK"/>
+                            <constraint firstItem="LNe-pn-77u" firstAttribute="top" secondItem="1YQ-lh-5vz" secondAttribute="bottom" constant="16" id="Fy4-vE-TON"/>
                             <constraint firstItem="Tve-fy-gf9" firstAttribute="leading" secondItem="5UM-4J-1cL" secondAttribute="leading" constant="16" id="Hrl-ff-QEw"/>
                             <constraint firstItem="OER-CV-ibL" firstAttribute="centerX" secondItem="on1-uR-gsG" secondAttribute="centerX" id="J2N-bk-vtU"/>
                             <constraint firstItem="5Rh-be-R2C" firstAttribute="top" secondItem="OER-CV-ibL" secondAttribute="bottom" constant="20" id="JsK-qu-vqd"/>
@@ -532,22 +550,25 @@
                             <constraint firstItem="5UM-4J-1cL" firstAttribute="trailing" secondItem="Dco-lM-qsV" secondAttribute="trailing" constant="16" id="Or1-lP-Xob"/>
                             <constraint firstItem="OER-CV-ibL" firstAttribute="top" secondItem="5UM-4J-1cL" secondAttribute="top" constant="80" id="P0y-96-DtH"/>
                             <constraint firstItem="Dco-lM-qsV" firstAttribute="leading" secondItem="5UM-4J-1cL" secondAttribute="leading" constant="16" id="PfU-sU-nsq"/>
-                            <constraint firstItem="LNe-pn-77u" firstAttribute="top" secondItem="Dco-lM-qsV" secondAttribute="bottom" constant="20" id="Rb6-2S-Atl"/>
                             <constraint firstAttribute="bottom" secondItem="LNe-pn-77u" secondAttribute="bottom" id="Uar-18-nnd"/>
                             <constraint firstItem="PUg-Sj-C3H" firstAttribute="leading" secondItem="5UM-4J-1cL" secondAttribute="leading" constant="16" id="Y6l-8i-X7z"/>
                             <constraint firstItem="ptI-8c-XIY" firstAttribute="top" secondItem="5UM-4J-1cL" secondAttribute="top" id="YeQ-pV-Y7S"/>
+                            <constraint firstItem="1YQ-lh-5vz" firstAttribute="top" secondItem="Dco-lM-qsV" secondAttribute="bottom" constant="10" id="ZJL-hE-rNS"/>
                             <constraint firstItem="5UM-4J-1cL" firstAttribute="trailing" secondItem="5Rh-be-R2C" secondAttribute="trailing" constant="16" id="ZXv-85-DDb"/>
                             <constraint firstItem="Tve-fy-gf9" firstAttribute="top" secondItem="OER-CV-ibL" secondAttribute="bottom" constant="20" id="axw-zw-e9D"/>
                             <constraint firstItem="OER-CV-ibL" firstAttribute="leading" secondItem="5UM-4J-1cL" secondAttribute="leading" constant="67" id="bxY-gT-Xg3"/>
                             <constraint firstAttribute="bottom" secondItem="LNe-pn-77u" secondAttribute="bottom" id="gW7-pc-01d"/>
                             <constraint firstItem="uIi-HE-EY5" firstAttribute="top" secondItem="Tve-fy-gf9" secondAttribute="bottom" constant="10" id="gxh-4p-jgn"/>
+                            <constraint firstItem="5UM-4J-1cL" firstAttribute="trailing" secondItem="1YQ-lh-5vz" secondAttribute="trailing" constant="16" id="m96-Kr-VAh"/>
                             <constraint firstItem="5UM-4J-1cL" firstAttribute="bottom" secondItem="OER-CV-ibL" secondAttribute="bottom" constant="410" id="p3p-S6-K5J"/>
                             <constraint firstItem="LNe-pn-77u" firstAttribute="leading" secondItem="5UM-4J-1cL" secondAttribute="leading" id="q0A-x3-rzB"/>
+                            <constraint firstItem="1YQ-lh-5vz" firstAttribute="leading" secondItem="5UM-4J-1cL" secondAttribute="leading" constant="16" id="wU8-0S-TDG"/>
                             <constraint firstItem="PUg-Sj-C3H" firstAttribute="top" secondItem="uIi-HE-EY5" secondAttribute="bottom" constant="10" id="xLS-xQ-jfy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5UM-4J-1cL"/>
                     </view>
                     <connections>
+                        <outlet property="confirmPasswordTextField" destination="1YQ-lh-5vz" id="87p-7o-S4O"/>
                         <outlet property="emailAddressTextField" destination="PUg-Sj-C3H" id="X3D-75-M1y"/>
                         <outlet property="firstNameTextField" destination="Tve-fy-gf9" id="rI8-4E-Cbs"/>
                         <outlet property="lastNameTextField" destination="5Rh-be-R2C" id="eSd-V8-71t"/>
@@ -558,7 +579,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3eW-my-qCa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3785" y="1222"/>
+            <point key="canvasLocation" x="3785" y="1333"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Z9q-hx-4xO">
@@ -567,7 +588,27 @@
                     <view key="view" contentMode="scaleToFill" id="Xac-dY-2SA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7cG-uk-oKd">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Login" id="gKW-qc-hSC">
+                                        <barButtonItem key="leftBarButtonItem" image="BackButton" id="T36-1j-8EV">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <segue destination="BYZ-38-t0r" kind="show" id="QhD-AK-EgS"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7cG-uk-oKd" firstAttribute="trailing" secondItem="rNs-d0-7FY" secondAttribute="trailing" id="V0s-AT-3UZ"/>
+                            <constraint firstItem="7cG-uk-oKd" firstAttribute="leading" secondItem="rNs-d0-7FY" secondAttribute="leading" id="kDn-DS-m87"/>
+                            <constraint firstItem="7cG-uk-oKd" firstAttribute="top" secondItem="rNs-d0-7FY" secondAttribute="top" id="qYJ-Lv-uE9"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="rNs-d0-7FY"/>
                     </view>
                 </viewController>
@@ -603,9 +644,10 @@
         <image name="UserAvatar" width="75" height="75"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="p3l-Ug-JEV"/>
         <segue reference="oDJ-j5-Hj0"/>
-        <segue reference="dx9-XK-pIu"/>
+        <segue reference="C0M-59-cRv"/>
         <segue reference="UZ0-sQ-kua"/>
-        <segue reference="v2f-bV-etP"/>
+        <segue reference="vfA-XI-OCe"/>
     </inferredMetricsTieBreakers>
 </document>

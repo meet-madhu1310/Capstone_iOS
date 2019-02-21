@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class TradesmanListViewController: UIViewController {
 
@@ -56,6 +57,28 @@ class TradesmanListViewController: UIViewController {
         UIView.animate( withDuration: 0.2, delay: 0.0, options: .curveLinear, animations: {self.view.layoutIfNeeded()} )
         
     }
+    
+    
+    @IBAction func logoutButtonTapped(_ sender: Any) {
+        
+        do {
+            try Auth.auth().signOut()
+            
+            let alertController = UIAlertController(title: "Success!", message: "You have successfully logged out.", preferredStyle: .alert)
+            let dafaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            
+            alertController.addAction(dafaultAction)
+//            self.present(alertController, animated: true, completion: nil)
+            
+            self.performSegue(withIdentifier: "logout_segue", sender: self)
+            
+        }
+        catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+        
+    }
+    
     
     
     /*
