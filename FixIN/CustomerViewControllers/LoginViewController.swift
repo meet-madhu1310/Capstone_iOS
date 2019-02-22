@@ -14,8 +14,6 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginEmailTextField: UITextField!
     @IBOutlet weak var loginPasswordTextField: UITextField!
     
-    var check:Bool = true
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,22 +30,23 @@ class LoginViewController: UIViewController {
         
     }
     
-    //Check with Colin.
-    
-//    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-//
-//        if check {
-//            loginEmailTextField.text = ""
-//            return false
-//        }
-//
-//        return true
-//
-//    }
     
     @IBAction func createAccountButtonTapped(_ sender: Any) {
+            
+            self.performSegue(withIdentifier: "createAccount_segue", sender: self)
         
-        self.performSegue(withIdentifier: "createAccount_segue", sender: self)
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        
+        if loginEmailTextField.text == "" {
+            
+            
+        } else {
+            loginButtonTapped(shouldPerformSegue(withIdentifier: "loginTo_home_segue", sender: self))
+        }
+        
+        return false
         
     }
     
@@ -58,17 +57,17 @@ class LoginViewController: UIViewController {
             (user, error) in
             
              if error == nil {
-                
-                self.performSegue(withIdentifier: "loginTo_home_segue", sender: self)
-                
+
+//                self.performSegue(withIdentifier: "loginTo_home_segue", sender: self)
+
             } else{
-                
+
                 let alertController = UIAlertController(title: "Error", message: "Please enter email address and password.", preferredStyle: .alert)
                 let dafaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                
+
                 alertController.addAction(dafaultAction)
                 self.present(alertController, animated: true, completion: nil)
-                
+
             }
         }
         

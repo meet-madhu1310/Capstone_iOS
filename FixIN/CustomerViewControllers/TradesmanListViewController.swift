@@ -24,6 +24,8 @@ class TradesmanListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        self.navigationItem.hidesBackButton = true
+        
         if let titleText = detailLabelString {
             tradesmanTitleLabel.text = titleText
         } else {
@@ -34,6 +36,8 @@ class TradesmanListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.leftBarButtonItem?.tintColor = UIColor.clear
 
         // Do any additional setup after loading the view.
     }
@@ -61,21 +65,44 @@ class TradesmanListViewController: UIViewController {
     
     @IBAction func logoutButtonTapped(_ sender: Any) {
         
-        do {
-            try Auth.auth().signOut()
+        let title = NSLocalizedString("Are you sure?", comment: "")
+        let yesButton = NSLocalizedString("Yes", comment: "")
+        let cancelButton = NSLocalizedString("No", comment: "")
+        
+        let alertController = UIAlertController(title: title, message: nil, preferredStyle: .actionSheet)
+        alertController.addAction(UIAlertAction(title: NSLocalizedString(yesButton, comment: ""), style: .default) { _ in
             
-            let alertController = UIAlertController(title: "Success!", message: "You have successfully logged out.", preferredStyle: .alert)
-            let dafaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            do {
+                try Auth.auth().signOut()
+                
+                self.performSegue(withIdentifier: "logout_segue", sender: self)
+                
+            }
+            catch let signOutError as NSError {
+                print ("Error signing out: %@", signOutError)
+            }
             
-            alertController.addAction(dafaultAction)
-//            self.present(alertController, animated: true, completion: nil)
-            
-            self.performSegue(withIdentifier: "logout_segue", sender: self)
-            
-        }
-        catch let signOutError as NSError {
-            print ("Error signing out: %@", signOutError)
-        }
+        })
+        
+        alertController.addAction(UIAlertAction(title: NSLocalizedString(cancelButton, comment: ""), style: .cancel) { _ in})
+        
+        self.present(alertController, animated: true, completion: nil)
+        
+    }
+    
+    
+    @IBAction func locationAction(_ sender: Any) {
+        
+        let title = NSLocalizedString("Choose something", comment: "")
+        let cancenButton = NSLocalizedString("Cancel", comment: "")
+        let defaultButton = NSLocalizedString("Default", comment: "")
+        
+        let alertController = UIAlertController(title: title, message: nil, preferredStyle: .actionSheet)
+        alertController.addAction(UIAlertAction(title: NSLocalizedString(cancenButton, comment: ""), style: .cancel) { _ in})
+        
+        alertController.addAction(UIAlertAction(title: NSLocalizedString(defaultButton, comment: ""), style: .default) { _ in})
+        
+        self.present(alertController, animated: true, completion: nil)
         
     }
     

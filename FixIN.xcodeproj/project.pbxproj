@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0E40B808538813437BE356A7 /* Pods_FixIN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0523165AE53B4BDA2B0E48D1 /* Pods_FixIN.framework */; };
+		150112DB221F986A00AC34AC /* TradesmanLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150112DA221F986A00AC34AC /* TradesmanLoginViewController.swift */; };
+		150112DD221F988300AC34AC /* TradesmanRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150112DC221F988300AC34AC /* TradesmanRegisterViewController.swift */; };
 		155A87442218F2EE006EBEE2 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155A87432218F2EE006EBEE2 /* RegisterViewController.swift */; };
 		155A87462218FA2B006EBEE2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155A87452218FA2B006EBEE2 /* LoginViewController.swift */; };
 		155A874E221920DC006EBEE2 /* TradesmanListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155A874D221920DC006EBEE2 /* TradesmanListViewController.swift */; };
@@ -22,6 +24,8 @@
 
 /* Begin PBXFileReference section */
 		0523165AE53B4BDA2B0E48D1 /* Pods_FixIN.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FixIN.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		150112DA221F986A00AC34AC /* TradesmanLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradesmanLoginViewController.swift; sourceTree = "<group>"; };
+		150112DC221F988300AC34AC /* TradesmanRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradesmanRegisterViewController.swift; sourceTree = "<group>"; };
 		155A87432218F2EE006EBEE2 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		155A87452218FA2B006EBEE2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		155A874D221920DC006EBEE2 /* TradesmanListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradesmanListViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +54,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		150112D8221F7DCA00AC34AC /* CustomerViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				155A87432218F2EE006EBEE2 /* RegisterViewController.swift */,
+				155A87452218FA2B006EBEE2 /* LoginViewController.swift */,
+				155A874D221920DC006EBEE2 /* TradesmanListViewController.swift */,
+				15F1A8E8221931D00075B0AF /* ShowCategory.swift */,
+			);
+			path = CustomerViewControllers;
+			sourceTree = "<group>";
+		};
+		150112D9221F984000AC34AC /* TradesmanViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				150112DA221F986A00AC34AC /* TradesmanLoginViewController.swift */,
+				150112DC221F988300AC34AC /* TradesmanRegisterViewController.swift */,
+			);
+			path = TradesmanViewControllers;
+			sourceTree = "<group>";
+		};
 		1582CFD6220E243A00EF8AA7 = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +95,8 @@
 		1582CFE1220E243A00EF8AA7 /* FixIN */ = {
 			isa = PBXGroup;
 			children = (
+				150112D9221F984000AC34AC /* TradesmanViewControllers */,
+				150112D8221F7DCA00AC34AC /* CustomerViewControllers */,
 				1582CFE2220E243A00EF8AA7 /* AppDelegate.swift */,
 				1582CFE4220E243A00EF8AA7 /* ViewController.swift */,
 				1582CFE6220E243A00EF8AA7 /* Main.storyboard */,
@@ -78,10 +104,6 @@
 				1582CFEB220E244100EF8AA7 /* LaunchScreen.storyboard */,
 				1582CFEE220E244100EF8AA7 /* Info.plist */,
 				157240AF221E07740025EF68 /* GoogleService-Info.plist */,
-				155A87432218F2EE006EBEE2 /* RegisterViewController.swift */,
-				155A87452218FA2B006EBEE2 /* LoginViewController.swift */,
-				155A874D221920DC006EBEE2 /* TradesmanListViewController.swift */,
-				15F1A8E8221931D00075B0AF /* ShowCategory.swift */,
 			);
 			path = FixIN;
 			sourceTree = "<group>";
@@ -92,7 +114,6 @@
 				F5352CF17D4D8075AA092DFA /* Pods-FixIN.debug.xcconfig */,
 				76F9F6F2C2AB7B05D5BAB504 /* Pods-FixIN.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -232,9 +253,11 @@
 				155A87462218FA2B006EBEE2 /* LoginViewController.swift in Sources */,
 				155A87442218F2EE006EBEE2 /* RegisterViewController.swift in Sources */,
 				1582CFE5220E243A00EF8AA7 /* ViewController.swift in Sources */,
+				150112DD221F988300AC34AC /* TradesmanRegisterViewController.swift in Sources */,
 				1582CFE3220E243A00EF8AA7 /* AppDelegate.swift in Sources */,
 				15F1A8E9221931D00075B0AF /* ShowCategory.swift in Sources */,
 				155A874E221920DC006EBEE2 /* TradesmanListViewController.swift in Sources */,
+				150112DB221F986A00AC34AC /* TradesmanLoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
