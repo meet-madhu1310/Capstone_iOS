@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseAuth
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var loginEmailTextField: UITextField!
     @IBOutlet weak var loginPasswordTextField: UITextField!
@@ -20,8 +20,12 @@ class LoginViewController: UIViewController {
         
         loginEmailTextField.setBottomBorder()
         loginPasswordTextField.setBottomBorder()
+        
+        loginEmailTextField.becomeFirstResponder()
+        
+        loginEmailTextField.delegate = self
+        loginPasswordTextField.delegate = self
 
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func itemBackTapped(_ sender: Any) {
@@ -37,13 +41,49 @@ class LoginViewController: UIViewController {
         
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+
+        if textField == loginEmailTextField {
+            loginPasswordTextField.becomeFirstResponder()
+        }
+
+        return true
+    }
+    
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        
+        if loginPasswordTextField.text == "" && loginEmailTextField.text == "" {
+            
+            let alertController = UIAlertController(title: "Error", message: "Please enter email address and password.", preferredStyle: .alert)
+            let dafaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            
+            alertController.addAction(dafaultAction)
+            self.present(alertController, animated: true, completion: nil)
+            
+        }
         
         if loginEmailTextField.text == "" {
             
+            loginPasswordTextField.resignFirstResponder()
+            loginEmailTextField.becomeFirstResponder()
             
-        } else {
-            loginButtonTapped(shouldPerformSegue(withIdentifier: "loginTo_home_segue", sender: self))
+            let alertController = UIAlertController(title: "Error", message: "Please enter email address.", preferredStyle: .alert)
+            let dafaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            
+            alertController.addAction(dafaultAction)
+            self.present(alertController, animated: true, completion: nil)
+            
+        } else if loginPasswordTextField.text == "" {
+            
+            loginEmailTextField.resignFirstResponder()
+            loginPasswordTextField.becomeFirstResponder()
+            
+            let alertController = UIAlertController(title: "Error", message: "Please enter password.", preferredStyle: .alert)
+            let dafaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            
+            alertController.addAction(dafaultAction)
+            self.present(alertController, animated: true, completion: nil)
+            
         }
         
         return false
@@ -58,15 +98,7 @@ class LoginViewController: UIViewController {
             
              if error == nil {
 
-//                self.performSegue(withIdentifier: "loginTo_home_segue", sender: self)
-
-            } else{
-
-                let alertController = UIAlertController(title: "Error", message: "Please enter email address and password.", preferredStyle: .alert)
-                let dafaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-
-                alertController.addAction(dafaultAction)
-                self.present(alertController, animated: true, completion: nil)
+                self.performSegue(withIdentifier: "loginTo_home_segue", sender: self)
 
             }
         }

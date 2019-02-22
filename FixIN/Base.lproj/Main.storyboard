@@ -108,7 +108,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FZB-v3-pq9">
                                 <rect key="frame" x="16" y="380" width="343" height="40"/>
@@ -556,7 +556,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LNe-pn-77u" userLabel="CreateView">
                                 <rect key="frame" x="0.0" y="533" width="375" height="134"/>
@@ -976,6 +976,6 @@
         <segue reference="oDJ-j5-Hj0"/>
         <segue reference="k4G-gx-cLt"/>
         <segue reference="UZ0-sQ-kua"/>
-        <segue reference="QhD-AK-EgS"/>
+        <segue reference="vfA-XI-OCe"/>
     </inferredMetricsTieBreakers>
 </document>

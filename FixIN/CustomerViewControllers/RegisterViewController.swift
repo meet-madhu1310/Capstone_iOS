@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseAuth
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var profileImage: UIImageView!
     
@@ -30,8 +30,15 @@ class RegisterViewController: UIViewController {
         emailAddressTextField.setBottomBorder()
         passwordTextField.setBottomBorder()
         confirmPasswordTextField.setBottomBorder()
+        
+        firstNameTextField.becomeFirstResponder()
 
-        // Do any additional setup after loading the view.
+        firstNameTextField.delegate = self
+        lastNameTextField.delegate = self
+        phoneNumberTextField.delegate = self
+        emailAddressTextField.delegate = self
+        passwordTextField.delegate = self
+        confirmPasswordTextField.delegate = self
     }
     
 
@@ -44,6 +51,31 @@ class RegisterViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        switch textField {
+        case firstNameTextField:
+            lastNameTextField.becomeFirstResponder()
+            
+        case lastNameTextField:
+            phoneNumberTextField.becomeFirstResponder()
+            
+        case phoneNumberTextField:
+            emailAddressTextField.becomeFirstResponder()
+            
+        case emailAddressTextField:
+            passwordTextField.becomeFirstResponder()
+            
+        case passwordTextField:
+            confirmPasswordTextField.becomeFirstResponder()
+        default:
+            textField.resignFirstResponder()
+        }
+        
+        return false
+        
+    }
     
     
     @IBAction func createButtonTapped(_ sender: Any) {
