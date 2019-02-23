@@ -18,6 +18,8 @@ class ShowCategory: UIViewController {
     var menuIsVisible = false
     var backButtonIsVisible = true
     
+    var segueValue = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,6 +35,12 @@ class ShowCategory: UIViewController {
         performSegue(withIdentifier: "mechanic_segue", sender: self)
     }
     
+    
+    @IBAction func bookingsButtonTapped(_ sender: Any) {
+        
+        self.performSegue(withIdentifier: "categoryToBookings_segue", sender: self)
+        
+    }    
     
     @IBAction func menuButtonTapped(_ sender: Any) {
         
@@ -58,7 +66,7 @@ class ShowCategory: UIViewController {
         
         let title = NSLocalizedString("Are you sure?", comment: "")
         let yesButton = NSLocalizedString("Yes", comment: "")
-        let cancelButton = NSLocalizedString("No", comment: "")
+        let noButton = NSLocalizedString("No", comment: "")
         
         let alertController = UIAlertController(title: title, message: nil, preferredStyle: .actionSheet)
         alertController.addAction(UIAlertAction(title: NSLocalizedString(yesButton, comment: ""), style: .default) { _ in
@@ -75,7 +83,7 @@ class ShowCategory: UIViewController {
             
         })
         
-        alertController.addAction(UIAlertAction(title: NSLocalizedString(cancelButton, comment: ""), style: .cancel) { _ in})
+        alertController.addAction(UIAlertAction(title: NSLocalizedString(noButton, comment: ""), style: .cancel) { _ in })
         
         self.present(alertController, animated: true, completion: nil)
         

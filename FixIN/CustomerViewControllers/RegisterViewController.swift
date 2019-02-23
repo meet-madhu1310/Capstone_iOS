@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseDatabase
 import FirebaseAuth
 
 class RegisterViewController: UIViewController, UITextFieldDelegate {
@@ -20,9 +21,15 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     
+    var refUser: DatabaseReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //setting reference to database
+        refUser = Database.database().reference().child("users")
+        
+        //setting bottom border for textFields and round profile photo
         profileImage.setRound()
         firstNameTextField.setBottomBorder()
         lastNameTextField.setBottomBorder()
@@ -31,6 +38,8 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         passwordTextField.setBottomBorder()
         confirmPasswordTextField.setBottomBorder()
         
+        
+        //focus and re-fcous on particular textField
         firstNameTextField.becomeFirstResponder()
 
         firstNameTextField.delegate = self
@@ -77,40 +86,112 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    
-    @IBAction func createButtonTapped(_ sender: Any) {
+    //function to push data to Firebase
+    func addUser() {
         
-//        var fName = firstNameTextField.text
-//        var lName = lastNameTextField.text
-//        var phone = phoneNumberTextField.text
+        let user = [
+            "FirstName": firstNameTextField.text! as String,
+            "LastName": lastNameTextField.text! as String,
+            "PhoneNumber": phoneNumberTextField.text! as String,
+            "EmailAddress": emailAddressTextField.text! as String,
+            "Password": passwordTextField.text! as String,
+            "ConfirmPassword": confirmPasswordTextField.text! as String
+        ]
         
-        
-        if passwordTextField.text != confirmPasswordTextField.text {
-            let alertController = UIAlertController(title: "Password Incorrect", message: "Please re-type your password", preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            
-            alertController.addAction(defaultAction)
-            self.present(alertController, animated: true, completion: nil)
-        } else {
-            
-            Auth.auth().createUser(withEmail: emailAddressTextField.text!, password: passwordTextField.text!) {
-                (user, error) in
-                if error == nil {
-                    self.performSegue(withIdentifier: "createTo_home_segue", sender: self)
-                } else {
-                    let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
-                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                    
-                    alertController.addAction(defaultAction)
-                    self.present(alertController, animated: true, completion: nil)
-                }
-            }
-            
-        }
+        refUser.childByAutoId().setValue(user)
         
     }
     
     
+    @IBAction func createButtonTapped(_ sender: Any) {
+        
+        if firstNameTextField.text == "" {
+            
+            firstNameTextField.becomeFirstResponder()
+            
+            let alertController = UIAlertController(title: "First Name", message: "Please enter your first name.", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            
+            alertController.addAction(defaultAction)
+            self.present(alertController, animated: true, completion: nil)
+            
+        } else if lastNameTextField.text == "" {
+            lastNameTextField.becomeFirstResponder()
+            
+            let alertController = UIAlertController(title: "Last Name", message: "Please enter your last name.", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            
+            alertController.addAction(defaultAction)
+            self.present(alertController, animated: true, completion: nil)
+            
+        } else if phoneNumberTextField.text == "" {
+            phoneNumberTextField.becomeFirstResponder()
+            
+            let alertController = UIAlertController(title: "Phone Number", message: "Please enter your phone number.", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            
+            alertController.addAction(defaultAction)
+            self.present(alertController, animated: true, completion: nil)
+            
+        } else if emailAddressTextField.text == "" {
+            emailAddressTextField.becomeFirstResponder()
+            
+            let alertController = UIAlertController(title: "Email Address", message: "Please enter your email address.", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            
+            alertController.addAction(defaultAction)
+            self.present(alertController, animated: true, completion: nil)
+            
+        } else if passwordTextField.text == "" {
+            passwordTextField.becomeFirstResponder()
+            
+            let alertController = UIAlertController(title: "Password", message: "Please enter your password.", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            
+            alertController.addAction(defaultAction)
+            self.present(alertController, animated: true, completion: nil)
+            
+        } else if confirmPasswordTextField.text == "" {
+            confirmPasswordTextField.becomeFirstResponder()
+            
+            let alertController = UIAlertController(title: "Confirm Password", message: "Please enter your confirm password.", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            
+            alertController.addAction(defaultAction)
+            self.present(alertController, animated: true, completion: nil)
+            
+        } else if passwordTextField.text != confirmPasswordTextField.text {
+            confirmPasswordTextField.becomeFirstResponder()
+            
+            let alertController = UIAlertController(title: "Password does't match", message: "Please re-type your confirm password.", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            
+            alertController.addAction(defaultAction)
+            self.present(alertController, animated: true, completion: nil)
+            
+        } else {
+            addUser()
+            getUser()
+        }
+        
+    }
+    
+    //it is giving you first names of all the users you have. you might wannna use it to display tradesman name and last name as giving all the table entries
+    func getUser() {
+        
+//        let userID = Auth.auth().currentUser?.uid
+        
+        self.refUser.observe(DataEventType.childAdded) {
+            (snapshot: DataSnapshot) in
+            
+            let value = snapshot.value as? NSDictionary
+            let username = value?["FirstName"] as? String
+            
+            print(username!)
+//            print(userID!)
+        }
+        
+    }
 
 }
 

@@ -36,14 +36,21 @@ class TradesmanListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.navigationItem.leftBarButtonItem?.tintColor = UIColor.clear
-
         // Do any additional setup after loading the view.
+        
+    }
+    
+    
+    @IBAction func bookingsButtonTapped(_ sender: Any) {
+        
+        self.performSegue(withIdentifier: "tradesmanToBookings_segue", sender: self)
+        
     }
     
 
     @IBAction func menuButtonTapped(_ sender: Any) {
+        
+        navigationItem.leftBarButtonItem?.tintColor = UIColor.red
         
         if !menuIsVisible {
             leadingC.constant = 200

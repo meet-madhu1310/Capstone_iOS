@@ -8,5 +8,6 @@ target 'FixIN' do
   # Pods for FixIN
 	pod 'Firebase/Core'
 	pod 'Firebase/Auth'
+	pod 'Firebase/Database'
 
 end
