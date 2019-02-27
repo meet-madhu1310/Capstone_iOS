@@ -26,6 +26,8 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.hideKeyboard()
+        
         //setting reference to database
         refUser = Database.database().reference().child("users")
         
@@ -179,7 +181,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     //it is giving you first names of all the users you have. you might wannna use it to display tradesman name and last name as giving all the table entries
     func getUser() {
         
-//        let userID = Auth.auth().currentUser?.uid
+        //let userID = Auth.auth().currentUser?.uid
         
         self.refUser.observe(DataEventType.childAdded) {
             (snapshot: DataSnapshot) in
@@ -188,7 +190,6 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
             let username = value?["FirstName"] as? String
             
             print(username!)
-//            print(userID!)
         }
         
     }

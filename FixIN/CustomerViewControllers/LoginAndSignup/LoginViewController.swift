@@ -13,15 +13,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var loginEmailTextField: UITextField!
     @IBOutlet weak var loginPasswordTextField: UITextField!
+    @IBOutlet weak var loginButtonTapped: UIButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.hideKeyboard()
+        
         loginEmailTextField.setBottomBorder()
         loginPasswordTextField.setBottomBorder()
-        
-        loginEmailTextField.becomeFirstResponder()
+        loginButtonTapped.roundedBorder()
         
         loginEmailTextField.delegate = self
         loginPasswordTextField.delegate = self
@@ -29,16 +31,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func itemBackTapped(_ sender: Any) {
-        
         self.performSegue(withIdentifier: "backToHome_segue", sender: self)
-        
     }
     
     
     @IBAction func createAccountButtonTapped(_ sender: Any) {
-            
             self.performSegue(withIdentifier: "createAccount_segue", sender: self)
-        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -64,7 +62,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         if loginEmailTextField.text == "" {
             
-            loginPasswordTextField.resignFirstResponder()
             loginEmailTextField.becomeFirstResponder()
             
             let alertController = UIAlertController(title: "Error", message: "Please enter email address.", preferredStyle: .alert)
@@ -75,7 +72,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             
         } else if loginPasswordTextField.text == "" {
             
-            loginEmailTextField.resignFirstResponder()
             loginPasswordTextField.becomeFirstResponder()
             
             let alertController = UIAlertController(title: "Error", message: "Please enter password.", preferredStyle: .alert)
@@ -95,11 +91,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         Auth.auth().signIn(withEmail: loginEmailTextField.text!, password: loginPasswordTextField.text!) {
             (user, error) in
-            
-             if error == nil {
-
+            if error == nil {
                 self.performSegue(withIdentifier: "loginTo_home_segue", sender: self)
-
+            } else {
+                let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                let dafaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                
+                alertController.addAction(dafaultAction)
+                self.present(alertController, animated: true, completion: nil)
             }
         }
         
@@ -116,4 +115,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     */
 
+}
+
+extension UIButton {
+    
+    func roundedBorder() {
+        self.frame = CGRect(x: 160, y: 100, width: 50, height: 40)
+        self.layer.cornerRadius = 0.25 * self.bounds.size.width
+        self.clipsToBounds = true
+    }
+    
 }
