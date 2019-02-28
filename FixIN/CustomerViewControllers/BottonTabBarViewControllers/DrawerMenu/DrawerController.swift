@@ -15,8 +15,6 @@ class DrawerController: UIViewController, RootViewControllerDelegate {
     var isMenuExpanded: Bool = false
     let overlayView = UIView()
     
-    let button = UIButton(frame: CGRect(x: 50, y: 200, width: 150, height: 50))
-    
     init(rootViewController: RootViewController, menuController: MenuViewController) {
         self.rootViewController = rootViewController
         self.menuController = menuController
@@ -46,9 +44,9 @@ class DrawerController: UIViewController, RootViewControllerDelegate {
         
         configureGestures()
         
-        UIView.animate(withDuration: 0.3, animations: {
-            self.button.isHidden = false
-        }) { (success) in }
+        menuController.logoutButton.isHidden = false
+        menuController.settingsButton.isHidden = false
+        menuController.bookingsButton.isHidden = false
     }
     
     override func viewDidLayoutSubviews() {
@@ -68,21 +66,9 @@ class DrawerController: UIViewController, RootViewControllerDelegate {
             self.overlayView.alpha = (self.isMenuExpanded) ? 0.5 : 0.0
         }) { (success) in }
         
-        UIView.animate(withDuration: 0.5, animations: {
-            self.button.backgroundColor = .clear
-            
-            self.button.titleLabel?.font = UIFont(name: "System Font", size: 30.0)
-            self.button.setTitleColor(UIColor.black, for: .normal)
-            self.button.setTitle("Logout", for: .normal)
-            self.button.addTarget(self, action: #selector(self.buttonAction), for: .touchUpInside)
-            
-            self.view.addSubview(self.button)
-            self.button.isHidden = false
-        }) { (success) in }
-    }
-    
-    @objc func buttonAction(sender: UIButton!) {
-        print("Tapped.")
+        menuController.logoutButton.isHidden = false
+        menuController.settingsButton.isHidden = false
+        menuController.bookingsButton.isHidden = false
     }
     
     func navigateTo(viewController: UIViewController) {
@@ -101,28 +87,25 @@ class DrawerController: UIViewController, RootViewControllerDelegate {
     
     @objc fileprivate func didSwipeLeft() {
         toggleMenu()
-        
-        UIView.animate(withDuration: 0.4, animations: {
-            self.button.isHidden = true
-        }) { (success) in }
+        menuController.logoutButton.isHidden = true
+        menuController.settingsButton.isHidden = true
+        menuController.bookingsButton.isHidden = true
     }
     
     @objc fileprivate func didTapOverlay() {
         toggleMenu()
-        
-        UIView.animate(withDuration: 0.4, animations: {
-            self.button.isHidden = true
-        }) { (success) in }
+        menuController.logoutButton.isHidden = true
+        menuController.settingsButton.isHidden = true
+        menuController.bookingsButton.isHidden = true
     }
 }
 
 extension DrawerController {
     func rootViewControllerDidTapMenuButton(_ rootViewController: RootViewController) {
         toggleMenu()
-        
-        UIView.animate(withDuration: 0.5, animations: {
-            self.button.isHidden = false
-        }) { (success) in }
+        menuController.logoutButton.isHidden = false
+        menuController.settingsButton.isHidden = false
+        menuController.bookingsButton.isHidden = false
     }
 }
 

@@ -11,6 +11,7 @@ import UIKit
 class TradesmanTableViewCell: UITableViewCell {
 
     @IBOutlet weak var tradesmanLabel: UILabel!
+    @IBOutlet weak var tradesmanImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

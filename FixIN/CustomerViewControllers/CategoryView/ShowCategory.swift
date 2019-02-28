@@ -20,13 +20,28 @@ class ShowCategory: UIViewController {
     
     //for table view
     let categoryNames = ["Mechanic", "Plumber", "Carpenter", "Velder", "Painter", "Gardener", "Pipe Fitters", "Electricians"]
+    let categoryImages: [UIImage] = [
+        UIImage(named: "Mechanic")!,
+        UIImage(named: "Plumber")!,
+        UIImage(named: "Carpenter")!,
+        UIImage(named: "Velder")!,
+        UIImage(named: "Painter")!,
+        UIImage(named: "Gardener")!,
+        UIImage(named: "Pipe Fitters")!,
+        UIImage(named: "Electricians")!
+    ]
+    
     var selectedCategory: String!
-    let cellSpacingHeight: CGFloat = 10
+    var selectedImage: UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.navigationBar.prefersLargeTitles = false
     }
     
     @IBAction func bookingsButtonTapped(_ sender: Any) {
@@ -84,7 +99,7 @@ class ShowCategory: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "category_detail_segue" {
             let dvc = segue.destination as! TradesmanListViewController
-            dvc.categoryTitle = selectedCategory
+            dvc.categoryName = selectedCategory
         }
     }
     
@@ -99,9 +114,11 @@ extension ShowCategory: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let categoryName = categoryNames[indexPath.row]
+        let imageName = categoryImages[indexPath.row]
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell") as? CategoryTableViewCell {
             cell.categoryLabel.text = categoryName
+            cell.categoryImage.image = imageName
             
             cell.layer.borderColor = UIColor.white.cgColor
             cell.layer.borderWidth = 3.0
@@ -120,13 +137,5 @@ extension ShowCategory: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
-    
-//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        return cellSpacingHeight
-//    }
-    
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return categoryNames.count
-//    }
     
 }

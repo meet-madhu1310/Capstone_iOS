@@ -48,6 +48,7 @@ extension RootViewController {
         topViewController?.navigationItem.title = topViewController?.title
         if self.viewControllers.count <= 1 {
             topViewController?.navigationItem.rightBarButtonItem = menuButton
+            topViewController?.navigationItem.rightBarButtonItem?.tintColor = UIColor.white
         }
     }
 }

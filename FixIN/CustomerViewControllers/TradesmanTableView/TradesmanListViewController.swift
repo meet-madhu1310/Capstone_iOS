@@ -12,59 +12,67 @@ import FirebaseAuth
 class TradesmanListViewController: UIViewController {
 
     @IBOutlet weak var categoryTitleLabel: UILabel!
-    var categoryTitle: String!
     
     @IBOutlet weak var leadingC: NSLayoutConstraint!
     @IBOutlet weak var trailingC: NSLayoutConstraint!
     
     @IBOutlet weak var backButtonTapped: UIBarButtonItem!
     
-    var menuIsVisible = false
+    var categoryName: String!
     
     //for table data
-    let tradesmanNames = ["Alex Sim", "Sim Alex", "John Doe", "Smith Nelson", "Dani Anderson", "Emma Rogers"]
-    var selectedTradesman: String!
+    let tradesmanNames = ["Alex Sim", "Sim Alex", "John Doe", "Smith Nelson", "Dani Anderson", "Emma Rogers", "Nicole Stan"]
+    let tradesmanImages: [UIImage] = [
+        UIImage(named: "Alex")!,
+        UIImage(named: "Sim")!,
+        UIImage(named: "John")!,
+        UIImage(named: "Smith")!,
+        UIImage(named: "Dani")!,
+        UIImage(named: "Emma")!,
+        UIImage(named: "Nicole")!
+    ]
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        categoryTitleLabel.text = categoryTitle
-    }
+    var selectedTradesman: String!
+    var selectedImage: UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
+        self.navigationController?.navigationItem.largeTitleDisplayMode = .never
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        title = categoryName
+        
+        self.navigationController?.navigationBar.prefersLargeTitles = false
+    }
     
     @IBAction func bookingsButtonTapped(_ sender: Any) {
-        
-        self.performSegue(withIdentifier: "tradesmanToBookings_segue", sender: self)
-        
+        self.performSegue(withIdentifier: "tradesmanToBookings_segue", sender: self)  
     }
     
 
-    @IBAction func menuButtonTapped(_ sender: Any) {
-        
-        navigationItem.leftBarButtonItem?.tintColor = UIColor.red
-        
-        if !menuIsVisible {
-            leadingC.constant = 200
-            
-            trailingC.constant = 0
-            menuIsVisible = true
-            
-        } else {
-            leadingC.constant = 0
-            trailingC.constant = 0
-            
-            menuIsVisible = false
-        }
-        
-        UIView.animate( withDuration: 0.2, delay: 0.0, options: .curveLinear, animations: {self.view.layoutIfNeeded()} )
-        
-    }
+//    @IBAction func menuButtonTapped(_ sender: Any) {
+//
+//        navigationItem.leftBarButtonItem?.tintColor = UIColor.red
+//
+//        if !menuIsVisible {
+//            leadingC.constant = 200
+//
+//            trailingC.constant = 0
+//            menuIsVisible = true
+//
+//        } else {
+//            leadingC.constant = 0
+//            trailingC.constant = 0
+//
+//            menuIsVisible = false
+//        }
+//
+//        UIView.animate( withDuration: 0.2, delay: 0.0, options: .curveLinear, animations: {self.view.layoutIfNeeded()} )
+//
+//    }
     
     
 //    @IBAction func logoutButtonTapped(_ sender: Any) {
@@ -98,20 +106,12 @@ class TradesmanListViewController: UIViewController {
         if segue.identifier == "tradesman_detail_segue" {
             let dvc = segue.destination as! TradesmanDetailViewController
             dvc.tradesmanName = selectedTradesman
+        } else {
+            if #available(iOS 11.0, *) {
+                segue.destination.navigationItem.largeTitleDisplayMode = .never
+            }
         }
     }
-    
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
@@ -123,9 +123,18 @@ extension TradesmanListViewController: UITableViewDataSource, UITableViewDelegat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let tradesmanName = tradesmanNames[indexPath.row]
+        let imageName = tradesmanImages[indexPath.row]
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "TradesmanNameCell") as? TradesmanTableViewCell {
             cell.tradesmanLabel.text = tradesmanName
+            cell.tradesmanImage.image = imageName
+            
+            cell.layer.borderColor = UIColor.white.cgColor
+//            cell.layer.borderWidth = 3.0
+            
+            cell.tradesmanImage.layer.cornerRadius = cell.tradesmanImage.frame.width / 2
+            cell.tradesmanImage.clipsToBounds = true
+            
             return cell
         }
         

@@ -48,6 +48,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "loginTo_home_segue" {
+            segue.destination.navigationItem.largeTitleDisplayMode = .never
+        }
+    }
+    
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         
         if loginPasswordTextField.text == "" && loginEmailTextField.text == "" {

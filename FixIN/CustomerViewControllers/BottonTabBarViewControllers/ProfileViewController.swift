@@ -11,7 +11,7 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,7 +20,7 @@ class ProfileViewController: UIViewController {
         
         let rootController = RootViewController(mainViewController: mainVC, topNavigationRightImage: UIImage(named: "HamburgerMenu"))
         let menuVC = MenuViewController()
-        menuVC.view.backgroundColor = UIColor.cyan
+        menuVC.view.backgroundColor = UIColor(red: 20.0/255.0, green: 25.0/255.0, blue: 45.0/255.0, alpha: 1.0)
         
         let drawerVC = DrawerController(rootViewController: rootController, menuController: menuVC)
         
