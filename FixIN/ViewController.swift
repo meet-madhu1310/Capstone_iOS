@@ -16,18 +16,12 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    //MARK: - If user already logged in then redirect to home
     override func viewWillAppear(_ animated: Bool) {
-        if Auth.auth().currentUser != nil {
-            self.performSegue(withIdentifier: "direct_home_segue", sender: self)
-        }
-    }
-    
-//    override func viewDidAppear(_ animated: Bool){
-//        super.viewDidAppear(animated)
 //        if Auth.auth().currentUser != nil {
-//            self.performSegue(withIdentifier: "alreadyLogged_segue", sender: nil)
+//            self.performSegue(withIdentifier: "direct_home_segue", sender: self)
 //        }
-//    }
+    }
     
 }
 

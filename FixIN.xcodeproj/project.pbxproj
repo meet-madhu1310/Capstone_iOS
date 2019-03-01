@@ -18,10 +18,14 @@
 		153207D1222689860029F4BF /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153207D0222689860029F4BF /* MenuViewController.swift */; };
 		153207D3222689DB0029F4BF /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153207D2222689DB0029F4BF /* RootViewController.swift */; };
 		153207D722268DD70029F4BF /* DrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153207D622268DD70029F4BF /* DrawerController.swift */; };
+		1534B8BF2228CB9000FA58F4 /* SearchBarItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1534B8BE2228CB9000FA58F4 /* SearchBarItemViewController.swift */; };
 		155A87442218F2EE006EBEE2 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155A87432218F2EE006EBEE2 /* RegisterViewController.swift */; };
 		155A87462218FA2B006EBEE2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155A87452218FA2B006EBEE2 /* LoginViewController.swift */; };
 		155A874E221920DC006EBEE2 /* TradesmanListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155A874D221920DC006EBEE2 /* TradesmanListViewController.swift */; };
 		157240B0221E07750025EF68 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 157240AF221E07740025EF68 /* GoogleService-Info.plist */; };
+		157EF69E22290F6500DC02EC /* TradesmanProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157EF69D22290F6500DC02EC /* TradesmanProfileViewController.swift */; };
+		157EF6A02229104D00DC02EC /* ConfirmedJobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157EF69F2229104D00DC02EC /* ConfirmedJobsViewController.swift */; };
+		157EF6A22229106600DC02EC /* PendingJobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157EF6A12229106600DC02EC /* PendingJobViewController.swift */; };
 		1582CFE3220E243A00EF8AA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582CFE2220E243A00EF8AA7 /* AppDelegate.swift */; };
 		1582CFE5220E243A00EF8AA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582CFE4220E243A00EF8AA7 /* ViewController.swift */; };
 		1582CFE8220E243A00EF8AA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1582CFE6220E243A00EF8AA7 /* Main.storyboard */; };
@@ -43,10 +47,14 @@
 		153207D0222689860029F4BF /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		153207D2222689DB0029F4BF /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		153207D622268DD70029F4BF /* DrawerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerController.swift; sourceTree = "<group>"; };
+		1534B8BE2228CB9000FA58F4 /* SearchBarItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarItemViewController.swift; sourceTree = "<group>"; };
 		155A87432218F2EE006EBEE2 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		155A87452218FA2B006EBEE2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		155A874D221920DC006EBEE2 /* TradesmanListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradesmanListViewController.swift; sourceTree = "<group>"; };
 		157240AF221E07740025EF68 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		157EF69D22290F6500DC02EC /* TradesmanProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradesmanProfileViewController.swift; sourceTree = "<group>"; };
+		157EF69F2229104D00DC02EC /* ConfirmedJobsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmedJobsViewController.swift; sourceTree = "<group>"; };
+		157EF6A12229106600DC02EC /* PendingJobViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingJobViewController.swift; sourceTree = "<group>"; };
 		1582CFDF220E243A00EF8AA7 /* FixIN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FixIN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1582CFE2220E243A00EF8AA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1582CFE4220E243A00EF8AA7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +83,7 @@
 		150112D8221F7DCA00AC34AC /* CustomerViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				153207CF2226862B0029F4BF /* DrawerMenu */,
 				153207CC222684DA0029F4BF /* BottonTabBarViewControllers */,
 				153207C7222638140029F4BF /* CategoryView */,
 				153207C6222630E60029F4BF /* LoginAndSignup */,
@@ -87,8 +96,8 @@
 		150112D9221F984000AC34AC /* TradesmanViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				150112DA221F986A00AC34AC /* TradesmanLoginViewController.swift */,
-				150112DC221F988300AC34AC /* TradesmanRegisterViewController.swift */,
+				157EF69422290B6400DC02EC /* TabBar Controllers */,
+				157EF69322290B4C00DC02EC /* LoginAndSignup */,
 			);
 			path = TradesmanViewControllers;
 			sourceTree = "<group>";
@@ -125,8 +134,7 @@
 		153207CC222684DA0029F4BF /* BottonTabBarViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				153207CF2226862B0029F4BF /* DrawerMenu */,
-				153207CD222685050029F4BF /* ProfileViewController.swift */,
+				1534B8BE2228CB9000FA58F4 /* SearchBarItemViewController.swift */,
 			);
 			path = BottonTabBarViewControllers;
 			sourceTree = "<group>";
@@ -136,9 +144,37 @@
 			children = (
 				153207D0222689860029F4BF /* MenuViewController.swift */,
 				153207D2222689DB0029F4BF /* RootViewController.swift */,
+				153207CD222685050029F4BF /* ProfileViewController.swift */,
 				153207D622268DD70029F4BF /* DrawerController.swift */,
 			);
 			path = DrawerMenu;
+			sourceTree = "<group>";
+		};
+		157EF69322290B4C00DC02EC /* LoginAndSignup */ = {
+			isa = PBXGroup;
+			children = (
+				150112DA221F986A00AC34AC /* TradesmanLoginViewController.swift */,
+				150112DC221F988300AC34AC /* TradesmanRegisterViewController.swift */,
+			);
+			path = LoginAndSignup;
+			sourceTree = "<group>";
+		};
+		157EF69422290B6400DC02EC /* TabBar Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				157EF6A32229137300DC02EC /* Confirm Job COntrollers */,
+				157EF69D22290F6500DC02EC /* TradesmanProfileViewController.swift */,
+				157EF6A12229106600DC02EC /* PendingJobViewController.swift */,
+			);
+			path = "TabBar Controllers";
+			sourceTree = "<group>";
+		};
+		157EF6A32229137300DC02EC /* Confirm Job COntrollers */ = {
+			isa = PBXGroup;
+			children = (
+				157EF69F2229104D00DC02EC /* ConfirmedJobsViewController.swift */,
+			);
+			path = "Confirm Job COntrollers";
 			sourceTree = "<group>";
 		};
 		1582CFD6220E243A00EF8AA7 = {
@@ -325,7 +361,10 @@
 				1582CFE5220E243A00EF8AA7 /* ViewController.swift in Sources */,
 				150112DD221F988300AC34AC /* TradesmanRegisterViewController.swift in Sources */,
 				153207CE222685050029F4BF /* ProfileViewController.swift in Sources */,
+				157EF69E22290F6500DC02EC /* TradesmanProfileViewController.swift in Sources */,
+				157EF6A22229106600DC02EC /* PendingJobViewController.swift in Sources */,
 				153207D3222689DB0029F4BF /* RootViewController.swift in Sources */,
+				157EF6A02229104D00DC02EC /* ConfirmedJobsViewController.swift in Sources */,
 				1582CFE3220E243A00EF8AA7 /* AppDelegate.swift in Sources */,
 				153207C022260D3B0029F4BF /* SignupEmailViewController.swift in Sources */,
 				159B7E942220F07D0058CB79 /* BookingsViewController.swift in Sources */,
@@ -334,6 +373,7 @@
 				155A874E221920DC006EBEE2 /* TradesmanListViewController.swift in Sources */,
 				153207D722268DD70029F4BF /* DrawerController.swift in Sources */,
 				150112DB221F986A00AC34AC /* TradesmanLoginViewController.swift in Sources */,
+				1534B8BF2228CB9000FA58F4 /* SearchBarItemViewController.swift in Sources */,
 				153207CB2226583C0029F4BF /* CategoryTableViewCell.swift in Sources */,
 				153207C3222629700029F4BF /* TradesmanTableViewCell.swift in Sources */,
 			);

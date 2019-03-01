@@ -106,6 +106,7 @@ class TradesmanListViewController: UIViewController {
         if segue.identifier == "tradesman_detail_segue" {
             let dvc = segue.destination as! TradesmanDetailViewController
             dvc.tradesmanName = selectedTradesman
+            dvc.tradsmanImage = selectedImage
         } else {
             if #available(iOS 11.0, *) {
                 segue.destination.navigationItem.largeTitleDisplayMode = .never
@@ -147,6 +148,7 @@ extension TradesmanListViewController: UITableViewDataSource, UITableViewDelegat
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedTradesman = tradesmanNames[indexPath.row]
+        selectedImage = tradesmanImages[indexPath.row]
         performSegue(withIdentifier: "tradesman_detail_segue", sender: self)
     }
 }

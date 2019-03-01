@@ -41,8 +41,14 @@ class MenuViewController: UIViewController {
         logoutButton.setTitle("Logout", for: .normal)
         logoutButton.setTitleColor(UIColor.white, for: .normal)
         logoutButton.titleLabel?.font = UIFont(name: "System Font", size: 30.0)
+        
+//        logoutButton.addTarget(self, action: #selector(logoutButtonTapped), for: .touchUpInside)
         view.addSubview(logoutButton)
     }
+    
+//    @objc func logoutButtonTapped() {
+//        self.performSegue(withIdentifier: "logout_button_segue", sender: self)
+//    }
     
     func bookingsButtonFunc() {
         bookingsButton.backgroundColor = .clear

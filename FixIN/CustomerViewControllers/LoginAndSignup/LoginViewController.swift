@@ -18,6 +18,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Login"
         
         self.hideKeyboard()
         
@@ -30,15 +31,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
     }
     
-    @IBAction func itemBackTapped(_ sender: Any) {
-        self.performSegue(withIdentifier: "backToHome_segue", sender: self)
-    }
-    
-    
-    @IBAction func createAccountButtonTapped(_ sender: Any) {
-            self.performSegue(withIdentifier: "createAccount_segue", sender: self)
-    }
-    
+    //MARK: Keyboard Next Pressed - when user is on email textField and user press next on keyboard focus will move to password textField
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 
         if textField == loginEmailTextField {
@@ -48,78 +41,52 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    //MARK: Never Big Title
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "loginTo_home_segue" {
             segue.destination.navigationItem.largeTitleDisplayMode = .never
         }
     }
     
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        
-        if loginPasswordTextField.text == "" && loginEmailTextField.text == "" {
-            
-            let alertController = UIAlertController(title: "Error", message: "Please enter email address and password.", preferredStyle: .alert)
-            let dafaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            
-            alertController.addAction(dafaultAction)
-            self.present(alertController, animated: true, completion: nil)
-            
-        }
-        
-        if loginEmailTextField.text == "" {
-            
-            loginEmailTextField.becomeFirstResponder()
-            
-            let alertController = UIAlertController(title: "Error", message: "Please enter email address.", preferredStyle: .alert)
-            let dafaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            
-            alertController.addAction(dafaultAction)
-            self.present(alertController, animated: true, completion: nil)
-            
-        } else if loginPasswordTextField.text == "" {
-            
-            loginPasswordTextField.becomeFirstResponder()
-            
-            let alertController = UIAlertController(title: "Error", message: "Please enter password.", preferredStyle: .alert)
-            let dafaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            
-            alertController.addAction(dafaultAction)
-            self.present(alertController, animated: true, completion: nil)
-            
-        }
-        
-        return false
-        
-    }
-    
-    
+    //MARK: Login Button Tapped
     @IBAction func loginButtonTapped(_ sender: Any) {
         
         Auth.auth().signIn(withEmail: loginEmailTextField.text!, password: loginPasswordTextField.text!) {
             (user, error) in
-            if error == nil {
-                self.performSegue(withIdentifier: "loginTo_home_segue", sender: self)
-            } else {
-                let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+            
+            if self.loginEmailTextField.text == "" && self.loginPasswordTextField.text == "" {
+                self.loginEmailTextField.becomeFirstResponder()
+                
+                let alertController = UIAlertController(title: "Error", message:"Please enter email address and password.", preferredStyle: .alert)
                 let dafaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                 
                 alertController.addAction(dafaultAction)
                 self.present(alertController, animated: true, completion: nil)
+                
+            } else if self.loginEmailTextField.text == "" {
+                self.loginEmailTextField.becomeFirstResponder()
+                
+                let alertController = UIAlertController(title: "Error", message:"Please enter email address.", preferredStyle: .alert)
+                let dafaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                
+                alertController.addAction(dafaultAction)
+                self.present(alertController, animated: true, completion: nil)
+                
+            } else if self.loginPasswordTextField.text == "" {
+                self.loginPasswordTextField.becomeFirstResponder()
+                
+                let alertController = UIAlertController(title: "Error", message:"Please enter password.", preferredStyle: .alert)
+                let dafaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                
+                alertController.addAction(dafaultAction)
+                self.present(alertController, animated: true, completion: nil)
+                
+            } else {
+                self.performSegue(withIdentifier: "loginTo_home_segue", sender: self)
             }
         }
         
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 

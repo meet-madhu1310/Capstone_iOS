@@ -21,6 +21,7 @@ class SignupEmailViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Create Account"
         
         self.hideKeyboard()
         createButtonTapped.roundedBorder()
@@ -51,7 +52,7 @@ class SignupEmailViewController: UIViewController, UITextFieldDelegate {
         return false
     }
     
-    // MARK: - Navigation
+    // MARK: - Navigation for Never Bif Title
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "createTo_home_segue"{
             segue.destination.navigationItem.largeTitleDisplayMode = .never
