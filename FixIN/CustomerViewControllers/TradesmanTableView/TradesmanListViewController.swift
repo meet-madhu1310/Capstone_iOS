@@ -10,13 +10,9 @@ import UIKit
 import FirebaseAuth
 
 class TradesmanListViewController: UIViewController {
-
-    @IBOutlet weak var categoryTitleLabel: UILabel!
     
     @IBOutlet weak var leadingC: NSLayoutConstraint!
     @IBOutlet weak var trailingC: NSLayoutConstraint!
-    
-    @IBOutlet weak var backButtonTapped: UIBarButtonItem!
     
     var categoryName: String!
     
@@ -46,10 +42,6 @@ class TradesmanListViewController: UIViewController {
         title = categoryName
         
         self.navigationController?.navigationBar.prefersLargeTitles = false
-    }
-    
-    @IBAction func bookingsButtonTapped(_ sender: Any) {
-        self.performSegue(withIdentifier: "tradesmanToBookings_segue", sender: self)  
     }
     
 

@@ -1,17 +1,15 @@
 //
-//  PendingJobViewController.swift
+//  PendingNavigationViewController.swift
 //  FixIN
 //
-//  Created by Meet Madhu on 2019-02-28.
+//  Created by Meet Madhu on 2019-03-01.
 //  Copyright © 2019 Meet Madhu. All rights reserved.
 //
 
 import UIKit
 
-class PendingJobViewController: UINavigationController {
-
+class PendingNavigationViewController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
 }
