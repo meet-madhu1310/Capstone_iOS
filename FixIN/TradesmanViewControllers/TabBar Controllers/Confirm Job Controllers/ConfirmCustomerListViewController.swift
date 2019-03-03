@@ -15,10 +15,32 @@ class ConfirmCustomerListViewController: UIViewController {
         UIImage(named: "Alex")!,
         UIImage(named: "Emma")!
     ]
+    
+    //define varible to get and set the name of particular customer on ChatController
+    var selectedCustomer: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    }
+    
+    //MARK: - Methods after View Will Appear
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.navigationBar.prefersLargeTitles = false
+    }
+    
+    //MARK: - navigation to ChatController
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "chatWith_customer_segue" {
+            let dvc = segue.destination as! ChatWithCustomerViewController
+            dvc.customerName = selectedCustomer
+        } else {
+            if #available(iOS 11.0, *) {
+                segue.destination.navigationItem.largeTitleDisplayMode = .never
+            }
+        }
     }
 
 }
@@ -46,6 +68,11 @@ extension ConfirmCustomerListViewController: UITableViewDataSource, UITableViewD
         }
         
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedCustomer = customerNames[indexPath.row]
+        performSegue(withIdentifier: "chatWith_customer_segue", sender: self)
     }
     
 }

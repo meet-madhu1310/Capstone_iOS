@@ -62,7 +62,9 @@ class SignupEmailViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Sign Up method
     @IBAction func createButtonTapped(_ sender: Any) {
         
-        if emailAddressTextField.text == "" || passwordTextField.text == "" || confirmPasswordTextField.text == "" {
+        if emailAddressTextField.text == "" && passwordTextField.text == "" && confirmPasswordTextField.text == "" {
+            
+            emailAddressTextField.becomeFirstResponder()
             
             let alertController = UIAlertController(title: "All fields required", message: "Please fill all fields.", preferredStyle: .alert)
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -70,30 +72,41 @@ class SignupEmailViewController: UIViewController, UITextFieldDelegate {
             alertController.addAction(defaultAction)
             self.present(alertController, animated: true, completion: nil)
             
-            if passwordTextField.text != confirmPasswordTextField.text {
-                let alertController = UIAlertController(title: "Incoorect password", message: "Please re-type your confirm password.", preferredStyle: .alert)
-                let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                
-                alertController.addAction(defaultAction)
-                self.present(alertController, animated: true, completion: nil)
-            }
+        } else if passwordTextField.text == "" {
+            
+            passwordTextField.becomeFirstResponder()
+            
+            let alertController = UIAlertController(title: "Password required", message: "Please enter your password.", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            
+            alertController.addAction(defaultAction)
+            self.present(alertController, animated: true, completion: nil)
+        
+        } else if confirmPasswordTextField.text == "" {
+            
+            confirmPasswordTextField.becomeFirstResponder()
+            
+            let alertController = UIAlertController(title: "Confirm password requied", message: "Please enter your confirm password.", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            
+            alertController.addAction(defaultAction)
+            self.present(alertController, animated: true, completion: nil)
+            
+        } else if passwordTextField.text != confirmPasswordTextField.text {
+    
+            confirmPasswordTextField.becomeFirstResponder()
+    
+            let alertController = UIAlertController(title: "Password doesn't match", message: "Please re-type your confirm password.", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+    
+            alertController.addAction(defaultAction)
+            self.present(alertController, animated: true, completion: nil)
             
         } else {
-            
-            Auth.auth().createUser(withEmail: emailAddressTextField.text!, password: passwordTextField.text!){ (user, error) in
-                
-                if error == nil {
-                    self.performSegue(withIdentifier: "createTo_home_segue", sender: self)
-                } else {
-                    let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
-                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                    
-                    alertController.addAction(defaultAction)
-                    self.present(alertController, animated: true, completion: nil)
-                }
-                
+            Auth.auth().createUser(withEmail: emailAddressTextField.text!, password: passwordTextField.text!){
+                (user, error) in
+                self.performSegue(withIdentifier: "createTo_home_segue", sender: self)
             }
-            
         }
         
     }

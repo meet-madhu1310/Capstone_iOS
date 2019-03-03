@@ -19,12 +19,14 @@
 		153207D3222689DB0029F4BF /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153207D2222689DB0029F4BF /* RootViewController.swift */; };
 		153207D722268DD70029F4BF /* DrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153207D622268DD70029F4BF /* DrawerController.swift */; };
 		1534B8BF2228CB9000FA58F4 /* SearchBarItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1534B8BE2228CB9000FA58F4 /* SearchBarItemViewController.swift */; };
+		15422A4B222B58560085BC1D /* PendingCustomersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15422A4A222B58560085BC1D /* PendingCustomersViewController.swift */; };
+		15422A4D222B58E40085BC1D /* CustomersPendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15422A4C222B58E40085BC1D /* CustomersPendingTableViewCell.swift */; };
+		15422A4F222B624D0085BC1D /* ChatWithCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15422A4E222B624D0085BC1D /* ChatWithCustomerViewController.swift */; };
 		155A87442218F2EE006EBEE2 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155A87432218F2EE006EBEE2 /* RegisterViewController.swift */; };
 		155A87462218FA2B006EBEE2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155A87452218FA2B006EBEE2 /* LoginViewController.swift */; };
 		155A874E221920DC006EBEE2 /* TradesmanListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155A874D221920DC006EBEE2 /* TradesmanListViewController.swift */; };
 		157240B0221E07750025EF68 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 157240AF221E07740025EF68 /* GoogleService-Info.plist */; };
 		157EF69E22290F6500DC02EC /* TradesmanProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157EF69D22290F6500DC02EC /* TradesmanProfileViewController.swift */; };
-		157EF6A922292E1F00DC02EC /* PendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157EF6A822292E1F00DC02EC /* PendingViewController.swift */; };
 		157EF6AC22292F8700DC02EC /* PendingNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157EF6AB22292F8700DC02EC /* PendingNavigationViewController.swift */; };
 		157EF6B22229329300DC02EC /* ConfirmJobsNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157EF6B12229329300DC02EC /* ConfirmJobsNavigationViewController.swift */; };
 		157EF6B62229345B00DC02EC /* CustomerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157EF6B52229345B00DC02EC /* CustomerTableViewCell.swift */; };
@@ -51,12 +53,14 @@
 		153207D2222689DB0029F4BF /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		153207D622268DD70029F4BF /* DrawerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerController.swift; sourceTree = "<group>"; };
 		1534B8BE2228CB9000FA58F4 /* SearchBarItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarItemViewController.swift; sourceTree = "<group>"; };
+		15422A4A222B58560085BC1D /* PendingCustomersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingCustomersViewController.swift; sourceTree = "<group>"; };
+		15422A4C222B58E40085BC1D /* CustomersPendingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomersPendingTableViewCell.swift; sourceTree = "<group>"; };
+		15422A4E222B624D0085BC1D /* ChatWithCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatWithCustomerViewController.swift; sourceTree = "<group>"; };
 		155A87432218F2EE006EBEE2 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		155A87452218FA2B006EBEE2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		155A874D221920DC006EBEE2 /* TradesmanListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradesmanListViewController.swift; sourceTree = "<group>"; };
 		157240AF221E07740025EF68 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		157EF69D22290F6500DC02EC /* TradesmanProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradesmanProfileViewController.swift; sourceTree = "<group>"; };
-		157EF6A822292E1F00DC02EC /* PendingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingViewController.swift; sourceTree = "<group>"; };
 		157EF6AB22292F8700DC02EC /* PendingNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingNavigationViewController.swift; sourceTree = "<group>"; };
 		157EF6B12229329300DC02EC /* ConfirmJobsNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmJobsNavigationViewController.swift; sourceTree = "<group>"; };
 		157EF6B52229345B00DC02EC /* CustomerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerTableViewCell.swift; sourceTree = "<group>"; };
@@ -181,6 +185,7 @@
 				157EF6B12229329300DC02EC /* ConfirmJobsNavigationViewController.swift */,
 				157EF6B52229345B00DC02EC /* CustomerTableViewCell.swift */,
 				157EF6B92229355200DC02EC /* ConfirmCustomerListViewController.swift */,
+				15422A4E222B624D0085BC1D /* ChatWithCustomerViewController.swift */,
 			);
 			path = "Confirm Job Controllers";
 			sourceTree = "<group>";
@@ -188,8 +193,9 @@
 		157EF6AA22292F4200DC02EC /* Pending Job Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				157EF6A822292E1F00DC02EC /* PendingViewController.swift */,
 				157EF6AB22292F8700DC02EC /* PendingNavigationViewController.swift */,
+				15422A4A222B58560085BC1D /* PendingCustomersViewController.swift */,
+				15422A4C222B58E40085BC1D /* CustomersPendingTableViewCell.swift */,
 			);
 			path = "Pending Job Controllers";
 			sourceTree = "<group>";
@@ -372,6 +378,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15422A4B222B58560085BC1D /* PendingCustomersViewController.swift in Sources */,
 				157EF6AC22292F8700DC02EC /* PendingNavigationViewController.swift in Sources */,
 				155A87462218FA2B006EBEE2 /* LoginViewController.swift in Sources */,
 				153207D1222689860029F4BF /* MenuViewController.swift in Sources */,
@@ -387,10 +394,11 @@
 				153207C022260D3B0029F4BF /* SignupEmailViewController.swift in Sources */,
 				159B7E942220F07D0058CB79 /* BookingsViewController.swift in Sources */,
 				153207C522262A120029F4BF /* TradesmanDetailViewController.swift in Sources */,
-				157EF6A922292E1F00DC02EC /* PendingViewController.swift in Sources */,
 				15F1A8E9221931D00075B0AF /* ShowCategory.swift in Sources */,
 				155A874E221920DC006EBEE2 /* TradesmanListViewController.swift in Sources */,
 				153207D722268DD70029F4BF /* DrawerController.swift in Sources */,
+				15422A4D222B58E40085BC1D /* CustomersPendingTableViewCell.swift in Sources */,
+				15422A4F222B624D0085BC1D /* ChatWithCustomerViewController.swift in Sources */,
 				150112DB221F986A00AC34AC /* TradesmanLoginViewController.swift in Sources */,
 				1534B8BF2228CB9000FA58F4 /* SearchBarItemViewController.swift in Sources */,
 				157EF6BA2229355200DC02EC /* ConfirmCustomerListViewController.swift in Sources */,

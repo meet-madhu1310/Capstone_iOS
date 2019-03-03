@@ -122,9 +122,6 @@ extension TradesmanListViewController: UITableViewDataSource, UITableViewDelegat
             cell.tradesmanLabel.text = tradesmanName
             cell.tradesmanImage.image = imageName
             
-            cell.layer.borderColor = UIColor.white.cgColor
-//            cell.layer.borderWidth = 3.0
-            
             cell.tradesmanImage.layer.cornerRadius = cell.tradesmanImage.frame.width / 2
             cell.tradesmanImage.clipsToBounds = true
             
