@@ -8,6 +8,8 @@
 
 import UIKit
 import FirebaseAuth
+import FacebookLogin
+import FacebookCore
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
@@ -28,7 +30,34 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         loginEmailTextField.delegate = self
         loginPasswordTextField.delegate = self
+        
+        //Facebook Logit Button
+        let loginButton = UIButton(type: .custom)
+        loginButton.backgroundColor = UIColor(red: 59.0/255.0, green: 89.0/255.0, blue: 152.0/255.0, alpha: 1.0)
+        loginButton.frame = CGRect(x: 80, y: 460, width: 250, height: 40)
+        loginButton.setTitle("Continue with Facebook", for: .normal)
+        loginButton.addTarget(self, action: #selector(loginFacebookButtonTapped), for: .touchUpInside)
+        
+        view.addSubview(loginButton)
 
+    }
+    
+    //MARK: - Facebook Login Button Tapped
+    @objc func loginFacebookButtonTapped() {
+        let loginManager = LoginManager()
+        loginManager.logIn(readPermissions: [.publicProfile, .email], viewController: self) {
+            loginResult in
+            switch loginResult {
+            case .failed(let error):
+                print(error)
+            case .cancelled:
+                print("User cancelled login")
+            case .success(grantedPermissions: let grantedPermission, declinedPermissions: let decilnedPermission, token: let accessToken):
+                print("User logged in.")
+                
+                self.performSegue(withIdentifier: "loginTo_home_segue", sender: self)
+            }
+        }
     }
     
     //MARK: Keyboard Next Pressed - when user is on email textField and user press next on keyboard focus will move to password textField
