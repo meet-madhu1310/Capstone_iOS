@@ -8,10 +8,16 @@
 
 import UIKit
 import FirebaseAuth
+
 import FacebookLogin
 import FacebookCore
 
+import SwiftyJSON
+
 class LoginViewController: UIViewController, UITextFieldDelegate {
+    
+    var name: String!
+    var profilePicture: UIImage!
 
     @IBOutlet weak var loginEmailTextField: UITextField!
     @IBOutlet weak var loginPasswordTextField: UITextField!
@@ -42,6 +48,42 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
     }
     
+    fileprivate func fetchFacebookUser() {
+        let graphRequestConnection = GraphRequestConnection()
+        let graphRequest = GraphRequest(graphPath: "me", parameters: ["fields": "id, email, name, picture.type(large)"], accessToken: AccessToken.current, httpMethod: .GET, apiVersion: .defaultVersion)
+        
+        graphRequestConnection.add(graphRequest) { (httpResponse, result) in
+            switch result {
+            case .success(response: let response):
+                guard let responseDictionary = response.dictionaryValue else { return }
+                let json = JSON(responseDictionary)
+                self.name = json["name"].string
+                
+                guard let profilePictureUrl = json["picture"]["data"]["url"].string, let url = URL(string: profilePictureUrl) else { return }
+                
+                URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
+                    if let error = error {
+                        print(error)
+                        return
+                    }
+                    
+                    guard let data = data else { return }
+                    self.profilePicture = UIImage(data: data)
+                    print(self.profilePicture)
+                    
+                }).resume()
+                break
+                
+            case .failed(let error):
+                print("Failed here in graph request:", error)
+                break
+            }
+        }
+        
+        graphRequestConnection.start()
+    }
+    
+    
     //MARK: - Facebook Login Button Tapped
     @objc func loginFacebookButtonTapped() {
         let loginManager = LoginManager()
@@ -49,7 +91,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             loginResult in
             switch loginResult {
             case .failed(let error):
-                print(error)
+                print("Failed here when button tapped:",error)
             case .cancelled:
                 print("User cancelled login")
             case .success(grantedPermissions: let grantedPermission, declinedPermissions: let decilnedPermission, token: let accessToken):

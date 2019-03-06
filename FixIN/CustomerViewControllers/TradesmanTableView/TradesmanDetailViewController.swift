@@ -31,5 +31,10 @@ class TradesmanDetailViewController: UIViewController {
             self.navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
         }
     }
+    
+    @IBAction func chatButtonTapped(_ sender: Any) {
+        self.performSegue(withIdentifier: "chat_segue", sender: self)
+    }
+    
 
 }

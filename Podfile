@@ -9,8 +9,16 @@ target 'FixIN' do
 	pod 'Firebase/Core'
 	pod 'Firebase/Auth'
 	pod 'Firebase/Database'
+	pod 'Firebase/Storage'
+	pod 'Firebase/Firestore'
+
+	pod 'MessageKit'
+	
 	pod 'FacebookCore'
 	pod 'FacebookLogin'
 	pod 'FacebookShare'
+	pod 'FacebookSDK'
+
+	pod 'SwiftyJSON'
 
 end

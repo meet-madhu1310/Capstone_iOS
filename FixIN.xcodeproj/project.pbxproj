@@ -15,10 +15,6 @@
 		153207C522262A120029F4BF /* TradesmanDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153207C422262A120029F4BF /* TradesmanDetailViewController.swift */; };
 		153207CB2226583C0029F4BF /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153207CA2226583C0029F4BF /* CategoryTableViewCell.swift */; };
 		153207CE222685050029F4BF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153207CD222685050029F4BF /* ProfileViewController.swift */; };
-		153207D1222689860029F4BF /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153207D0222689860029F4BF /* MenuViewController.swift */; };
-		153207D3222689DB0029F4BF /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153207D2222689DB0029F4BF /* RootViewController.swift */; };
-		153207D722268DD70029F4BF /* DrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153207D622268DD70029F4BF /* DrawerController.swift */; };
-		1534B8BF2228CB9000FA58F4 /* SearchBarItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1534B8BE2228CB9000FA58F4 /* SearchBarItemViewController.swift */; };
 		15422A4B222B58560085BC1D /* PendingCustomersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15422A4A222B58560085BC1D /* PendingCustomersViewController.swift */; };
 		15422A4D222B58E40085BC1D /* CustomersPendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15422A4C222B58E40085BC1D /* CustomersPendingTableViewCell.swift */; };
 		15422A4F222B624D0085BC1D /* ChatWithCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15422A4E222B624D0085BC1D /* ChatWithCustomerViewController.swift */; };
@@ -36,7 +32,12 @@
 		1582CFE8220E243A00EF8AA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1582CFE6220E243A00EF8AA7 /* Main.storyboard */; };
 		1582CFEA220E244100EF8AA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1582CFE9220E244100EF8AA7 /* Assets.xcassets */; };
 		1582CFED220E244100EF8AA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1582CFEB220E244100EF8AA7 /* LaunchScreen.storyboard */; };
-		159B7E942220F07D0058CB79 /* BookingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159B7E932220F07D0058CB79 /* BookingsViewController.swift */; };
+		158DD628222F333D0017A692 /* ProfileNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158DD627222F333D0017A692 /* ProfileNavigationViewController.swift */; };
+		158DD62A222F33F20017A692 /* NotificationNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158DD629222F33F20017A692 /* NotificationNavigationViewController.swift */; };
+		158DD62C222F347C0017A692 /* SearchNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158DD62B222F347C0017A692 /* SearchNavigationViewController.swift */; };
+		158DD62E222F34D50017A692 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158DD62D222F34D50017A692 /* SearchViewController.swift */; };
+		158DD630222F34F90017A692 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158DD62F222F34F90017A692 /* NotificationViewController.swift */; };
+		158DD632222F5D3E0017A692 /* ChatTradesmanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158DD631222F5D3E0017A692 /* ChatTradesmanViewController.swift */; };
 		15F1A8E9221931D00075B0AF /* ShowCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F1A8E8221931D00075B0AF /* ShowCategory.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,10 +50,6 @@
 		153207C422262A120029F4BF /* TradesmanDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradesmanDetailViewController.swift; sourceTree = "<group>"; };
 		153207CA2226583C0029F4BF /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		153207CD222685050029F4BF /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		153207D0222689860029F4BF /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		153207D2222689DB0029F4BF /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		153207D622268DD70029F4BF /* DrawerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerController.swift; sourceTree = "<group>"; };
-		1534B8BE2228CB9000FA58F4 /* SearchBarItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarItemViewController.swift; sourceTree = "<group>"; };
 		15422A4A222B58560085BC1D /* PendingCustomersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingCustomersViewController.swift; sourceTree = "<group>"; };
 		15422A4C222B58E40085BC1D /* CustomersPendingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomersPendingTableViewCell.swift; sourceTree = "<group>"; };
 		15422A4E222B624D0085BC1D /* ChatWithCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatWithCustomerViewController.swift; sourceTree = "<group>"; };
@@ -72,7 +69,12 @@
 		1582CFE9220E244100EF8AA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1582CFEC220E244100EF8AA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1582CFEE220E244100EF8AA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		159B7E932220F07D0058CB79 /* BookingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingsViewController.swift; sourceTree = "<group>"; };
+		158DD627222F333D0017A692 /* ProfileNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNavigationViewController.swift; sourceTree = "<group>"; };
+		158DD629222F33F20017A692 /* NotificationNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNavigationViewController.swift; sourceTree = "<group>"; };
+		158DD62B222F347C0017A692 /* SearchNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNavigationViewController.swift; sourceTree = "<group>"; };
+		158DD62D222F34D50017A692 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		158DD62F222F34F90017A692 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		158DD631222F5D3E0017A692 /* ChatTradesmanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTradesmanViewController.swift; sourceTree = "<group>"; };
 		15F1A8E8221931D00075B0AF /* ShowCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCategory.swift; sourceTree = "<group>"; };
 		76F9F6F2C2AB7B05D5BAB504 /* Pods-FixIN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FixIN.release.xcconfig"; path = "Target Support Files/Pods-FixIN/Pods-FixIN.release.xcconfig"; sourceTree = "<group>"; };
 		F5352CF17D4D8075AA092DFA /* Pods-FixIN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FixIN.debug.xcconfig"; path = "Target Support Files/Pods-FixIN/Pods-FixIN.debug.xcconfig"; sourceTree = "<group>"; };
@@ -93,12 +95,10 @@
 		150112D8221F7DCA00AC34AC /* CustomerViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				153207CF2226862B0029F4BF /* DrawerMenu */,
 				153207CC222684DA0029F4BF /* BottonTabBarViewControllers */,
 				153207C7222638140029F4BF /* CategoryView */,
 				153207C6222630E60029F4BF /* LoginAndSignup */,
 				153207C1222629370029F4BF /* TradesmanTableView */,
-				159B7E932220F07D0058CB79 /* BookingsViewController.swift */,
 			);
 			path = CustomerViewControllers;
 			sourceTree = "<group>";
@@ -118,6 +118,7 @@
 				155A874D221920DC006EBEE2 /* TradesmanListViewController.swift */,
 				153207C2222629700029F4BF /* TradesmanTableViewCell.swift */,
 				153207C422262A120029F4BF /* TradesmanDetailViewController.swift */,
+				158DD631222F5D3E0017A692 /* ChatTradesmanViewController.swift */,
 			);
 			path = TradesmanTableView;
 			sourceTree = "<group>";
@@ -144,20 +145,14 @@
 		153207CC222684DA0029F4BF /* BottonTabBarViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				1534B8BE2228CB9000FA58F4 /* SearchBarItemViewController.swift */,
+				153207CD222685050029F4BF /* ProfileViewController.swift */,
+				158DD627222F333D0017A692 /* ProfileNavigationViewController.swift */,
+				158DD629222F33F20017A692 /* NotificationNavigationViewController.swift */,
+				158DD62B222F347C0017A692 /* SearchNavigationViewController.swift */,
+				158DD62D222F34D50017A692 /* SearchViewController.swift */,
+				158DD62F222F34F90017A692 /* NotificationViewController.swift */,
 			);
 			path = BottonTabBarViewControllers;
-			sourceTree = "<group>";
-		};
-		153207CF2226862B0029F4BF /* DrawerMenu */ = {
-			isa = PBXGroup;
-			children = (
-				153207D0222689860029F4BF /* MenuViewController.swift */,
-				153207D2222689DB0029F4BF /* RootViewController.swift */,
-				153207CD222685050029F4BF /* ProfileViewController.swift */,
-				153207D622268DD70029F4BF /* DrawerController.swift */,
-			);
-			path = DrawerMenu;
 			sourceTree = "<group>";
 		};
 		157EF69322290B4C00DC02EC /* LoginAndSignup */ = {
@@ -353,6 +348,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-FixIN/Pods-FixIN-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
@@ -361,6 +357,12 @@
 				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/MessageInputBar/MessageInputBar.framework",
+				"${BUILT_PRODUCTS_DIR}/MessageKit/MessageKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -369,6 +371,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
@@ -377,6 +380,12 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MessageInputBar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MessageKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -392,29 +401,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				158DD628222F333D0017A692 /* ProfileNavigationViewController.swift in Sources */,
 				15422A4B222B58560085BC1D /* PendingCustomersViewController.swift in Sources */,
 				157EF6AC22292F8700DC02EC /* PendingNavigationViewController.swift in Sources */,
 				155A87462218FA2B006EBEE2 /* LoginViewController.swift in Sources */,
-				153207D1222689860029F4BF /* MenuViewController.swift in Sources */,
 				155A87442218F2EE006EBEE2 /* RegisterViewController.swift in Sources */,
 				1582CFE5220E243A00EF8AA7 /* ViewController.swift in Sources */,
 				150112DD221F988300AC34AC /* TradesmanRegisterViewController.swift in Sources */,
 				153207CE222685050029F4BF /* ProfileViewController.swift in Sources */,
+				158DD62E222F34D50017A692 /* SearchViewController.swift in Sources */,
 				157EF6B22229329300DC02EC /* ConfirmJobsNavigationViewController.swift in Sources */,
 				157EF69E22290F6500DC02EC /* TradesmanProfileViewController.swift in Sources */,
-				153207D3222689DB0029F4BF /* RootViewController.swift in Sources */,
 				1582CFE3220E243A00EF8AA7 /* AppDelegate.swift in Sources */,
 				157EF6B62229345B00DC02EC /* CustomerTableViewCell.swift in Sources */,
 				153207C022260D3B0029F4BF /* SignupEmailViewController.swift in Sources */,
-				159B7E942220F07D0058CB79 /* BookingsViewController.swift in Sources */,
 				153207C522262A120029F4BF /* TradesmanDetailViewController.swift in Sources */,
 				15F1A8E9221931D00075B0AF /* ShowCategory.swift in Sources */,
+				158DD632222F5D3E0017A692 /* ChatTradesmanViewController.swift in Sources */,
 				155A874E221920DC006EBEE2 /* TradesmanListViewController.swift in Sources */,
-				153207D722268DD70029F4BF /* DrawerController.swift in Sources */,
 				15422A4D222B58E40085BC1D /* CustomersPendingTableViewCell.swift in Sources */,
+				158DD62A222F33F20017A692 /* NotificationNavigationViewController.swift in Sources */,
 				15422A4F222B624D0085BC1D /* ChatWithCustomerViewController.swift in Sources */,
+				158DD62C222F347C0017A692 /* SearchNavigationViewController.swift in Sources */,
 				150112DB221F986A00AC34AC /* TradesmanLoginViewController.swift in Sources */,
-				1534B8BF2228CB9000FA58F4 /* SearchBarItemViewController.swift in Sources */,
+				158DD630222F34F90017A692 /* NotificationViewController.swift in Sources */,
 				157EF6BA2229355200DC02EC /* ConfirmCustomerListViewController.swift in Sources */,
 				153207CB2226583C0029F4BF /* CategoryTableViewCell.swift in Sources */,
 				153207C3222629700029F4BF /* TradesmanTableViewCell.swift in Sources */,
