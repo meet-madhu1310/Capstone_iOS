@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 import FirebaseAuth
 
 class ShowCategory: UIViewController {
@@ -20,6 +21,10 @@ class ShowCategory: UIViewController {
     
     //for table view
     let categoryNames = ["Mechanic", "Plumber", "Carpenter", "Velder", "Painter", "Gardener", "Pipe Fitters", "Electricians"]
+    
+    var categories: [String?] = []
+    let ref = Database.database().reference().child("tradesmen")
+    
     let categoryImages: [UIImage] = [
         UIImage(named: "Mechanic")!,
         UIImage(named: "Plumber")!,
@@ -36,6 +41,14 @@ class ShowCategory: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        ref.child("/Mechanic").observe(.childAdded, with: { snapshot in
+            var array: [String] = []
+            let value = snapshot.value as? NSDictionary
+            let name = value?["FullName"] as? String ?? ""
+            array.append(name)
+            print("In array:", array)
+        })
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,54 +59,7 @@ class ShowCategory: UIViewController {
     
     @IBAction func bookingsButtonTapped(_ sender: Any) {
         self.performSegue(withIdentifier: "categoryToBookings_segue", sender: self)
-    }    
-    
-//    @IBAction func menuButtonTapped(_ sender: Any) {
-//
-//        if !menuIsVisible {
-//            leadingC.constant = 200
-//
-//            trailingC.constant = 0
-//            menuIsVisible = true
-//
-//        } else {
-//            leadingC.constant = 0
-//            trailingC.constant = 0
-//
-//            menuIsVisible = false
-//        }
-//
-//        UIView.animate( withDuration: 0.2, delay: 0.0, options: .curveLinear, animations: {self.view.layoutIfNeeded()} )
-//
-//    }
-    
-    
-//    @IBAction func logoutButtonTapped(_ sender: Any) {
-//        
-//        let title = NSLocalizedString("Are you sure?", comment: "")
-//        let yesButton = NSLocalizedString("Yes", comment: "")
-//        let noButton = NSLocalizedString("No", comment: "")
-//        
-//        let alertController = UIAlertController(title: title, message: nil, preferredStyle: .actionSheet)
-//        alertController.addAction(UIAlertAction(title: NSLocalizedString(yesButton, comment: ""), style: .default) { _ in
-//            
-//            do {
-//                try Auth.auth().signOut()
-//                
-//                self.performSegue(withIdentifier: "categoryLogoutTo_home_segue", sender: self)
-//                
-//            }
-//            catch let signOutError as NSError {
-//                print ("Error signing out: %@", signOutError)
-//            }
-//            
-//        })
-//        
-//        alertController.addAction(UIAlertAction(title: NSLocalizedString(noButton, comment: ""), style: .cancel) { _ in })
-//        
-//        self.present(alertController, animated: true, completion: nil)
-//        
-//    }
+    }
     
     //MARK: - Preapre for segue func
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
