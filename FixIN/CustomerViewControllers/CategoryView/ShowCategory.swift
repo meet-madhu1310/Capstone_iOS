@@ -22,7 +22,7 @@ class ShowCategory: UIViewController {
     //for table view
     let categoryNames = ["Mechanic", "Plumber", "Carpenter", "Velder", "Painter", "Gardener", "Pipe Fitters", "Electricians"]
     
-    var categories: [String?] = []
+    var categories: [CategoryList] = []
     let ref = Database.database().reference().child("tradesmen")
     
     let categoryImages: [UIImage] = [
@@ -55,10 +55,6 @@ class ShowCategory: UIViewController {
         super.viewWillAppear(animated)
         
         self.navigationController?.navigationBar.prefersLargeTitles = false
-    }
-    
-    @IBAction func bookingsButtonTapped(_ sender: Any) {
-        self.performSegue(withIdentifier: "categoryToBookings_segue", sender: self)
     }
     
     //MARK: - Preapre for segue func

@@ -1051,37 +1051,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="full name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yIV-6o-scr">
-                                <rect key="frame" x="40" y="308" width="295" height="40"/>
+                                <rect key="frame" x="40" y="274" width="295" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="62G-nX-3ip"/>
+                                    <constraint firstAttribute="height" constant="40" id="GTK-dr-2ml"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="next" textContentType="name"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DfA-to-Ekr">
-                                <rect key="frame" x="40" y="358" width="295" height="40"/>
+                                <rect key="frame" x="40" y="324" width="295" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="RTs-XF-K70"/>
+                                    <constraint firstAttribute="height" constant="40" id="vVW-v2-fwz"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="your profession" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8G8-ip-SGt">
-                                <rect key="frame" x="40" y="408" width="295" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="C5z-qI-fdW"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" textContentType="organization-title"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ewc-ow-5kb">
-                                <rect key="frame" x="40" y="468" width="295" height="40"/>
+                                <rect key="frame" x="40" y="464" width="295" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="k07-Wu-Yab"/>
+                                    <constraint firstAttribute="height" constant="40" id="3mT-nN-s6D"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Create Account">
@@ -1091,33 +1082,43 @@
                                     <action selector="createAccountButtonTapped:" destination="X7I-BE-0kj" eventType="touchUpInside" id="Z0q-br-IMV"/>
                                 </connections>
                             </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hFw-iK-DXP">
+                                <rect key="frame" x="40" y="374" width="295" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="aTH-za-Nyl"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="X7I-BE-0kj" id="Z3L-VK-4Xx"/>
+                                    <outlet property="delegate" destination="X7I-BE-0kj" id="ElW-m0-gik"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Opp-xc-18b" firstAttribute="trailing" secondItem="DfA-to-Ekr" secondAttribute="trailing" constant="40" id="H1b-q1-Uc9"/>
-                            <constraint firstItem="8G8-ip-SGt" firstAttribute="top" secondItem="DfA-to-Ekr" secondAttribute="bottom" constant="10" id="Yjm-Tr-8id"/>
-                            <constraint firstItem="yIV-6o-scr" firstAttribute="leading" secondItem="Opp-xc-18b" secondAttribute="leading" constant="40" id="bIf-cU-bF6"/>
-                            <constraint firstItem="Opp-xc-18b" firstAttribute="trailing" secondItem="ewc-ow-5kb" secondAttribute="trailing" constant="40" id="ewc-oL-AjH"/>
-                            <constraint firstItem="Opp-xc-18b" firstAttribute="trailing" secondItem="yIV-6o-scr" secondAttribute="trailing" constant="40" id="fF1-aq-mJQ"/>
-                            <constraint firstItem="ewc-ow-5kb" firstAttribute="leading" secondItem="Opp-xc-18b" secondAttribute="leading" constant="40" id="gGX-Oi-fbo"/>
-                            <constraint firstItem="Opp-xc-18b" firstAttribute="trailing" secondItem="8G8-ip-SGt" secondAttribute="trailing" constant="40" id="mLR-Cp-fCh"/>
-                            <constraint firstItem="DfA-to-Ekr" firstAttribute="top" secondItem="yIV-6o-scr" secondAttribute="bottom" constant="10" id="nuz-l4-kfM"/>
-                            <constraint firstItem="8G8-ip-SGt" firstAttribute="leading" secondItem="Opp-xc-18b" secondAttribute="leading" constant="40" id="uha-jF-Uz2"/>
-                            <constraint firstItem="yIV-6o-scr" firstAttribute="top" secondItem="Opp-xc-18b" secondAttribute="top" constant="244" id="y03-Ag-VnF"/>
-                            <constraint firstItem="DfA-to-Ekr" firstAttribute="leading" secondItem="Opp-xc-18b" secondAttribute="leading" constant="40" id="yBB-wz-S4R"/>
-                            <constraint firstItem="ewc-ow-5kb" firstAttribute="top" secondItem="8G8-ip-SGt" secondAttribute="bottom" constant="20" id="z0J-lL-yKf"/>
+                            <constraint firstItem="Opp-xc-18b" firstAttribute="trailing" secondItem="DfA-to-Ekr" secondAttribute="trailing" constant="40" id="1nK-Zb-fce"/>
+                            <constraint firstItem="Opp-xc-18b" firstAttribute="trailing" secondItem="ewc-ow-5kb" secondAttribute="trailing" constant="40" id="3Y9-la-NNK"/>
+                            <constraint firstItem="DfA-to-Ekr" firstAttribute="top" secondItem="yIV-6o-scr" secondAttribute="bottom" constant="10" id="AQT-27-WPJ"/>
+                            <constraint firstItem="Opp-xc-18b" firstAttribute="trailing" secondItem="yIV-6o-scr" secondAttribute="trailing" constant="40" id="DXt-4G-Bmi"/>
+                            <constraint firstItem="hFw-iK-DXP" firstAttribute="top" secondItem="DfA-to-Ekr" secondAttribute="bottom" constant="10" id="DqE-0u-e9r"/>
+                            <constraint firstItem="yIV-6o-scr" firstAttribute="top" secondItem="Opp-xc-18b" secondAttribute="top" constant="210" id="G3z-BP-5ec"/>
+                            <constraint firstItem="ewc-ow-5kb" firstAttribute="leading" secondItem="Opp-xc-18b" secondAttribute="leading" constant="40" id="Nru-rV-abU"/>
+                            <constraint firstItem="yIV-6o-scr" firstAttribute="leading" secondItem="Opp-xc-18b" secondAttribute="leading" constant="40" id="RK1-YF-dmZ"/>
+                            <constraint firstItem="DfA-to-Ekr" firstAttribute="leading" secondItem="Opp-xc-18b" secondAttribute="leading" constant="40" id="Rdn-Oh-sWl"/>
+                            <constraint firstItem="Opp-xc-18b" firstAttribute="trailing" secondItem="hFw-iK-DXP" secondAttribute="trailing" constant="40" id="jiM-by-KfA"/>
+                            <constraint firstItem="ewc-ow-5kb" firstAttribute="top" secondItem="hFw-iK-DXP" secondAttribute="bottom" constant="20" id="l38-gl-DuY"/>
+                            <constraint firstItem="hFw-iK-DXP" firstAttribute="leading" secondItem="Opp-xc-18b" secondAttribute="leading" constant="40" id="oyR-bl-bhD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Opp-xc-18b"/>
                     </view>
                     <connections>
                         <outlet property="emailAddressTextField" destination="DfA-to-Ekr" id="ilK-RZ-PJC"/>
                         <outlet property="fullNameTextField" destination="yIV-6o-scr" id="ogj-ap-t4S"/>
-                        <outlet property="professionTextField" destination="8G8-ip-SGt" id="jih-si-Du0"/>
+                        <outlet property="professionPicker" destination="hFw-iK-DXP" id="V0U-tZ-H80"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lE9-t3-5Xd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3785" y="-558"/>
+            <point key="canvasLocation" x="3784.8000000000002" y="-558.17091454272872"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1d8-Ma-uin">
@@ -1322,6 +1323,6 @@
         <image name="UserAvatar" width="75" height="75"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="DkG-a1-UMX"/>
+        <segue reference="OFV-Vj-SOI"/>
     </inferredMetricsTieBreakers>
 </document>

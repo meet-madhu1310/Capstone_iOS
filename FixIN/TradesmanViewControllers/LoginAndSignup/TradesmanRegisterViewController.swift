@@ -15,13 +15,13 @@ class TradesmanRegisterViewController: UIViewController, UITextFieldDelegate {
     //MARK: Properties
     var category: [CategoryList] = []
     let refTradesmen = Database.database().reference(withPath: "tradesmen")
-    var data = [String: AnyObject]()
+    let professions = ["- select your profession -","Velder", "Plumber", "Pipe Fitters", "Mechanic", "Gardener", "Painter", "Electricians"]
     
     @IBOutlet weak var fullNameTextField: UITextField!
     @IBOutlet weak var emailAddressTextField: UITextField!
-    @IBOutlet weak var professionTextField: UITextField!
+    @IBOutlet weak var professionPicker: UIPickerView!
     
-//    var refTradesmen: DatabaseReference!
+    var selectedProfession: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,12 +30,10 @@ class TradesmanRegisterViewController: UIViewController, UITextFieldDelegate {
         //setting only bottom border
         fullNameTextField.setBottomBorder()
         emailAddressTextField.setBottomBorder()
-        professionTextField.setBottomBorder()
         
         //when NEXT button is pressed
         fullNameTextField.delegate = self
         emailAddressTextField.delegate = self
-        professionTextField.delegate = self
         
         self.hideKeyboard()
     }
@@ -45,8 +43,6 @@ class TradesmanRegisterViewController: UIViewController, UITextFieldDelegate {
         switch textField {
         case fullNameTextField:
             emailAddressTextField.becomeFirstResponder()
-        case emailAddressTextField:
-            professionTextField.becomeFirstResponder()
         default:
             textField.resignFirstResponder()
         }
@@ -56,17 +52,37 @@ class TradesmanRegisterViewController: UIViewController, UITextFieldDelegate {
     
     //Mark: Pushing to Firebase
     func addTradesman() {
-        
-        let categoryItem = CategoryList(fullname: fullNameTextField.text!, email: emailAddressTextField.text!, profession: professionTextField.text!)
-        let categoryItemRef = self.refTradesmen.child(professionTextField.text!).childByAutoId()
+        let categoryItem = CategoryList(fullname: fullNameTextField.text!, email: emailAddressTextField.text!, profession: selectedProfession)
+        let categoryItemRef = self.refTradesmen.child(selectedProfession).childByAutoId()
         categoryItemRef.setValue(categoryItem.toAnyObject())
     }
     
+    //MARK: Create button tapped
     @IBAction func createAccountButtonTapped(_ sender: Any) {
         addTradesman()
         self.fullNameTextField.text = ""
         self.emailAddressTextField.text = ""
-        self.professionTextField.text = ""
+    }
+    
+}
+
+//MARK: Extension of Picker View
+extension TradesmanRegisterViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return professions.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return professions[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedProfession = professions[row]
     }
     
 }
