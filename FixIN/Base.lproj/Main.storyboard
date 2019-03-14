@@ -364,6 +364,7 @@
                     <navigationItem key="navigationItem" title="Category" id="AnW-LS-jdU"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="categoryTable" destination="1DN-xg-yRZ" id="t58-pw-ZTV"/>
                         <outlet property="leadingC" destination="Ceb-YG-ByA" id="lEG-ce-hNV"/>
                         <outlet property="trailingC" destination="AG5-V2-dNx" id="QHZ-zj-p8c"/>
                         <segue destination="dSK-9L-4Bu" kind="show" identifier="category_detail_segue" id="Oal-vV-nCq"/>
@@ -458,6 +459,7 @@
                     </view>
                     <connections>
                         <outlet property="leadingC" destination="CFj-J1-ChH" id="3BP-GN-fCe"/>
+                        <outlet property="tradesmenTable" destination="6pw-IO-Slg" id="dtT-22-bgl"/>
                         <outlet property="trailingC" destination="Xcw-OW-cSM" id="UeD-2f-qjw"/>
                         <segue destination="fOG-TX-TC7" kind="show" identifier="tradesman_detail_segue" id="gyZ-zJ-UnX"/>
                     </connections>
@@ -1323,6 +1325,6 @@
         <image name="UserAvatar" width="75" height="75"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="OFV-Vj-SOI"/>
+        <segue reference="DkG-a1-UMX"/>
     </inferredMetricsTieBreakers>
 </document>

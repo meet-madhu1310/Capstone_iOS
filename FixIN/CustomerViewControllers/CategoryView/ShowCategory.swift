@@ -15,6 +15,7 @@ class ShowCategory: UIViewController {
     
     @IBOutlet weak var trailingC: NSLayoutConstraint!
     @IBOutlet weak var leadingC: NSLayoutConstraint!
+    @IBOutlet weak var categoryTable: UITableView!
     
     var menuIsVisible = false
     var backButtonIsVisible = true
@@ -23,7 +24,7 @@ class ShowCategory: UIViewController {
     let categoryNames = ["Mechanic", "Plumber", "Carpenter", "Velder", "Painter", "Gardener", "Pipe Fitters", "Electricians"]
     
     var categories: [CategoryList] = []
-    let ref = Database.database().reference().child("tradesmen")
+    let refTradesmen = Database.database().reference(withPath: "tradesmen")
     
     let categoryImages: [UIImage] = [
         UIImage(named: "Mechanic")!,
@@ -39,16 +40,20 @@ class ShowCategory: UIViewController {
     var selectedCategory: String!
     var selectedImage: UIImage!
     
+    let dispatchGroup = DispatchGroup()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchCategory()
         
-        ref.child("/Mechanic").observe(.childAdded, with: { snapshot in
-            var array: [String] = []
-            let value = snapshot.value as? NSDictionary
-            let name = value?["FullName"] as? String ?? ""
-            array.append(name)
-            print("In array:", array)
+        let meet = Database.database().reference()
+        var h: [String] = []
+        
+        meet.child("tradesmen").observe(.childAdded, with: { snapshot in
+            h.append(snapshot.key)
+            print("value of h:", h)
         })
+        print("hahaha", h.count)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,12 +62,29 @@ class ShowCategory: UIViewController {
         self.navigationController?.navigationBar.prefersLargeTitles = false
     }
     
-    //MARK: - Preapre for segue func
+    //MARK: - Send data to TradesmanDetailView Controller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "category_detail_segue" {
             let dvc = segue.destination as! TradesmanListViewController
             dvc.categoryName = selectedCategory
         }
+    }
+    
+    //MARK: Fetch All Categories
+    func fetchCategory() {
+        
+        refTradesmen.child("/Plumber").observe(.value, with: { snapshot in
+            var newItems: [CategoryList] = []
+            for child in snapshot.children{
+                if let snapshot = child as? DataSnapshot,
+                    let groceryItems = CategoryList(snapshot: snapshot) {
+                    newItems.append(groceryItems)
+                }
+            }
+            self.categories = newItems
+            self.categoryTable.reloadData()
+        })
+        
     }
     
 }
