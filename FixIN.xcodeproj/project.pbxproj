@@ -10,6 +10,7 @@
 		0E40B808538813437BE356A7 /* Pods_FixIN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0523165AE53B4BDA2B0E48D1 /* Pods_FixIN.framework */; };
 		150112DB221F986A00AC34AC /* TradesmanLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150112DA221F986A00AC34AC /* TradesmanLoginViewController.swift */; };
 		150112DD221F988300AC34AC /* TradesmanRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150112DC221F988300AC34AC /* TradesmanRegisterViewController.swift */; };
+		151FB2B7223B309000B9FC83 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151FB2B6223B309000B9FC83 /* SideMenuViewController.swift */; };
 		153207C022260D3B0029F4BF /* SignupEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153207BF22260D3B0029F4BF /* SignupEmailViewController.swift */; };
 		153207C3222629700029F4BF /* TradesmanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153207C2222629700029F4BF /* TradesmanTableViewCell.swift */; };
 		153207C522262A120029F4BF /* TradesmanDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153207C422262A120029F4BF /* TradesmanDetailViewController.swift */; };
@@ -47,6 +48,7 @@
 		0523165AE53B4BDA2B0E48D1 /* Pods_FixIN.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FixIN.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		150112DA221F986A00AC34AC /* TradesmanLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradesmanLoginViewController.swift; sourceTree = "<group>"; };
 		150112DC221F988300AC34AC /* TradesmanRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradesmanRegisterViewController.swift; sourceTree = "<group>"; };
+		151FB2B6223B309000B9FC83 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		153207BF22260D3B0029F4BF /* SignupEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupEmailViewController.swift; sourceTree = "<group>"; };
 		153207C2222629700029F4BF /* TradesmanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradesmanTableViewCell.swift; sourceTree = "<group>"; };
 		153207C422262A120029F4BF /* TradesmanDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradesmanDetailViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +118,16 @@
 			path = TradesmanViewControllers;
 			sourceTree = "<group>";
 		};
+		151FB2B8223B421200B9FC83 /* NavigationControllers */ = {
+			isa = PBXGroup;
+			children = (
+				158DD627222F333D0017A692 /* ProfileNavigationViewController.swift */,
+				158DD629222F33F20017A692 /* NotificationNavigationViewController.swift */,
+				158DD62B222F347C0017A692 /* SearchNavigationViewController.swift */,
+			);
+			path = NavigationControllers;
+			sourceTree = "<group>";
+		};
 		153207C1222629370029F4BF /* TradesmanTableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,12 +158,11 @@
 		153207CC222684DA0029F4BF /* BottonTabBarViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				151FB2B8223B421200B9FC83 /* NavigationControllers */,
 				153207CD222685050029F4BF /* ProfileViewController.swift */,
-				158DD627222F333D0017A692 /* ProfileNavigationViewController.swift */,
-				158DD629222F33F20017A692 /* NotificationNavigationViewController.swift */,
-				158DD62B222F347C0017A692 /* SearchNavigationViewController.swift */,
 				158DD62D222F34D50017A692 /* SearchViewController.swift */,
 				158DD62F222F34F90017A692 /* NotificationViewController.swift */,
+				151FB2B6223B309000B9FC83 /* SideMenuViewController.swift */,
 			);
 			path = BottonTabBarViewControllers;
 			sourceTree = "<group>";
@@ -390,6 +401,7 @@
 				"${BUILT_PRODUCTS_DIR}/MessageInputBar/MessageInputBar.framework",
 				"${BUILT_PRODUCTS_DIR}/MessageKit/MessageKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
@@ -413,6 +425,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MessageInputBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MessageKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
@@ -459,6 +472,7 @@
 				158DD630222F34F90017A692 /* NotificationViewController.swift in Sources */,
 				157EF6BA2229355200DC02EC /* ConfirmCustomerListViewController.swift in Sources */,
 				153207CB2226583C0029F4BF /* CategoryTableViewCell.swift in Sources */,
+				151FB2B7223B309000B9FC83 /* SideMenuViewController.swift in Sources */,
 				153207C3222629700029F4BF /* TradesmanTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -155,6 +155,7 @@ PODS:
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
   - Protobuf (3.6.1)
+  - SideMenu (5.0.3)
   - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
@@ -168,6 +169,7 @@ DEPENDENCIES:
   - Firebase/Firestore
   - Firebase/Storage
   - MessageKit
+  - SideMenu
   - SwiftyJSON
 
 SPEC REPOS:
@@ -201,6 +203,7 @@ SPEC REPOS:
     - MessageKit
     - nanopb
     - Protobuf
+    - SideMenu
     - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -233,8 +236,9 @@ SPEC CHECKSUMS:
   MessageKit: 29c1c87e5a396d2ca7a3f712e5171dc9aba42a1e
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
+  SideMenu: 1dcaabce84538c53325c287f7fe62999379a641c
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 5e3d8d42af0fe121d8221e245a56c9e8b4829fae
+PODFILE CHECKSUM: 93cb5b9f25fdebf0c3d1fe61c2915eae1a8c36c5
 
 COCOAPODS: 1.6.0

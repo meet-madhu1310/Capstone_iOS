@@ -653,11 +653,51 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="V6R-f5-iZ0"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Profile" id="ApC-yY-qbh"/>
+                    <navigationItem key="navigationItem" title="Profile" id="ApC-yY-qbh">
+                        <barButtonItem key="leftBarButtonItem" image="HamburgerMenu" id="2su-zR-lBJ">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="upf-CS-L6S" kind="presentation" id="wUa-No-0Ah"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7hO-ym-Q0R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="8078" y="2448"/>
+        </scene>
+        <!--Side Menu View Controller-->
+        <scene sceneID="LgW-bQ-4hZ">
+            <objects>
+                <viewController id="OQL-sB-bAO" customClass="SideMenuViewController" customModule="FixIN" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3VJ-l7-wrH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Axd-fR-Xsd">
+                                <rect key="frame" x="129" y="117" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sDz-q1-8Fk">
+                                <rect key="frame" x="280" y="155" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Axd-fR-Xsd" firstAttribute="top" secondItem="4dh-Rt-hJv" secondAttribute="top" constant="53" id="42Q-2Z-Zi0"/>
+                            <constraint firstItem="4dh-Rt-hJv" firstAttribute="trailing" secondItem="sDz-q1-8Fk" secondAttribute="trailing" constant="49" id="8JB-H5-soY"/>
+                            <constraint firstItem="sDz-q1-8Fk" firstAttribute="top" secondItem="Axd-fR-Xsd" secondAttribute="bottom" constant="8" id="90F-9M-ND2"/>
+                            <constraint firstItem="4dh-Rt-hJv" firstAttribute="trailing" secondItem="Axd-fR-Xsd" secondAttribute="trailing" constant="200" id="DUh-if-Bav"/>
+                            <constraint firstItem="sDz-q1-8Fk" firstAttribute="top" secondItem="Axd-fR-Xsd" secondAttribute="bottom" constant="8" id="mv5-JP-4rg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4dh-Rt-hJv"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="smb-eK-DPm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Buc-xz-tmP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="9622" y="2443"/>
         </scene>
         <!--RegisterView-->
         <scene sceneID="sJv-O7-5FN">
@@ -1313,10 +1353,35 @@
             </objects>
             <point key="canvasLocation" x="6528.8000000000002" y="1732.9835082458771"/>
         </scene>
+        <!--Side Menu Navigation Controller-->
+        <scene sceneID="27g-UZ-BOE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="upf-CS-L6S" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ohn-7z-YbG">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="menuWidth">
+                            <real key="value" value="300"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="OQL-sB-bAO" kind="relationship" relationship="rootViewController" id="ewA-FL-GIo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e1e-W2-nFY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8876" y="2442.7286356821592"/>
+        </scene>
     </scenes>
     <resources>
         <image name="ConfirmedJob" width="18.75" height="18.75"/>
         <image name="DownArrow" width="75" height="75"/>
+        <image name="HamburgerMenu" width="33.75" height="33.75"/>
         <image name="PendingJob" width="18.75" height="18.75"/>
         <image name="RightArrow" width="75" height="75"/>
         <image name="TabBarCategory" width="18.75" height="18.75"/>

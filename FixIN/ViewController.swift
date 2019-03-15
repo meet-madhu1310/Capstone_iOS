@@ -17,9 +17,9 @@ class ViewController: UIViewController {
     
     //MARK: - If user already logged in then redirect to home
     override func viewWillAppear(_ animated: Bool) {
-//        if Auth.auth().currentUser != nil {
-//            self.performSegue(withIdentifier: "direct_home_segue", sender: self)
-//        }
+        if Auth.auth().currentUser != nil {
+            self.performSegue(withIdentifier: "direct_home_segue", sender: self)
+        }
     }
     
 }

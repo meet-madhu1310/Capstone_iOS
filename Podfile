@@ -20,5 +20,6 @@ target 'FixIN' do
 	pod 'FacebookSDK'
 
 	pod 'SwiftyJSON'
-
+	
+	pod 'SideMenu'
 end
