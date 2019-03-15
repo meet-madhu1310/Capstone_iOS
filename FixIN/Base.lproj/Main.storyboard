@@ -105,7 +105,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aXC-PT-5o7">
-                                <rect key="frame" x="40" y="314" width="295" height="40"/>
+                                <rect key="frame" x="40" y="270" width="295" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="CKH-hJ-0yF"/>
                                 </constraints>
@@ -114,7 +114,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FZB-v3-pq9">
-                                <rect key="frame" x="40" y="374" width="295" height="40"/>
+                                <rect key="frame" x="40" y="330" width="295" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="R4x-kj-bBV"/>
                                 </constraints>
@@ -123,7 +123,7 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9F7-CT-0YA">
-                                <rect key="frame" x="226" y="424" width="109" height="28"/>
+                                <rect key="frame" x="226" y="380" width="109" height="28"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" title="Forgot Password?"/>
                             </button>
@@ -155,7 +155,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mR0-gx-aQz">
-                                <rect key="frame" x="40" y="462" width="295" height="40"/>
+                                <rect key="frame" x="40" y="418" width="295" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ve3-16-jmV"/>
@@ -396,19 +396,19 @@
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="TradesmanNameCell" rowHeight="110" id="2IH-c9-9WX" customClass="TradesmanTableViewCell" customModule="FixIN" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="375" height="110"/>
                                                 <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2IH-c9-9WX" id="j3q-Jd-fFd">
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2IH-c9-9WX" id="j3q-Jd-fFd">
                                                     <rect key="frame" x="0.0" y="0.0" width="342" height="109.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8xf-Ab-GSE">
-                                                            <rect key="frame" x="10" y="20" width="60" height="70"/>
+                                                            <rect key="frame" x="10" y="20.5" width="60" height="70"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="70" id="Lsp-Gt-0cz"/>
                                                                 <constraint firstAttribute="width" constant="60" id="P4Z-FG-tk8"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sia-bw-Af2">
-                                                            <rect key="frame" x="85" y="46" width="37.5" height="18"/>
+                                                            <rect key="frame" x="85" y="46.5" width="37.5" height="18"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -417,7 +417,6 @@
                                                     <constraints>
                                                         <constraint firstItem="8xf-Ab-GSE" firstAttribute="top" secondItem="j3q-Jd-fFd" secondAttribute="top" constant="20" id="4gF-PJ-5cJ"/>
                                                         <constraint firstAttribute="bottom" secondItem="8xf-Ab-GSE" secondAttribute="bottom" constant="20" id="4wV-7P-721"/>
-                                                        <constraint firstAttribute="bottomMargin" secondItem="Sia-bw-Af2" secondAttribute="bottom" constant="35" id="Ijq-Tx-UpV"/>
                                                         <constraint firstItem="Sia-bw-Af2" firstAttribute="leading" secondItem="8xf-Ab-GSE" secondAttribute="trailing" constant="15" id="VIT-Rb-Xea"/>
                                                         <constraint firstItem="8xf-Ab-GSE" firstAttribute="leading" secondItem="j3q-Jd-fFd" secondAttribute="leading" constant="10" id="W28-El-L8z"/>
                                                         <constraint firstItem="Sia-bw-Af2" firstAttribute="top" secondItem="j3q-Jd-fFd" secondAttribute="topMargin" constant="35" id="jiU-sp-V7U"/>
@@ -607,12 +606,32 @@
                     <view key="view" contentMode="scaleToFill" id="UbU-Fw-ond">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" barStyle="blackTranslucent" placeholder="search" translatesAutoresizingMaskIntoConstraints="NO" id="v7S-xi-UjV">
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="search"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="d0k-hy-90O" id="kBf-hx-sSY"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="v7S-xi-UjV" firstAttribute="leading" secondItem="vGf-98-RyS" secondAttribute="leading" id="Jya-kJ-8Gu"/>
+                            <constraint firstItem="v7S-xi-UjV" firstAttribute="trailing" secondItem="vGf-98-RyS" secondAttribute="trailing" id="TGs-V4-emU"/>
+                            <constraint firstItem="v7S-xi-UjV" firstAttribute="top" secondItem="vGf-98-RyS" secondAttribute="top" id="Y6V-F7-I1c"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="vGf-98-RyS"/>
                     </view>
                     <navigationItem key="navigationItem" id="XPe-Yo-q2Z"/>
                     <connections>
-                        <outlet property="searchDisplayController" destination="pPe-iG-ash" id="jNW-Cj-3Rs"/>
+                        <outlet property="searchBar" destination="v7S-xi-UjV" id="kd0-7y-slp"/>
+                        <outlet property="searchDisplayController" destination="aj1-LH-KCh" id="qr0-EL-xZ9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gQZ-R7-DJq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -622,6 +641,14 @@
                         <outlet property="searchContentsController" destination="d0k-hy-90O" id="EO3-1F-adn"/>
                         <outlet property="searchResultsDataSource" destination="d0k-hy-90O" id="HEc-yj-bhu"/>
                         <outlet property="searchResultsDelegate" destination="d0k-hy-90O" id="Eei-Rs-nZ5"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="aj1-LH-KCh">
+                    <connections>
+                        <outlet property="delegate" destination="d0k-hy-90O" id="pBc-cf-PMf"/>
+                        <outlet property="searchContentsController" destination="d0k-hy-90O" id="e9M-q8-8lP"/>
+                        <outlet property="searchResultsDataSource" destination="d0k-hy-90O" id="aen-4B-BRb"/>
+                        <outlet property="searchResultsDelegate" destination="d0k-hy-90O" id="jaz-3q-beb"/>
                     </connections>
                 </searchDisplayController>
             </objects>

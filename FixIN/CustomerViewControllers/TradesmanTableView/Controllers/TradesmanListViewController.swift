@@ -18,7 +18,6 @@ class TradesmanListViewController: UIViewController {
     var categoryName: String!
     
     //MARK: - Properties
-    let tradesmanNames = ["Alex Sim", "Sim Alex", "John Doe", "Smith Nelson", "Dani Anderson", "Emma Rogers", "Nicole Stan"]
     let tradesmanImages: [UIImage] = [
         UIImage(named: "Alex")!,
         UIImage(named: "Sim")!,
@@ -40,6 +39,7 @@ class TradesmanListViewController: UIViewController {
         super.viewDidLoad()
         
         self.navigationController?.navigationItem.largeTitleDisplayMode = .never
+        self.navigationController?.navigationBar.tintColor = UIColor.white
         fetchTradesman()
     }
     
@@ -195,7 +195,7 @@ extension TradesmanListViewController: UITableViewDataSource, UITableViewDelegat
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedTradesman = tradesmanNames[indexPath.row]
+        selectedTradesman = categories[indexPath.row].fullname
         selectedImage = tradesmanImages[indexPath.row]
         performSegue(withIdentifier: "tradesman_detail_segue", sender: self)
     }
