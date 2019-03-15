@@ -19,6 +19,13 @@ class SideMenuViewController: UIViewController {
         guard let statusBarView = UIApplication.shared.value(forKeyPath: "statusBarWindow.statusBar") as? UIView else { return }
         statusBarView.backgroundColor = UIColor(red: 20.0/255.0, green: 25.0/255.0, blue: 45.0/255.0, alpha: 1.0)
     }
+    
+    //MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "customer_logout_segue" {
+            segue.destination.navigationItem.setHidesBackButton(true, animated: false)
+        }
+    }
 
     //MARK: - Logout Button Tapped
     @IBAction func logoutButtonTapped(_ sender: Any) {

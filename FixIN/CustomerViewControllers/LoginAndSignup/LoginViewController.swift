@@ -27,6 +27,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Login"
+//        self.navigationItem.setHidesBackButton(true, animated: false)
         
         self.hideKeyboard()
         
@@ -43,11 +44,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         loginButton.frame = CGRect(x: 80, y: 460, width: 250, height: 40)
         loginButton.setTitle("Continue with Facebook", for: .normal)
         loginButton.addTarget(self, action: #selector(loginFacebookButtonTapped), for: .touchUpInside)
+        loginButton.layer.cornerRadius = 0.05 * loginButton.bounds.size.width
         
         view.addSubview(loginButton)
-
     }
     
+    //MARK: - Fetch FBUser
     fileprivate func fetchFacebookUser() {
         let graphRequestConnection = GraphRequestConnection()
         let graphRequest = GraphRequest(graphPath: "me", parameters: ["fields": "id, email, name, picture.type(large)"], accessToken: AccessToken.current, httpMethod: .GET, apiVersion: .defaultVersion)
@@ -102,7 +104,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    //MARK: Keyboard Next Pressed - when user is on email textField and user press next on keyboard focus will move to password textField
+    //MARK: Keyboard Next Pressed
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 
         if textField == loginEmailTextField {
