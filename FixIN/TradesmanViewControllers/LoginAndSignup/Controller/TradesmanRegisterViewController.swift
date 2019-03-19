@@ -20,6 +20,7 @@ class TradesmanRegisterViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var fullNameTextField: UITextField!
     @IBOutlet weak var emailAddressTextField: UITextField!
     @IBOutlet weak var professionPicker: UIPickerView!
+    @IBOutlet var profileImageView: UIImageView!
     
     var selectedProfession: String!
     
@@ -36,6 +37,15 @@ class TradesmanRegisterViewController: UIViewController, UITextFieldDelegate {
         emailAddressTextField.delegate = self
         
         self.hideKeyboard()
+        
+        profileImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(uploadProfileImage)))
+        profileImageView.isUserInteractionEnabled = true
+    }
+    
+    //MARK: - Upload Profile Image Method
+    @objc func uploadProfileImage() {
+        let picker = UIImagePickerController()
+        present(picker, animated: true, completion: nil)
     }
     
     //MARK: - Move to next textFiled, NEXT is pressed
@@ -66,7 +76,7 @@ class TradesmanRegisterViewController: UIViewController, UITextFieldDelegate {
     
 }
 
-//MARK: Extension of Picker View
+//MARK: Extension of CategoryPicker View
 extension TradesmanRegisterViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

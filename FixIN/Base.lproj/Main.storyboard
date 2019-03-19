@@ -619,12 +619,49 @@
                                     <outlet property="delegate" destination="d0k-hy-90O" id="kBf-hx-sSY"/>
                                 </connections>
                             </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dy1-cL-STB">
+                                <rect key="frame" x="0.0" y="120" width="375" height="498"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultCell" id="DAh-Sx-Ibd" customClass="SearchTradesmanTableViewCell" customModule="FixIN" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DAh-Sx-Ibd" id="EmG-B0-rcm">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SNz-J8-OgY">
+                                                    <rect key="frame" x="15" y="11" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="SNz-J8-OgY" firstAttribute="top" secondItem="EmG-B0-rcm" secondAttribute="topMargin" id="ha6-lS-qMJ"/>
+                                                <constraint firstItem="SNz-J8-OgY" firstAttribute="leading" secondItem="EmG-B0-rcm" secondAttribute="leadingMargin" id="rSV-Ca-5k3"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="tradesmanNameLabel" destination="SNz-J8-OgY" id="Won-S1-dHT"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="d0k-hy-90O" id="eRh-cT-xX1"/>
+                                    <outlet property="delegate" destination="d0k-hy-90O" id="97U-w8-tVE"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="v7S-xi-UjV" firstAttribute="leading" secondItem="vGf-98-RyS" secondAttribute="leading" id="Jya-kJ-8Gu"/>
                             <constraint firstItem="v7S-xi-UjV" firstAttribute="trailing" secondItem="vGf-98-RyS" secondAttribute="trailing" id="TGs-V4-emU"/>
+                            <constraint firstItem="vGf-98-RyS" firstAttribute="bottom" secondItem="dy1-cL-STB" secondAttribute="bottom" id="U0I-Ar-lHs"/>
                             <constraint firstItem="v7S-xi-UjV" firstAttribute="top" secondItem="vGf-98-RyS" secondAttribute="top" id="Y6V-F7-I1c"/>
+                            <constraint firstItem="vGf-98-RyS" firstAttribute="trailing" secondItem="dy1-cL-STB" secondAttribute="trailing" id="lu4-97-iq6"/>
+                            <constraint firstItem="dy1-cL-STB" firstAttribute="leading" secondItem="vGf-98-RyS" secondAttribute="leading" id="rlE-Zl-9cv"/>
+                            <constraint firstItem="dy1-cL-STB" firstAttribute="top" secondItem="v7S-xi-UjV" secondAttribute="bottom" id="s1a-HM-Sdy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vGf-98-RyS"/>
                     </view>
@@ -632,6 +669,7 @@
                     <connections>
                         <outlet property="searchBar" destination="v7S-xi-UjV" id="kd0-7y-slp"/>
                         <outlet property="searchDisplayController" destination="aj1-LH-KCh" id="qr0-EL-xZ9"/>
+                        <outlet property="searchTradesmanTable" destination="dy1-cL-STB" id="adI-9y-Kag"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gQZ-R7-DJq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1189,6 +1227,13 @@
                                     <outlet property="delegate" destination="X7I-BE-0kj" id="ElW-m0-gik"/>
                                 </connections>
                             </pickerView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UserAvatar" translatesAutoresizingMaskIntoConstraints="NO" id="zUc-IZ-utM">
+                                <rect key="frame" x="112.5" y="94" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="QSN-5q-A0v"/>
+                                    <constraint firstAttribute="height" constant="150" id="q0W-nV-yoE"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -1201,6 +1246,8 @@
                             <constraint firstItem="ewc-ow-5kb" firstAttribute="leading" secondItem="Opp-xc-18b" secondAttribute="leading" constant="40" id="Nru-rV-abU"/>
                             <constraint firstItem="yIV-6o-scr" firstAttribute="leading" secondItem="Opp-xc-18b" secondAttribute="leading" constant="40" id="RK1-YF-dmZ"/>
                             <constraint firstItem="DfA-to-Ekr" firstAttribute="leading" secondItem="Opp-xc-18b" secondAttribute="leading" constant="40" id="Rdn-Oh-sWl"/>
+                            <constraint firstItem="zUc-IZ-utM" firstAttribute="top" secondItem="Opp-xc-18b" secondAttribute="top" constant="30" id="T5k-Cu-ZGJ"/>
+                            <constraint firstItem="zUc-IZ-utM" firstAttribute="centerX" secondItem="4Zr-ZW-raO" secondAttribute="centerX" id="WaA-dE-qbW"/>
                             <constraint firstItem="Opp-xc-18b" firstAttribute="trailing" secondItem="hFw-iK-DXP" secondAttribute="trailing" constant="40" id="jiM-by-KfA"/>
                             <constraint firstItem="ewc-ow-5kb" firstAttribute="top" secondItem="hFw-iK-DXP" secondAttribute="bottom" constant="20" id="l38-gl-DuY"/>
                             <constraint firstItem="hFw-iK-DXP" firstAttribute="leading" secondItem="Opp-xc-18b" secondAttribute="leading" constant="40" id="oyR-bl-bhD"/>
@@ -1211,6 +1258,7 @@
                         <outlet property="emailAddressTextField" destination="DfA-to-Ekr" id="ilK-RZ-PJC"/>
                         <outlet property="fullNameTextField" destination="yIV-6o-scr" id="ogj-ap-t4S"/>
                         <outlet property="professionPicker" destination="hFw-iK-DXP" id="V0U-tZ-H80"/>
+                        <outlet property="profileImageView" destination="zUc-IZ-utM" id="hXn-WF-aEu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lE9-t3-5Xd" userLabel="First Responder" sceneMemberID="firstResponder"/>

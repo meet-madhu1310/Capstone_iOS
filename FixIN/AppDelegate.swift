@@ -29,6 +29,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //to show the status bar in light content because navigation is dark
         UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
         
+        //Tab Bar color 
+        UITabBar.appearance().tintColor = UIColor.white
+        UITabBar.appearance().barStyle = UIBarStyle.blackOpaque
+        UITabBar.appearance().backgroundColor = UIColor(red: 20.0/255.0, green: 25.0/255.0, blue: 45.0/255.0, alpha: 1)
+        
         return true
     }
     
