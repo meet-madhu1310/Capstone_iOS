@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import Photos
+
 import FirebaseDatabase
 import FirebaseAuth
+import Firebase
 
 class TradesmanRegisterViewController: UIViewController, UITextFieldDelegate {
     
@@ -42,12 +45,6 @@ class TradesmanRegisterViewController: UIViewController, UITextFieldDelegate {
         profileImageView.isUserInteractionEnabled = true
     }
     
-    //MARK: - Upload Profile Image Method
-    @objc func uploadProfileImage() {
-        let picker = UIImagePickerController()
-        present(picker, animated: true, completion: nil)
-    }
-    
     //MARK: - Move to next textFiled, NEXT is pressed
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
@@ -62,6 +59,7 @@ class TradesmanRegisterViewController: UIViewController, UITextFieldDelegate {
     
     //Mark: Pushing to Firebase
     func addTradesman() {
+        
         let categoryItem = CategoryList(fullname: fullNameTextField.text!, email: emailAddressTextField.text!, profession: selectedProfession)
         let categoryItemRef = self.refTradesmen.child(selectedProfession).childByAutoId()
         categoryItemRef.setValue(categoryItem.toAnyObject())
@@ -93,6 +91,40 @@ extension TradesmanRegisterViewController: UIPickerViewDelegate, UIPickerViewDat
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedProfession = professions[row]
+    }
+    
+}
+
+//MARK: - Image PickerView
+extension TradesmanRegisterViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    @objc func uploadProfileImage() {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+//        picker.allowsEditing = true
+        
+        present(picker, animated: true, completion: nil)
+    }
+    
+    @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        var selectedImageFromPicker: UIImage?
+        
+        if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            selectedImageFromPicker = editedImage
+        } else if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            selectedImageFromPicker = originalImage
+        }
+        
+        if let selectedImage = selectedImageFromPicker {
+            profileImageView.contentMode = .scaleToFill
+            profileImageView.image = selectedImage
+            dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        print("cancelled.")
+        dismiss(animated: true, completion: nil)
     }
     
 }

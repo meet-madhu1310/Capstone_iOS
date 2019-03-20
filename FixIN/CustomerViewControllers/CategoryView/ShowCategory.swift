@@ -40,8 +40,6 @@ class ShowCategory: UIViewController {
     var selectedCategory: String!
     var selectedImage: UIImage!
     
-    let dispatchGroup = DispatchGroup()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchCategory()

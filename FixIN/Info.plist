@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>$(PRODUCT_NAME) would like to access your camera.</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 	<key>CFBundleDevelopmentRegion</key>
@@ -43,31 +45,25 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    
-<!--  Facebook Login  -->
-
-    <key>CFBundleURLTypes</key>
-    <array>
-        <dict>
-            <key>CFBundleURLSchemes</key>
-            <array>
-                <string>fb2172275766170039</string>
-            </array>
-        </dict>
-    </array>
-    <key>FacebookAppID</key>
-    <string>2172275766170039</string>
-    <key>FacebookDisplayName</key>
-    <string>Meet's first app</string>
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-        <string>fbapi</string>
-        <string>fb-messenger-share-api</string>
-        <string>fbauth2</string>
-        <string>fbshareextension</string>
-    </array>
-
-<!-- Facebook Login End -->
-
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb2172275766170039</string>
+			</array>
+		</dict>
+	</array>
+	<key>FacebookAppID</key>
+	<string>2172275766170039</string>
+	<key>FacebookDisplayName</key>
+	<string>Meet&apos;s first app</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fb-messenger-share-api</string>
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
+	</array>
 </dict>
 </plist>
