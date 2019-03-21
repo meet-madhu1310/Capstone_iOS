@@ -11,7 +11,7 @@ import FirebaseDatabase
 
 class TradesmanLoginViewController: UIViewController {
     
-    let tradesmanRef = Database.database().reference()
+    let tradesmanRef = Database.database().reference().child("tradesmen")
     
     
     @IBOutlet weak var tradesmanEmailTextField: UITextField!
@@ -30,13 +30,19 @@ class TradesmanLoginViewController: UIViewController {
     
     //MARK: Login Button Tapped
     @IBAction func loginButtonTapped(_ sender: Any) {
-        tradesmanRef.child("tradesmen").observe(.value, with: { snapshot in
-            for child in snapshot.children {
-                print(child)
+        let query = tradesmanRef.child("Carpenter").queryOrdered(byChild: "email").queryEqual(toValue: tradesmanEmailTextField.text)
+        print("im query: ",query)
+        query.observe(.value, with: { snapshot in
+            if snapshot.exists() {
+                self.performSegue(withIdentifier: "tradesman_loginTo_home_segue", sender: self)
+            } else {
+                let alertController = UIAlertController(title: "Something went wrong", message: "Please check your email address or password again.", preferredStyle: .alert)
+                let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                
+                alertController.addAction(defaultAction)
+                self.present(alertController, animated: true, completion: nil)
             }
         })
-        
-        self.performSegue(withIdentifier: "tradesman_loginTo_home_segue", sender: self)
     }
     
 }

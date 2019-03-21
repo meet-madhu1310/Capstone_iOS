@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import Firebase
 
 class ChatTradesmanViewController: UIViewController {
 
+    @IBOutlet var messageTextField: UITextField!
+    var toTradesmanName: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Chat"
@@ -20,5 +24,22 @@ class ChatTradesmanViewController: UIViewController {
         
         self.navigationController?.navigationBar.prefersLargeTitles = false
     }
-
+    
+    //MARK: - Send Button Pressed
+    @IBAction func sendButtonTapped(_ sender: Any) {
+        handleSend()
+    }
+    
+    //MARK: - Send Message Function
+    func handleSend() {
+        
+        let messageRef = Database.database().reference().child("messages")
+        let childRef = messageRef.childByAutoId()
+        
+        let fromId = Auth.auth().currentUser?.uid
+        
+        let values = ["text": messageTextField.text!, "toName": toTradesmanName!, "fromId": fromId!]
+        childRef.updateChildValues(values)
+        
+    }
 }

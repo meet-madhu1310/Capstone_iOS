@@ -591,9 +591,51 @@
                     <view key="view" contentMode="scaleToFill" id="zxw-TE-6ds">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MId-he-q2K">
+                                <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="enter message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vND-uT-HYn">
+                                        <rect key="frame" x="10" y="0.0" width="285" height="60"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0vl-cV-M8x">
+                                        <rect key="frame" x="315" y="12" width="50" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="pmR-kt-wYL"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Send"/>
+                                        <connections>
+                                            <action selector="sendButtonTapped:" destination="ZqG-kK-2Bm" eventType="touchUpInside" id="mM2-CI-ZtS"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="vND-uT-HYn" secondAttribute="bottom" id="0y5-Ra-b74"/>
+                                    <constraint firstItem="vND-uT-HYn" firstAttribute="top" secondItem="MId-he-q2K" secondAttribute="top" id="203-Rs-HDI"/>
+                                    <constraint firstAttribute="height" constant="60" id="Cw2-8k-bVd"/>
+                                    <constraint firstItem="0vl-cV-M8x" firstAttribute="centerY" secondItem="MId-he-q2K" secondAttribute="centerY" id="VbV-kQ-E9C"/>
+                                    <constraint firstItem="vND-uT-HYn" firstAttribute="leading" secondItem="MId-he-q2K" secondAttribute="leading" constant="10" id="Xc6-OJ-I9t"/>
+                                    <constraint firstItem="0vl-cV-M8x" firstAttribute="leading" secondItem="vND-uT-HYn" secondAttribute="trailing" constant="20" id="hMD-Qg-VYx"/>
+                                    <constraint firstAttribute="trailing" secondItem="0vl-cV-M8x" secondAttribute="trailing" constant="10" id="m8Q-dm-4xT"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MId-he-q2K" firstAttribute="leading" secondItem="Gpw-mS-0H8" secondAttribute="leading" id="Pzj-hn-ML7"/>
+                            <constraint firstItem="Gpw-mS-0H8" firstAttribute="trailing" secondItem="MId-he-q2K" secondAttribute="trailing" id="gsN-2n-sdG"/>
+                            <constraint firstItem="Gpw-mS-0H8" firstAttribute="bottom" secondItem="MId-he-q2K" secondAttribute="bottom" id="ofG-UX-V8C"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Gpw-mS-0H8"/>
                     </view>
+                    <connections>
+                        <outlet property="messageTextField" destination="vND-uT-HYn" id="1TI-YX-aat"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sze-J0-Z5q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

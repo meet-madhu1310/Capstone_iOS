@@ -32,6 +32,15 @@ class TradesmanDetailViewController: UIViewController {
         }
     }
     
+    //MARK: - Navigation to ChatViewController
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "chat_segue" {
+            let dvc = segue.destination as! ChatTradesmanViewController
+            dvc.toTradesmanName = tradesmanName
+        }
+    }
+    
+    //MARK: - Go to ChatViewController
     @IBAction func chatButtonTapped(_ sender: Any) {
         self.performSegue(withIdentifier: "chat_segue", sender: self)
     }
