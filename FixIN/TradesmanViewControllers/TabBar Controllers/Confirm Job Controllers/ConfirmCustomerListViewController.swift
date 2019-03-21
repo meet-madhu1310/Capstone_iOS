@@ -21,10 +21,11 @@ class ConfirmCustomerListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        title = "Confirm Jobs"
     }
     
-    //MARK: - Methods after View Will Appear
+    //MARK: - View Will Appear
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -45,6 +46,7 @@ class ConfirmCustomerListViewController: UIViewController {
 
 }
 
+//MARK: TableView of ConfirmJobs
 extension ConfirmCustomerListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

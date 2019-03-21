@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class TradesmanLoginViewController: UIViewController {
+    
+    let tradesmanRef = Database.database().reference()
     
     
     @IBOutlet weak var tradesmanEmailTextField: UITextField!
@@ -20,11 +23,19 @@ class TradesmanLoginViewController: UIViewController {
         
         tradesmanEmailTextField.setBottomBorder()
         tradesmanPasswordTextField.setBottomBorder()
+        
+        self.hideKeyboard()
 
     }
     
     //MARK: Login Button Tapped
     @IBAction func loginButtonTapped(_ sender: Any) {
+        tradesmanRef.child("tradesmen").observe(.value, with: { snapshot in
+            for child in snapshot.children {
+                print(child)
+            }
+        })
+        
         self.performSegue(withIdentifier: "tradesman_loginTo_home_segue", sender: self)
     }
     

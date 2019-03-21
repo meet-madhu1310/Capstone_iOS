@@ -11,7 +11,7 @@ import Photos
 
 import FirebaseDatabase
 import FirebaseAuth
-import Firebase
+import FirebaseStorage
 
 class TradesmanRegisterViewController: UIViewController, UITextFieldDelegate {
     
@@ -168,10 +168,22 @@ extension TradesmanRegisterViewController: UIImagePickerControllerDelegate, UINa
             selectedImageFromPicker = originalImage
         }
         
-        if let selectedImage = selectedImageFromPicker {
+        guard let selectedImage = selectedImageFromPicker, let imageData = selectedImage.pngData() else {
             profileImageView.contentMode = .scaleToFill
-            profileImageView.image = selectedImage
             dismiss(animated: true, completion: nil)
+            return
+        }
+        self.profileImageView.image = selectedImage
+        self.dismiss(animated: true, completion: nil)
+        let storageRef = Storage.storage().reference().child("profile.png")
+        let metadata = StorageMetadata(dictionary: ["contentType": "image/png"])
+        
+        let uploadTask = storageRef.putData(imageData, metadata: metadata) { (metadata, error) in
+            guard metadata != nil else {
+                print(error?.localizedDescription as Any)
+                return
+            }
+            
         }
     }
     
