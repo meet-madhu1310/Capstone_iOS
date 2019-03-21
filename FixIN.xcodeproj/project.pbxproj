@@ -40,6 +40,8 @@
 		158DD630222F34F90017A692 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158DD62F222F34F90017A692 /* NotificationViewController.swift */; };
 		158DD632222F5D3E0017A692 /* ChatTradesmanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158DD631222F5D3E0017A692 /* ChatTradesmanViewController.swift */; };
 		1594815D2241923500ED94D7 /* SearchTradesmanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1594815C2241923500ED94D7 /* SearchTradesmanTableViewCell.swift */; };
+		1594816322430EED00ED94D7 /* TradesmanProfileNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1594816222430EED00ED94D7 /* TradesmanProfileNavigationViewController.swift */; };
+		159481652243116F00ED94D7 /* MenuTradesmanProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159481642243116F00ED94D7 /* MenuTradesmanProfileViewController.swift */; };
 		15B0AF832238924200234675 /* CategoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B0AF822238924200234675 /* CategoryList.swift */; };
 		15CD5E1C2239CB93004F88DC /* Test_&_Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CD5E1B2239CB93004F88DC /* Test_&_Sample.swift */; };
 		15F1A8E9221931D00075B0AF /* ShowCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F1A8E8221931D00075B0AF /* ShowCategory.swift */; };
@@ -81,6 +83,8 @@
 		158DD62F222F34F90017A692 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		158DD631222F5D3E0017A692 /* ChatTradesmanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTradesmanViewController.swift; sourceTree = "<group>"; };
 		1594815C2241923500ED94D7 /* SearchTradesmanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTradesmanTableViewCell.swift; sourceTree = "<group>"; };
+		1594816222430EED00ED94D7 /* TradesmanProfileNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradesmanProfileNavigationViewController.swift; sourceTree = "<group>"; };
+		159481642243116F00ED94D7 /* MenuTradesmanProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTradesmanProfileViewController.swift; sourceTree = "<group>"; };
 		15B0AF822238924200234675 /* CategoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryList.swift; sourceTree = "<group>"; };
 		15CD5E1B2239CB93004F88DC /* Test_&_Sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Test_&_Sample.swift"; sourceTree = "<group>"; };
 		15F1A8E8221931D00075B0AF /* ShowCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCategory.swift; sourceTree = "<group>"; };
@@ -182,9 +186,9 @@
 		157EF69422290B6400DC02EC /* TabBar Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				159481662243118600ED94D7 /* ProfileTradesmanControllers */,
 				157EF6AA22292F4200DC02EC /* Pending Job Controllers */,
 				157EF6A32229137300DC02EC /* Confirm Job Controllers */,
-				157EF69D22290F6500DC02EC /* TradesmanProfileViewController.swift */,
 			);
 			path = "TabBar Controllers";
 			sourceTree = "<group>";
@@ -263,6 +267,16 @@
 				158DD631222F5D3E0017A692 /* ChatTradesmanViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		159481662243118600ED94D7 /* ProfileTradesmanControllers */ = {
+			isa = PBXGroup;
+			children = (
+				157EF69D22290F6500DC02EC /* TradesmanProfileViewController.swift */,
+				1594816222430EED00ED94D7 /* TradesmanProfileNavigationViewController.swift */,
+				159481642243116F00ED94D7 /* MenuTradesmanProfileViewController.swift */,
+			);
+			path = ProfileTradesmanControllers;
 			sourceTree = "<group>";
 		};
 		15B0AF812238920A00234675 /* Models */ = {
@@ -452,9 +466,11 @@
 				157EF6AC22292F8700DC02EC /* PendingNavigationViewController.swift in Sources */,
 				155A87462218FA2B006EBEE2 /* LoginViewController.swift in Sources */,
 				155A87442218F2EE006EBEE2 /* RegisterViewController.swift in Sources */,
+				159481652243116F00ED94D7 /* MenuTradesmanProfileViewController.swift in Sources */,
 				1582CFE5220E243A00EF8AA7 /* ViewController.swift in Sources */,
 				150112DD221F988300AC34AC /* TradesmanRegisterViewController.swift in Sources */,
 				153207CE222685050029F4BF /* ProfileViewController.swift in Sources */,
+				1594816322430EED00ED94D7 /* TradesmanProfileNavigationViewController.swift in Sources */,
 				158DD62E222F34D50017A692 /* SearchViewController.swift in Sources */,
 				157EF6B22229329300DC02EC /* ConfirmJobsNavigationViewController.swift in Sources */,
 				157EF69E22290F6500DC02EC /* TradesmanProfileViewController.swift in Sources */,

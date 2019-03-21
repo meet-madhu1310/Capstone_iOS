@@ -21,7 +21,10 @@ class TradesmanRegisterViewController: UIViewController, UITextFieldDelegate {
     let professions = ["- select your profession -","Velder", "Plumber", "Pipe Fitters", "Mechanic", "Gardener", "Painter", "Electricians", "Carpenter"]
     
     @IBOutlet weak var fullNameTextField: UITextField!
-    @IBOutlet weak var emailAddressTextField: UITextField!
+    @IBOutlet var emailAddressTextField: UITextField!
+    @IBOutlet var hourlyRateTextField: UITextField!
+    @IBOutlet var availibilityTextField: UITextField!
+    
     @IBOutlet weak var professionPicker: UIPickerView!
     @IBOutlet var profileImageView: UIImageView!
     
@@ -34,10 +37,14 @@ class TradesmanRegisterViewController: UIViewController, UITextFieldDelegate {
         //setting only bottom border
         fullNameTextField.setBottomBorder()
         emailAddressTextField.setBottomBorder()
+        hourlyRateTextField.setBottomBorder()
+        availibilityTextField.setBottomBorder()
         
-        //when NEXT button is pressed
+        //when NEXT button on KEYBOARD is pressed
         fullNameTextField.delegate = self
         emailAddressTextField.delegate = self
+        hourlyRateTextField.delegate = self
+        availibilityTextField.delegate = self
         
         self.hideKeyboard()
         
@@ -50,6 +57,10 @@ class TradesmanRegisterViewController: UIViewController, UITextFieldDelegate {
         switch textField {
         case fullNameTextField:
             emailAddressTextField.becomeFirstResponder()
+        case emailAddressTextField:
+            hourlyRateTextField.becomeFirstResponder()
+        case hourlyRateTextField:
+            availibilityTextField.becomeFirstResponder()
         default:
             textField.resignFirstResponder()
         }
@@ -59,19 +70,61 @@ class TradesmanRegisterViewController: UIViewController, UITextFieldDelegate {
     
     //Mark: Pushing to Firebase
     func addTradesman() {
-        
-        let categoryItem = CategoryList(fullname: fullNameTextField.text!, email: emailAddressTextField.text!, profession: selectedProfession)
+        let categoryItem = CategoryList(fullname: fullNameTextField.text!, email: emailAddressTextField.text!, profession: selectedProfession, hourlyrate: hourlyRateTextField.text!, availibility: availibilityTextField.text!)
         let categoryItemRef = self.refTradesmen.child(selectedProfession).childByAutoId()
         categoryItemRef.setValue(categoryItem.toAnyObject())
     }
     
     //MARK: Create button tapped
     @IBAction func createAccountButtonTapped(_ sender: Any) {
-        addTradesman()
-        self.fullNameTextField.text = ""
-        self.emailAddressTextField.text = ""
+        
+        ///Check Fields are not empty
+        if fullNameTextField.text == "" && emailAddressTextField.text == "" && hourlyRateTextField.text == "" && availibilityTextField.text == "" {
+            
+            fullNameTextField.becomeFirstResponder()
+            
+            let alertController = UIAlertController(title: "All fields required", message: "Please fill all fields.", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            
+            alertController.addAction(defaultAction)
+            self.present(alertController, animated: true, completion: nil)
+            
+        } else if emailAddressTextField.text == "" {
+            
+            emailAddressTextField.becomeFirstResponder()
+            
+            let alertController = UIAlertController(title: "Email address required", message: "Please enter your email address.", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            
+            alertController.addAction(defaultAction)
+            self.present(alertController, animated: true, completion: nil)
+            
+        } else if hourlyRateTextField.text == "" {
+            
+            hourlyRateTextField.becomeFirstResponder()
+            
+            let alertController = UIAlertController(title: "Hourly rate required", message: "Please enter your hourly rate.", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            
+            alertController.addAction(defaultAction)
+            self.present(alertController, animated: true, completion: nil)
+            
+        } else if availibilityTextField.text == "" {
+            
+            availibilityTextField.becomeFirstResponder()
+            
+            let alertController = UIAlertController(title: "Availibility required", message: "Please enter your availibility.", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            
+            alertController.addAction(defaultAction)
+            self.present(alertController, animated: true, completion: nil)
+            
+        } else {
+            addTradesman()
+            self.performSegue(withIdentifier: "tradesman_register_home_segue", sender: self
+        )
+        }
     }
-    
 }
 
 //MARK: Extension of CategoryPicker View

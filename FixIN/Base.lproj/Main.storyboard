@@ -1186,22 +1186,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="full name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yIV-6o-scr">
-                                <rect key="frame" x="40" y="274" width="295" height="40"/>
+                                <rect key="frame" x="40" y="274" width="150" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="GTK-dr-2ml"/>
+                                    <constraint firstAttribute="width" constant="150" id="ULw-lX-3ST"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="next" textContentType="name"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DfA-to-Ekr">
-                                <rect key="frame" x="40" y="324" width="295" height="40"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$ hourly rate" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DfA-to-Ekr">
+                                <rect key="frame" x="40" y="324" width="150" height="40"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="ECw-ck-qYe"/>
                                     <constraint firstAttribute="height" constant="40" id="vVW-v2-fwz"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad" returnKeyType="next"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ewc-ow-5kb">
                                 <rect key="frame" x="40" y="464" width="295" height="40"/>
@@ -1234,13 +1236,31 @@
                                     <constraint firstAttribute="height" constant="150" id="q0W-nV-yoE"/>
                                 </constraints>
                             </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ics-Tl-R5z">
+                                <rect key="frame" x="185" y="274" width="150" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="cbj-UY-8Cs"/>
+                                    <constraint firstAttribute="width" constant="150" id="oum-zj-PpI"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="availibility - days" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BBq-gJ-n2S">
+                                <rect key="frame" x="185" y="324" width="150" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="NGD-Zq-i11"/>
+                                    <constraint firstAttribute="height" constant="40" id="yRN-m6-yqk"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="done"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Opp-xc-18b" firstAttribute="trailing" secondItem="DfA-to-Ekr" secondAttribute="trailing" constant="40" id="1nK-Zb-fce"/>
                             <constraint firstItem="Opp-xc-18b" firstAttribute="trailing" secondItem="ewc-ow-5kb" secondAttribute="trailing" constant="40" id="3Y9-la-NNK"/>
                             <constraint firstItem="DfA-to-Ekr" firstAttribute="top" secondItem="yIV-6o-scr" secondAttribute="bottom" constant="10" id="AQT-27-WPJ"/>
-                            <constraint firstItem="Opp-xc-18b" firstAttribute="trailing" secondItem="yIV-6o-scr" secondAttribute="trailing" constant="40" id="DXt-4G-Bmi"/>
                             <constraint firstItem="hFw-iK-DXP" firstAttribute="top" secondItem="DfA-to-Ekr" secondAttribute="bottom" constant="10" id="DqE-0u-e9r"/>
                             <constraint firstItem="yIV-6o-scr" firstAttribute="top" secondItem="Opp-xc-18b" secondAttribute="top" constant="210" id="G3z-BP-5ec"/>
                             <constraint firstItem="ewc-ow-5kb" firstAttribute="leading" secondItem="Opp-xc-18b" secondAttribute="leading" constant="40" id="Nru-rV-abU"/>
@@ -1248,17 +1268,24 @@
                             <constraint firstItem="DfA-to-Ekr" firstAttribute="leading" secondItem="Opp-xc-18b" secondAttribute="leading" constant="40" id="Rdn-Oh-sWl"/>
                             <constraint firstItem="zUc-IZ-utM" firstAttribute="top" secondItem="Opp-xc-18b" secondAttribute="top" constant="30" id="T5k-Cu-ZGJ"/>
                             <constraint firstItem="zUc-IZ-utM" firstAttribute="centerX" secondItem="4Zr-ZW-raO" secondAttribute="centerX" id="WaA-dE-qbW"/>
+                            <constraint firstItem="ics-Tl-R5z" firstAttribute="top" secondItem="Opp-xc-18b" secondAttribute="top" constant="210" id="agS-Cc-6Ng"/>
+                            <constraint firstItem="BBq-gJ-n2S" firstAttribute="top" secondItem="ics-Tl-R5z" secondAttribute="bottom" constant="10" id="eAY-1T-fSk"/>
                             <constraint firstItem="Opp-xc-18b" firstAttribute="trailing" secondItem="hFw-iK-DXP" secondAttribute="trailing" constant="40" id="jiM-by-KfA"/>
+                            <constraint firstItem="Opp-xc-18b" firstAttribute="trailing" secondItem="BBq-gJ-n2S" secondAttribute="trailing" constant="40" id="kJG-Fp-itV"/>
                             <constraint firstItem="ewc-ow-5kb" firstAttribute="top" secondItem="hFw-iK-DXP" secondAttribute="bottom" constant="20" id="l38-gl-DuY"/>
                             <constraint firstItem="hFw-iK-DXP" firstAttribute="leading" secondItem="Opp-xc-18b" secondAttribute="leading" constant="40" id="oyR-bl-bhD"/>
+                            <constraint firstItem="Opp-xc-18b" firstAttribute="trailing" secondItem="ics-Tl-R5z" secondAttribute="trailing" constant="40" id="rb8-N7-Y0Z"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Opp-xc-18b"/>
                     </view>
                     <connections>
-                        <outlet property="emailAddressTextField" destination="DfA-to-Ekr" id="ilK-RZ-PJC"/>
+                        <outlet property="availibilityTextField" destination="BBq-gJ-n2S" id="lAK-wL-VWg"/>
+                        <outlet property="emailAddressTextField" destination="ics-Tl-R5z" id="YhX-Xd-6HL"/>
                         <outlet property="fullNameTextField" destination="yIV-6o-scr" id="ogj-ap-t4S"/>
+                        <outlet property="hourlyRateTextField" destination="DfA-to-Ekr" id="nOI-dg-y6i"/>
                         <outlet property="professionPicker" destination="hFw-iK-DXP" id="V0U-tZ-H80"/>
                         <outlet property="profileImageView" destination="zUc-IZ-utM" id="hXn-WF-aEu"/>
+                        <segue destination="tua-PH-ZzR" kind="presentation" identifier="tradesman_register_home_segue" id="7Rw-X8-ABy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lE9-t3-5Xd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1338,7 +1365,7 @@
                     <connections>
                         <segue destination="6J6-eO-3rN" kind="relationship" relationship="viewControllers" id="XhF-Hk-mZH"/>
                         <segue destination="rtg-Mp-DCH" kind="relationship" relationship="viewControllers" id="Ei8-Xv-S2v"/>
-                        <segue destination="n4c-Mo-ful" kind="relationship" relationship="viewControllers" id="Xdl-QZ-nTV"/>
+                        <segue destination="5oU-kC-ilA" kind="relationship" relationship="viewControllers" id="Xdl-QZ-nTV"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pcD-ya-lGQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1374,11 +1401,73 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="yBI-CE-NyR"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="TabBarUser" id="EvY-kv-bdN"/>
+                    <navigationItem key="navigationItem" title="Profile" id="Zgn-RR-w5T">
+                        <barButtonItem key="leftBarButtonItem" image="HamburgerMenu" id="wmH-Sw-BIj">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="Dax-n1-fXw" kind="presentation" id="PwS-Ce-R49"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OJ9-E3-sOT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7207" y="-558"/>
+            <point key="canvasLocation" x="7206" y="177"/>
+        </scene>
+        <!--Menu Tradesman Profile View Controller-->
+        <scene sceneID="xW7-wb-kWl">
+            <objects>
+                <viewController id="wWp-Uk-paY" customClass="MenuTradesmanProfileViewController" customModule="FixIN" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mf1-rv-iCq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xgt-Tf-QL5">
+                                <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logout" translatesAutoresizingMaskIntoConstraints="NO" id="ONI-Bc-dbo">
+                                        <rect key="frame" x="90" y="15" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="sUn-TX-kbw"/>
+                                            <constraint firstAttribute="height" constant="30" id="zpY-ff-okK"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sg3-ZC-drW">
+                                        <rect key="frame" x="209" y="10" width="76" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="XIw-gn-F2p"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="Logout">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.078431372550000003" green="0.098039215690000001" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="ONI-Bc-dbo" firstAttribute="top" secondItem="Xgt-Tf-QL5" secondAttribute="top" constant="15" id="9it-XH-py2"/>
+                                    <constraint firstItem="ONI-Bc-dbo" firstAttribute="leading" secondItem="Xgt-Tf-QL5" secondAttribute="leading" constant="90" id="CQc-yf-dPy"/>
+                                    <constraint firstAttribute="bottom" secondItem="ONI-Bc-dbo" secondAttribute="bottom" constant="15" id="Cjg-9F-k0n"/>
+                                    <constraint firstItem="sg3-ZC-drW" firstAttribute="top" secondItem="Xgt-Tf-QL5" secondAttribute="top" constant="10" id="MEr-S3-Lt1"/>
+                                    <constraint firstAttribute="trailing" secondItem="sg3-ZC-drW" secondAttribute="trailing" constant="90" id="OU8-Fz-azR"/>
+                                    <constraint firstAttribute="height" constant="60" id="RLp-3a-yh5"/>
+                                    <constraint firstAttribute="bottom" secondItem="sg3-ZC-drW" secondAttribute="bottom" constant="10" id="isH-HN-RMo"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.078431372550000003" green="0.098039215690000001" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Xgt-Tf-QL5" firstAttribute="leading" secondItem="yi9-xY-2CR" secondAttribute="leading" id="H9v-Zo-nsr"/>
+                            <constraint firstItem="yi9-xY-2CR" firstAttribute="trailing" secondItem="Xgt-Tf-QL5" secondAttribute="trailing" id="KTZ-9J-Gl9"/>
+                            <constraint firstItem="yi9-xY-2CR" firstAttribute="bottom" secondItem="Xgt-Tf-QL5" secondAttribute="bottom" id="zf7-xM-oxv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="yi9-xY-2CR"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="FxU-Kx-7Ez"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1a6-kT-i5j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8799" y="179"/>
         </scene>
         <!--Confirmed-->
         <scene sceneID="c8P-ST-q1G">
@@ -1480,6 +1569,49 @@
             </objects>
             <point key="canvasLocation" x="8876" y="2442.7286356821592"/>
         </scene>
+        <!--Profile-->
+        <scene sceneID="T1d-kj-Sb8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5oU-kC-ilA" customClass="TradesmanProfileNavigationViewController" customModule="FixIN" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" image="TabBarUser" id="EvY-kv-bdN"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dP8-GX-H0P">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="n4c-Mo-ful" kind="relationship" relationship="rootViewController" id="h9a-X0-gKg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ujw-73-4Mk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7205.6000000000004" y="-558.17091454272872"/>
+        </scene>
+        <!--Side Menu Navigation Controller-->
+        <scene sceneID="fJr-JS-2gE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Dax-n1-fXw" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wkM-VK-P3N">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="menuWidth">
+                            <real key="value" value="300"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="wWp-Uk-paY" kind="relationship" relationship="rootViewController" id="zTe-3p-7Nz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l9d-p0-aWs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8001" y="179"/>
+        </scene>
     </scenes>
     <resources>
         <image name="ConfirmedJob" width="18.75" height="18.75"/>
@@ -1494,6 +1626,7 @@
         <image name="UserAvatar" width="75" height="75"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="7Rw-X8-ABy"/>
         <segue reference="DkG-a1-UMX"/>
         <segue reference="DJe-C7-VQq"/>
     </inferredMetricsTieBreakers>
