@@ -45,6 +45,9 @@
 		15B0AF832238924200234675 /* CategoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B0AF822238924200234675 /* CategoryList.swift */; };
 		15CD5E1C2239CB93004F88DC /* Test_&_Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CD5E1B2239CB93004F88DC /* Test_&_Sample.swift */; };
 		15F1A8E9221931D00075B0AF /* ShowCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F1A8E8221931D00075B0AF /* ShowCategory.swift */; };
+		15FCA70722442AC70000F813 /* UserChatListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FCA70622442AC70000F813 /* UserChatListTableViewController.swift */; };
+		15FCA70B224432BB0000F813 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FCA70A224432BB0000F813 /* Message.swift */; };
+		15FCA70D22446A910000F813 /* UserChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FCA70C22446A910000F813 /* UserChatTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +91,9 @@
 		15B0AF822238924200234675 /* CategoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryList.swift; sourceTree = "<group>"; };
 		15CD5E1B2239CB93004F88DC /* Test_&_Sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Test_&_Sample.swift"; sourceTree = "<group>"; };
 		15F1A8E8221931D00075B0AF /* ShowCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCategory.swift; sourceTree = "<group>"; };
+		15FCA70622442AC70000F813 /* UserChatListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserChatListTableViewController.swift; sourceTree = "<group>"; };
+		15FCA70A224432BB0000F813 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		15FCA70C22446A910000F813 /* UserChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserChatTableViewCell.swift; sourceTree = "<group>"; };
 		76F9F6F2C2AB7B05D5BAB504 /* Pods-FixIN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FixIN.release.xcconfig"; path = "Target Support Files/Pods-FixIN/Pods-FixIN.release.xcconfig"; sourceTree = "<group>"; };
 		F5352CF17D4D8075AA092DFA /* Pods-FixIN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FixIN.debug.xcconfig"; path = "Target Support Files/Pods-FixIN/Pods-FixIN.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -165,6 +171,8 @@
 		153207CC222684DA0029F4BF /* BottonTabBarViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				15FCA7092244329B0000F813 /* ChatControllers */,
+				15FCA708224432900000F813 /* ChatModel */,
 				151FB2B8223B421200B9FC83 /* NavigationControllers */,
 				153207CD222685050029F4BF /* ProfileViewController.swift */,
 				158DD62D222F34D50017A692 /* SearchViewController.swift */,
@@ -285,6 +293,23 @@
 				15B0AF822238924200234675 /* CategoryList.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		15FCA708224432900000F813 /* ChatModel */ = {
+			isa = PBXGroup;
+			children = (
+				15FCA70A224432BB0000F813 /* Message.swift */,
+			);
+			path = ChatModel;
+			sourceTree = "<group>";
+		};
+		15FCA7092244329B0000F813 /* ChatControllers */ = {
+			isa = PBXGroup;
+			children = (
+				15FCA70622442AC70000F813 /* UserChatListTableViewController.swift */,
+				15FCA70C22446A910000F813 /* UserChatTableViewCell.swift */,
+			);
+			path = ChatControllers;
 			sourceTree = "<group>";
 		};
 		2F3B9BC3EFFFB92085E7896F /* Pods */ = {
@@ -469,6 +494,7 @@
 				159481652243116F00ED94D7 /* MenuTradesmanProfileViewController.swift in Sources */,
 				1582CFE5220E243A00EF8AA7 /* ViewController.swift in Sources */,
 				150112DD221F988300AC34AC /* TradesmanRegisterViewController.swift in Sources */,
+				15FCA70D22446A910000F813 /* UserChatTableViewCell.swift in Sources */,
 				153207CE222685050029F4BF /* ProfileViewController.swift in Sources */,
 				1594816322430EED00ED94D7 /* TradesmanProfileNavigationViewController.swift in Sources */,
 				158DD62E222F34D50017A692 /* SearchViewController.swift in Sources */,
@@ -488,7 +514,9 @@
 				158DD62A222F33F20017A692 /* NotificationNavigationViewController.swift in Sources */,
 				15422A4F222B624D0085BC1D /* ChatWithCustomerViewController.swift in Sources */,
 				158DD62C222F347C0017A692 /* SearchNavigationViewController.swift in Sources */,
+				15FCA70B224432BB0000F813 /* Message.swift in Sources */,
 				150112DB221F986A00AC34AC /* TradesmanLoginViewController.swift in Sources */,
+				15FCA70722442AC70000F813 /* UserChatListTableViewController.swift in Sources */,
 				158DD630222F34F90017A692 /* NotificationViewController.swift in Sources */,
 				157EF6BA2229355200DC02EC /* ConfirmCustomerListViewController.swift in Sources */,
 				153207CB2226583C0029F4BF /* CategoryTableViewCell.swift in Sources */,

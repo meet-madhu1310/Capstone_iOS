@@ -37,8 +37,9 @@ class ChatTradesmanViewController: UIViewController {
         let childRef = messageRef.childByAutoId()
         
         let fromId = Auth.auth().currentUser?.uid
+        let timeStamp = Int(NSDate().timeIntervalSince1970)
         
-        let values = ["text": messageTextField.text!, "toName": toTradesmanName!, "fromId": fromId!]
+        let values = ["textMessage": messageTextField.text!, "toName": toTradesmanName!, "fromId": fromId!, "timeStamp": timeStamp] as [String : Any]
         childRef.updateChildValues(values)
         
     }

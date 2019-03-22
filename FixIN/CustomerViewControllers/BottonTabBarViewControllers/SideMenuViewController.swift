@@ -26,7 +26,12 @@ class SideMenuViewController: UIViewController {
             segue.destination.navigationItem.setHidesBackButton(true, animated: false)
         }
     }
-
+    
+    //MARK: - Chat Button Tapped
+    @IBAction func chatButtonTapped(_ sender: Any) {
+        self.performSegue(withIdentifier: "user_chat_segue", sender: self)
+    }
+    
     //MARK: - Logout Button Tapped
     @IBAction func logoutButtonTapped(_ sender: Any) {
         let title = NSLocalizedString("Are you sure?", comment: "")
