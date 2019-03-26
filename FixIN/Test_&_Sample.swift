@@ -58,3 +58,25 @@ import Firebase
 //        self.present(alertController, animated: true, completion: nil)
 //
 //    }
+
+// MARK: in UserChatListTableView file
+//        messageRef.observe(.childAdded, with: { (snapshot) in
+//            if let dict = snapshot.value as? [String: Any] {
+//                let message = dict["textMessage"] as? String
+//                self.messages.append(message!)
+//                self.messages.reverse()
+//                self.tableView.reloadData()
+//            }
+//            if let dict = snapshot.value as? [String: Any] {
+//                let name = dict["toName"] as? String
+//                self.names.append(name!)
+//                self.names.reverse()
+//                self.tableView.reloadData()
+//            }
+//            if let dict = snapshot.value as? [String: Any] {
+//                let timeStamp = dict["timeStamp"] as? Int
+//                self.timeStamps.append(String(timeStamp!))
+//                self.timeStamps.reverse()
+//                self.tableView.reloadData()
+//            }
+//        }, withCancel: nil)

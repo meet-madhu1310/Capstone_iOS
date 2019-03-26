@@ -16,30 +16,29 @@ class UserChatListTableViewController: UITableViewController {
 
         title = "All Chats"
         
+        self.hideKeyboard()
         observeMessages()
     }
     
-    var messages = [String]()
-    var names = [String]()
-    var timeStamps = [String]()
+    var messages = [Message]()
+    var messagesDict = [String: Message]()
     
     //MARK: - Get Messages
     func observeMessages() {
         let messageRef = Database.database().reference().child("messages")
         messageRef.observe(.childAdded, with: { (snapshot) in
             if let dict = snapshot.value as? [String: Any] {
-                let message = dict["textMessage"] as? String
-                self.messages.append(message!)
-                self.tableView.reloadData()
-            }
-            if let dict = snapshot.value as? [String: Any] {
-                let name = dict["toName"] as? String
-                self.names.append(name!)
-                self.tableView.reloadData()
-            }
-            if let dict = snapshot.value as? [String: Any] {
-                let timeStamp = dict["timeStamp"] as? Int
-                self.timeStamps.append(String(timeStamp!))
+                let message = Message(dict: dict)
+                
+                ///TO group messages per name and show latest message
+                if let toName = message.toName {
+                    self.messagesDict[toName] = message
+                    self.messages = Array(self.messagesDict.values)
+                    self.messages.sort(by: { (message1, message2) -> Bool in
+                        return message1.timeStamp.hashValue > message2.timeStamp.hashValue
+                    })
+                }
+                
                 self.tableView.reloadData()
             }
         }, withCancel: nil)
@@ -52,16 +51,18 @@ class UserChatListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let message = messages[indexPath.row]
-        let name = names[indexPath.row]
-        let timeStamp = timeStamps[indexPath.row]
+        let name = messages[indexPath.row].toName
+        let message = messages[indexPath.row].textMessage
+        let timeStamp = messages[indexPath.row].timeStamp
 
         if let cell = tableView.dequeueReusableCell(withIdentifier: "ChatCell") as? UserChatTableViewCell {
             cell.tradesmanNameLabel.text = name
             cell.recentChatLabel.text = message
             
-            let timeStampDate = NSDate(timeIntervalSince1970: Double(timeStamp)!)
-            cell.displayTimeLabel.text = timeStampDate.description
+            let timeStampDate = NSDate(timeIntervalSince1970: Double(timeStamp!))
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "hh:mm a"
+            cell.displayTimeLabel.text = dateFormatter.string(from: timeStampDate as Date)
             
             return cell
         }

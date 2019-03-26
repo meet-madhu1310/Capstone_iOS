@@ -8,20 +8,16 @@
 
 import UIKit
 
-class Message: NSObject {
-    
+struct Message: Codable {
     var fromId: String?
     var textMessage: String?
     var timeStamp: Int?
     var toName: String?
     
     init(dict: [String: Any]) {
-        super.init()
-        
         fromId = dict["fromId"] as? String
         textMessage = dict["textMessage"] as? String
         timeStamp = dict["timeStamp"] as? Int
         toName = dict["toName"] as? String
     }
-    
 }

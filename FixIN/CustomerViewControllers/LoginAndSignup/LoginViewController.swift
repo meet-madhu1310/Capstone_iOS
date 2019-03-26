@@ -41,55 +41,56 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         //Facebook Logit Button
         let loginButton = UIButton(type: .custom)
         loginButton.backgroundColor = UIColor(red: 59.0/255.0, green: 89.0/255.0, blue: 152.0/255.0, alpha: 1.0)
-        loginButton.frame = CGRect(x: 80, y: 460, width: 250, height: 40)
+        loginButton.frame = CGRect(x: 40, y: 460, width: 335, height: 40)
         loginButton.setTitle("Continue with Facebook", for: .normal)
         loginButton.addTarget(self, action: #selector(loginFacebookButtonTapped), for: .touchUpInside)
-        loginButton.layer.cornerRadius = 0.05 * loginButton.bounds.size.width
-        
+        loginButton.layer.cornerRadius = 0.04 * loginButton.bounds.size.width
+
         view.addSubview(loginButton)
+        
     }
     
     //MARK: - Fetch FBUser
-    fileprivate func fetchFacebookUser() {
-        let graphRequestConnection = GraphRequestConnection()
-        let graphRequest = GraphRequest(graphPath: "me", parameters: ["fields": "id, email, name, picture.type(large)"], accessToken: AccessToken.current, httpMethod: .GET, apiVersion: .defaultVersion)
-        
-        graphRequestConnection.add(graphRequest) { (httpResponse, result) in
-            switch result {
-            case .success(response: let response):
-                guard let responseDictionary = response.dictionaryValue else { return }
-                let json = JSON(responseDictionary)
-                self.name = json["name"].string
-                
-                guard let profilePictureUrl = json["picture"]["data"]["url"].string, let url = URL(string: profilePictureUrl) else { return }
-                
-                URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
-                    if let error = error {
-                        print(error)
-                        return
-                    }
-                    
-                    guard let data = data else { return }
-                    self.profilePicture = UIImage(data: data)
-                    print(self.profilePicture)
-                    
-                }).resume()
-                break
-                
-            case .failed(let error):
-                print("Failed here in graph request:", error)
-                break
-            }
-        }
-        
-        graphRequestConnection.start()
-    }
+//    fileprivate func fetchFacebookUser() {
+//        let graphRequestConnection = GraphRequestConnection()
+//        let graphRequest = GraphRequest(graphPath: "me", parameters: ["fields": "id, email, name, picture.type(large)"], accessToken: AccessToken.current, httpMethod: .GET, apiVersion: .defaultVersion)
+//        
+//        graphRequestConnection.add(graphRequest) { (httpResponse, result) in
+//            switch result {
+//            case .success(response: let response):
+//                guard let responseDictionary = response.dictionaryValue else { return }
+//                let json = JSON(responseDictionary)
+//                self.name = json["name"].string
+//                
+//                guard let profilePictureUrl = json["picture"]["data"]["url"].string, let url = URL(string: profilePictureUrl) else { return }
+//                
+//                URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
+//                    if let error = error {
+//                        print(error)
+//                        return
+//                    }
+//                    
+//                    guard let data = data else { return }
+//                    self.profilePicture = UIImage(data: data)
+//                    print(self.profilePicture)
+//                    
+//                }).resume()
+//                break
+//                
+//            case .failed(let error):
+//                print("Failed here in graph request:", error)
+//                break
+//            }
+//        }
+//        
+//        graphRequestConnection.start()
+//    }
     
     
     //MARK: - Facebook Login Button Tapped
     @objc func loginFacebookButtonTapped() {
         let loginManager = LoginManager()
-        loginManager.logIn(readPermissions: [.publicProfile, .email], viewController: self) {
+        loginManager.logIn(readPermissions: [.publicProfile], viewController: self) {
             loginResult in
             switch loginResult {
             case .failed(let error):
@@ -98,7 +99,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 print("User cancelled login")
             case .success(grantedPermissions: let grantedPermission, declinedPermissions: let decilnedPermission, token: let accessToken):
                 print("User logged in.")
-                
+
                 self.performSegue(withIdentifier: "loginTo_home_segue", sender: self)
             }
         }

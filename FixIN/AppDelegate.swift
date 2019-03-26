@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 import FacebookCore
-import FBSDKCoreKit
+//import FBSDKCoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -34,10 +34,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().barStyle = UIBarStyle.blackOpaque
         UITabBar.appearance().backgroundColor = UIColor(red: 20.0/255.0, green: 25.0/255.0, blue: 45.0/255.0, alpha: 1)
         
+        SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+        
         return true
     }
     
-    @available (iOS 9.0, *)
+//    @available (iOS 9.0, *)
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         return SDKApplicationDelegate.shared.application(app, open: url, options: options)
     }
