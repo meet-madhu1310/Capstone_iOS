@@ -51,7 +51,15 @@ class ChatTradesmanViewController: UIViewController, UITextFieldDelegate {
         let timeStamp = Int(NSDate().timeIntervalSince1970)
         
         let values = ["textMessage": messageTextField.text!, "toName": toTradesmanName!, "fromId": fromId!, "timeStamp": timeStamp] as [String : Any]
-        childRef.updateChildValues(values)
+        childRef.updateChildValues(values) { (error, ref) in
+            if error != nil {
+                print(error!)
+                return
+            }
+            let userMessagesRef = Database.database().reference().child("user-messages").child(fromId!)
+            let messageId = childRef.key
+            userMessagesRef.updateChildValues([messageId: 1])
+        }
         
     }
     
@@ -78,7 +86,7 @@ class ChatTradesmanViewController: UIViewController, UITextFieldDelegate {
         var aRect: CGRect = self.view.frame
         aRect.size.height -= keyboardSize!.height
 
-        if let activeField = self.activeTextField {
+        if let activeField = self.messageTextField {
             if (!aRect.contains(activeField.frame.origin)) {
                 self.scrollView.scrollRectToVisible(activeField.frame, animated: true)
             }
@@ -96,10 +104,10 @@ class ChatTradesmanViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        activeTextField = textField
+        messageTextField = textField
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        activeTextField = nil
+        messageTextField = nil
     }
 }

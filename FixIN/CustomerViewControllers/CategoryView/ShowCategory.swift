@@ -17,9 +17,6 @@ class ShowCategory: UIViewController {
     @IBOutlet weak var leadingC: NSLayoutConstraint!
     @IBOutlet weak var categoryTable: UITableView!
     
-    var menuIsVisible = false
-    var backButtonIsVisible = true
-    
     //for table view
     let categoryNames = ["Mechanic", "Plumber", "Carpenter", "Velder", "Painter", "Gardener", "Pipe Fitters", "Electricians"]
     
@@ -42,7 +39,6 @@ class ShowCategory: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchCategory()
         
         let meet = Database.database().reference()
         var h: [String] = []
@@ -68,56 +64,45 @@ class ShowCategory: UIViewController {
         }
     }
     
-    //MARK: Fetch All Categories
-    func fetchCategory() {
-        
-        refTradesmen.child("/Plumber").observe(.value, with: { snapshot in
-            var newItems: [CategoryList] = []
-            for child in snapshot.children{
-                if let snapshot = child as? DataSnapshot,
-                    let groceryItems = CategoryList(snapshot: snapshot) {
-                    newItems.append(groceryItems)
-                }
-            }
-            self.categories = newItems
-            self.categoryTable.reloadData()
-        })
-        
-    }
-    
 }
 
-//MARK: - TableView Extension
-extension ShowCategory: UITableViewDelegate, UITableViewDataSource {
+//MARK: - Collection View
+extension ShowCategory: UICollectionViewDelegate, UICollectionViewDataSource {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return categoryNames.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let categoryName = categoryNames[indexPath.row]
-        let imageName = categoryImages[indexPath.row]
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell") as? CategoryTableViewCell {
-            cell.categoryLabel.text = categoryName
-            cell.categoryImage.image = imageName
+        let categoryName = categoryNames[indexPath.row]
+        let categoryImage = categoryImages[indexPath.row]
+        
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as? CategoryCollectionViewCell {
             
-            cell.layer.borderColor = UIColor.white.cgColor
-            cell.layer.borderWidth = 3.0
+            cell.categoryNameLabel.text = categoryName
+            cell.categoryImageView.image = categoryImage
+            cell.categoryImageView.layer.cornerRadius = 10.0
+            cell.categoryImageView.layer.masksToBounds = true
+            
+            cell.layer.cornerRadius = 10.0
+            cell.layer.masksToBounds = true
+            
+            cell.layer.shadowRadius = 3.0
+            cell.layer.shadowColor = UIColor.lightGray.cgColor
+            cell.layer.shadowOpacity = 2.0
+            cell.layer.shadowOffset = CGSize(width: 0.0, height: 5.0)
+            cell.layer.masksToBounds = false
             
             return cell
         }
         
-        return UITableViewCell()
+        return UICollectionViewCell()
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedCategory = categoryNames[indexPath.row]
         performSegue(withIdentifier: "category_detail_segue", sender: self)
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
     }
     
 }

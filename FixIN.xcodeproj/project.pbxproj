@@ -14,11 +14,12 @@
 		153207C022260D3B0029F4BF /* SignupEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153207BF22260D3B0029F4BF /* SignupEmailViewController.swift */; };
 		153207C3222629700029F4BF /* TradesmanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153207C2222629700029F4BF /* TradesmanTableViewCell.swift */; };
 		153207C522262A120029F4BF /* TradesmanDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153207C422262A120029F4BF /* TradesmanDetailViewController.swift */; };
-		153207CB2226583C0029F4BF /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153207CA2226583C0029F4BF /* CategoryTableViewCell.swift */; };
 		153207CE222685050029F4BF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153207CD222685050029F4BF /* ProfileViewController.swift */; };
 		15422A4B222B58560085BC1D /* PendingCustomersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15422A4A222B58560085BC1D /* PendingCustomersViewController.swift */; };
 		15422A4D222B58E40085BC1D /* CustomersPendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15422A4C222B58E40085BC1D /* CustomersPendingTableViewCell.swift */; };
 		15422A4F222B624D0085BC1D /* ChatWithCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15422A4E222B624D0085BC1D /* ChatWithCustomerViewController.swift */; };
+		1552110C224DD3F50080AB5B /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1552110B224DD3F50080AB5B /* CategoryCollectionViewCell.swift */; };
+		15548C21224AF14300833043 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15548C20224AF14300833043 /* SearchTableViewController.swift */; };
 		155A87442218F2EE006EBEE2 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155A87432218F2EE006EBEE2 /* RegisterViewController.swift */; };
 		155A87462218FA2B006EBEE2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155A87452218FA2B006EBEE2 /* LoginViewController.swift */; };
 		155A874E221920DC006EBEE2 /* TradesmanListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155A874D221920DC006EBEE2 /* TradesmanListViewController.swift */; };
@@ -58,11 +59,12 @@
 		153207BF22260D3B0029F4BF /* SignupEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupEmailViewController.swift; sourceTree = "<group>"; };
 		153207C2222629700029F4BF /* TradesmanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradesmanTableViewCell.swift; sourceTree = "<group>"; };
 		153207C422262A120029F4BF /* TradesmanDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradesmanDetailViewController.swift; sourceTree = "<group>"; };
-		153207CA2226583C0029F4BF /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		153207CD222685050029F4BF /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		15422A4A222B58560085BC1D /* PendingCustomersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingCustomersViewController.swift; sourceTree = "<group>"; };
 		15422A4C222B58E40085BC1D /* CustomersPendingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomersPendingTableViewCell.swift; sourceTree = "<group>"; };
 		15422A4E222B624D0085BC1D /* ChatWithCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatWithCustomerViewController.swift; sourceTree = "<group>"; };
+		1552110B224DD3F50080AB5B /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		15548C20224AF14300833043 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		155A87432218F2EE006EBEE2 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		155A87452218FA2B006EBEE2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		155A874D221920DC006EBEE2 /* TradesmanListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradesmanListViewController.swift; sourceTree = "<group>"; };
@@ -163,7 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				15F1A8E8221931D00075B0AF /* ShowCategory.swift */,
-				153207CA2226583C0029F4BF /* CategoryTableViewCell.swift */,
+				1552110B224DD3F50080AB5B /* CategoryCollectionViewCell.swift */,
 			);
 			path = CategoryView;
 			sourceTree = "<group>";
@@ -178,6 +180,7 @@
 				158DD62D222F34D50017A692 /* SearchViewController.swift */,
 				158DD62F222F34F90017A692 /* NotificationViewController.swift */,
 				151FB2B6223B309000B9FC83 /* SideMenuViewController.swift */,
+				15548C20224AF14300833043 /* SearchTableViewController.swift */,
 			);
 			path = BottonTabBarViewControllers;
 			sourceTree = "<group>";
@@ -489,6 +492,7 @@
 				158DD628222F333D0017A692 /* ProfileNavigationViewController.swift in Sources */,
 				15422A4B222B58560085BC1D /* PendingCustomersViewController.swift in Sources */,
 				157EF6AC22292F8700DC02EC /* PendingNavigationViewController.swift in Sources */,
+				1552110C224DD3F50080AB5B /* CategoryCollectionViewCell.swift in Sources */,
 				155A87462218FA2B006EBEE2 /* LoginViewController.swift in Sources */,
 				155A87442218F2EE006EBEE2 /* RegisterViewController.swift in Sources */,
 				159481652243116F00ED94D7 /* MenuTradesmanProfileViewController.swift in Sources */,
@@ -517,9 +521,9 @@
 				15FCA70B224432BB0000F813 /* Message.swift in Sources */,
 				150112DB221F986A00AC34AC /* TradesmanLoginViewController.swift in Sources */,
 				15FCA70722442AC70000F813 /* UserChatListTableViewController.swift in Sources */,
+				15548C21224AF14300833043 /* SearchTableViewController.swift in Sources */,
 				158DD630222F34F90017A692 /* NotificationViewController.swift in Sources */,
 				157EF6BA2229355200DC02EC /* ConfirmCustomerListViewController.swift in Sources */,
-				153207CB2226583C0029F4BF /* CategoryTableViewCell.swift in Sources */,
 				151FB2B7223B309000B9FC83 /* SideMenuViewController.swift in Sources */,
 				153207C3222629700029F4BF /* TradesmanTableViewCell.swift in Sources */,
 			);
