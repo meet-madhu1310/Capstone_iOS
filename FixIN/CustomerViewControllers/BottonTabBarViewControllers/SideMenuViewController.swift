@@ -27,6 +27,11 @@ class SideMenuViewController: UIViewController {
         }
     }
     
+    //MARK: - Bookings Button Tapped
+    @IBAction func bookingsButtonTapped(_ sender: Any) {
+        self.performSegue(withIdentifier: "bookings_segue", sender: self)
+    }
+    
     //MARK: - Chat Button Tapped
     @IBAction func chatButtonTapped(_ sender: Any) {
         self.performSegue(withIdentifier: "user_chat_segue", sender: self)

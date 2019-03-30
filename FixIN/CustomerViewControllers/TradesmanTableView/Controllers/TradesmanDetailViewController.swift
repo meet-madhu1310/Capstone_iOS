@@ -12,7 +12,13 @@ class TradesmanDetailViewController: UIViewController {
     
     var tradesmanName: String!
     var tradsmanImage: UIImage!
+    var tradesmanAvailibility: String!
+    var tradesmanRate: String!
+    
     @IBOutlet weak var tradesmanImageView: UIImageView!
+    @IBOutlet var chatButton: UIButton!
+    @IBOutlet var availibilityLabel: UILabel!
+    @IBOutlet var tradesmanRateLabel: UILabel!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -22,9 +28,16 @@ class TradesmanDetailViewController: UIViewController {
         super.viewDidLoad()
         title = tradesmanName
         tradesmanImageView.image = tradsmanImage
+        availibilityLabel.text = tradesmanAvailibility
+        tradesmanRateLabel.text = "$\(tradesmanRate!)"
         
+        ///Rounded Tradesman Profile Image
         tradesmanImageView.layer.cornerRadius = tradesmanImageView.frame.width / 2
         tradesmanImageView.clipsToBounds = true
+        
+        ///Rounded Chat Button
+        chatButton.layer.cornerRadius = 10.0
+        chatButton.clipsToBounds = true
         
         if #available(iOS 11.0, *) {
             self.navigationController?.navigationBar.prefersLargeTitles = true

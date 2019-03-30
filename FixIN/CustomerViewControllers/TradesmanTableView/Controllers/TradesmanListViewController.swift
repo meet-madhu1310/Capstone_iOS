@@ -30,6 +30,8 @@ class TradesmanListViewController: UIViewController {
     
     var selectedTradesman: String!
     var selectedImage: UIImage!
+    var selectedTradesmanAvailibility: String!
+    var selectedTradesmanRate: String!
     
     var categories: [CategoryList] = []
     let refTradesmen = Database.database().reference(withPath: "tradesmen")
@@ -157,6 +159,8 @@ class TradesmanListViewController: UIViewController {
             let dvc = segue.destination as! TradesmanDetailViewController
             dvc.tradesmanName = selectedTradesman
             dvc.tradsmanImage = selectedImage
+            dvc.tradesmanAvailibility = selectedTradesmanAvailibility
+            dvc.tradesmanRate = selectedTradesmanRate
         } else {
             if #available(iOS 11.0, *) {
                 segue.destination.navigationItem.largeTitleDisplayMode = .never
@@ -197,6 +201,9 @@ extension TradesmanListViewController: UITableViewDataSource, UITableViewDelegat
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedTradesman = categories[indexPath.row].fullname
         selectedImage = tradesmanImages[indexPath.row]
+        selectedTradesmanAvailibility = categories[indexPath.row].availibility
+        selectedTradesmanRate = categories[indexPath.row].hourlyrate
+        
         performSegue(withIdentifier: "tradesman_detail_segue", sender: self)
     }
 }
