@@ -11,14 +11,10 @@ import Firebase
 import FirebaseAuth
 
 class ShowCategory: UIViewController {
-    
-    
-    @IBOutlet weak var trailingC: NSLayoutConstraint!
-    @IBOutlet weak var leadingC: NSLayoutConstraint!
     @IBOutlet weak var categoryTable: UITableView!
     
     //for table view
-    let categoryNames = ["Mechanic", "Plumber", "Carpenter", "Velder", "Painter", "Gardener", "Pipe Fitters", "Electricians"]
+    let categoryNames = ["Mechanic", "Plumber", "Carpenter", "Welder", "Painter", "Gardener", "Pipe Fitters", "Electricians", "House Cleaning", "Kitchen Installments", "Floor Repairing", "Decks", "Home Appliance", "Railings"]
     
     var categories: [CategoryList] = []
     let refTradesmen = Database.database().reference(withPath: "tradesmen")
@@ -31,7 +27,13 @@ class ShowCategory: UIViewController {
         UIImage(named: "Painter")!,
         UIImage(named: "Gardener")!,
         UIImage(named: "Pipe Fitters")!,
-        UIImage(named: "Electricians")!
+        UIImage(named: "Electricians")!,
+        UIImage(named: "HouseCleaning")!,
+        UIImage(named: "KitchenInstallments")!,
+        UIImage(named: "FloorRepairing")!,
+        UIImage(named: "Decks")!,
+        UIImage(named: "HomeAppliance")!,
+        UIImage(named: "Railings")!
     ]
     
     var selectedCategory: String!

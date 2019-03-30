@@ -30,6 +30,7 @@ class SearchTableViewController: UITableViewController, UISearchResultsUpdating 
         tableView.tableHeaderView = searchController.searchBar
         
         ref.child("tradesmen").queryOrdered(byChild: "fullname").observe(.childAdded, with: { (snapshot) in
+            
             self.tradesmanList.append(snapshot.value as! NSDictionary)
             self.findTradesmanTable.insertRows(at: [IndexPath(row: self.tradesmanList.count - 1, section: 0)], with: .automatic)
         }) { (error) in
@@ -41,9 +42,9 @@ class SearchTableViewController: UITableViewController, UISearchResultsUpdating 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if searchController.isActive && searchController.searchBar.text != "" {
-            return filteredTradesman.count
+            return self.filteredTradesman.count
         }
-        return tradesmanList.count
+        return self.tradesmanList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -51,29 +52,29 @@ class SearchTableViewController: UITableViewController, UISearchResultsUpdating 
         
         let tradesman: NSDictionary?
         if searchController.isActive && searchController.searchBar.text != "" {
-            tradesman = filteredTradesman[indexPath.row]
+            tradesman = self.filteredTradesman[indexPath.row]
+            print("Filtered...:", tradesman as Any)
         } else {
             tradesman = self.tradesmanList[indexPath.row]
+            print("THis is tradesman: ", tradesman?.value(forKeyPath: "fullname") as Any)
         }
         
         cell?.textLabel!.text = tradesman?["fullname"] as? String
         cell?.detailTextLabel!.text = tradesman?["profession"] as? String
-        
-        print("not getting", tradesman?["fullname"] as Any)
         
         return cell!
     }
     
     //MARK: Search Result Update
     func updateSearchResults(for searchController: UISearchController) {
-        filterContent(searchText: self.searchController.searchBar.text!)
+        self.filterContent(searchText: self.searchController.searchBar.text!)
     }
     
     func filterContent(searchText: String) {
         self.filteredTradesman = self.tradesmanList.filter{ tradesman in
             let tradesmanName = tradesman["fullname"] as? String
             
-            return (tradesmanName != nil)
+            return (tradesmanName?.lowercased().contains(searchText.lowercased()) ?? false)
         }
         
         tableView.reloadData()

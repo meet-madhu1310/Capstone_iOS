@@ -19,6 +19,8 @@ class ChatTradesmanViewController: UIViewController, UITextFieldDelegate {
     var toTradesmanName: String!
     var activeTextField: UITextField?
     
+    var userId: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Chat"
@@ -28,6 +30,8 @@ class ChatTradesmanViewController: UIViewController, UITextFieldDelegate {
         
         messageTextField.layer.cornerRadius = 20.0
         messageTextField.layer.borderWidth = 0.5
+        
+        self.userId = Auth.auth().currentUser?.uid
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,6 +43,7 @@ class ChatTradesmanViewController: UIViewController, UITextFieldDelegate {
     //MARK: - Send Button Pressed
     @IBAction func sendButtonTapped(_ sender: Any) {
         handleSend()
+        self.messageTextField.text = ""
     }
     
     //MARK: - Send Message Function
@@ -47,19 +52,11 @@ class ChatTradesmanViewController: UIViewController, UITextFieldDelegate {
         let messageRef = Database.database().reference().child("messages")
         let childRef = messageRef.childByAutoId()
         
-        let fromId = Auth.auth().currentUser?.uid
         let timeStamp = Int(NSDate().timeIntervalSince1970)
+        let fromId = "1K4HI7JsH7XOofij30GAsBSnj9i2"
         
-        let values = ["textMessage": messageTextField.text!, "toName": toTradesmanName!, "fromId": fromId!, "timeStamp": timeStamp] as [String : Any]
-        childRef.updateChildValues(values) { (error, ref) in
-            if error != nil {
-                print(error!)
-                return
-            }
-            let userMessagesRef = Database.database().reference().child("user-messages").child(fromId!)
-            let messageId = childRef.key
-            userMessagesRef.updateChildValues([messageId: 1])
-        }
+        let values = ["textMessage": messageTextField.text!, "toName": toTradesmanName!, "fromId": fromId, "timeStamp": timeStamp] as [String : Any]
+        childRef.updateChildValues(values)
         
     }
     
@@ -68,12 +65,12 @@ class ChatTradesmanViewController: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-    
+
     func deregisterFromKeyboardNotification() {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-    
+
     @objc func keyboardWasShown(notification: NSNotification) {
         self.scrollView.isScrollEnabled = true
         var info = notification.userInfo!
@@ -86,13 +83,13 @@ class ChatTradesmanViewController: UIViewController, UITextFieldDelegate {
         var aRect: CGRect = self.view.frame
         aRect.size.height -= keyboardSize!.height
 
-        if let activeField = self.messageTextField {
+        if let activeField = self.activeTextField {
             if (!aRect.contains(activeField.frame.origin)) {
                 self.scrollView.scrollRectToVisible(activeField.frame, animated: true)
             }
         }
     }
-    
+
     @objc func keyboardWillBeHidden(notification: NSNotification) {
         var info = notification.userInfo!
         let keyboardSize = (info[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
@@ -102,12 +99,12 @@ class ChatTradesmanViewController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
         self.scrollView.isScrollEnabled = false
     }
-    
+
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        messageTextField = textField
+        activeTextField = textField
     }
-    
+
     func textFieldDidEndEditing(_ textField: UITextField) {
-        messageTextField = nil
+        activeTextField = nil
     }
 }

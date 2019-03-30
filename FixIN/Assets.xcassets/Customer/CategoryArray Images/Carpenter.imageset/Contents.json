@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "carpenter.jpeg",
+      "filename" : "carpenter.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "carpenter-1.jpeg",
+      "filename" : "carpenter-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "carpenter-2.jpeg",
+      "filename" : "carpenter-2.png",
       "scale" : "3x"
     }
   ],

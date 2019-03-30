@@ -18,7 +18,7 @@ class TradesmanRegisterViewController: UIViewController, UITextFieldDelegate {
     //MARK: Properties
     var category: [CategoryList] = []
     let refTradesmen = Database.database().reference(withPath: "tradesmen")
-    let professions = ["- select your profession -","Velder", "Plumber", "Pipe Fitters", "Mechanic", "Gardener", "Painter", "Electricians", "Carpenter"]
+    let professions = ["- select your profession -","Welder", "Plumber", "Pipe Fitters", "Mechanic", "Gardener", "Painter", "Electricians", "Carpenter", "Appliance Repair", "Railings", "House Cleaning", "Floor Repairs", "Decks", "Kitchen Installments"]
     
     @IBOutlet weak var fullNameTextField: UITextField!
     @IBOutlet var emailAddressTextField: UITextField!

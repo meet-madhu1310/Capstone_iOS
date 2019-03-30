@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "electricinas.png",
+      "filename" : "kitchen-installments.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "electricinas-1.png",
+      "filename" : "kitchen-installments-1.jpg",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "electricinas-2.png",
+      "filename" : "kitchen-installments-2.jpg",
       "scale" : "3x"
     }
   ],
