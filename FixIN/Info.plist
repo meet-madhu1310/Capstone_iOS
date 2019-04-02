@@ -65,5 +65,33 @@
 		<string>fbauth2</string>
 		<string>fbshareextension</string>
 	</array>
+    
+    <!--  3D Touch  -->
+    
+    <key>UIApplicationShortcutItems</key>
+    <array>
+        <dict>
+            <key>UIApplicationShortcutItemType</key>
+            <string>SearchAction</string>
+            <key>UIApplicationShortcutItemIconType</key>
+            <string>UIApplicationShortcutIconTypeSearch</string>
+            <key>UIApplicationShortcutItemTitle</key>
+            <string>Search</string>
+            <key>UIApplicationShortcutItemSubtitle</key>
+            <string>Search for an item</string>
+        </dict>
+        <dict>
+            <key>UIApplicationShortcutItemType</key>
+            <string>ShareAction</string>
+            <key>UIApplicationShortcutItemIconType</key>
+            <string>UIApplicationShortcutIconTypeShare</string>
+            <key>UIApplicationShortcutItemTitle</key>
+            <string>Share</string>
+            <key>UIApplicationShortcutItemSubtitle</key>
+            <string>Share an item</string>
+        </dict>
+    </array>
+    
+    <!--  END  -->
 </dict>
 </plist>

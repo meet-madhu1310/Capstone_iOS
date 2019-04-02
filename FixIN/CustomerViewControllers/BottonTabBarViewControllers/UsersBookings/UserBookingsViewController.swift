@@ -12,7 +12,7 @@ class UserBookingsViewController: UIViewController {
     
     @IBOutlet var yourBookingLabel: UILabel!
     
-    let tradesmanImages: [UIImage] = [
+    var tradesmanImages: [UIImage] = [
         UIImage(named: "Alex")!,
         UIImage(named: "Nicole")!
     ]
@@ -29,7 +29,12 @@ class UserBookingsViewController: UIViewController {
         yourBookingLabel.layer.shadowOffset = CGSize(width: 5, height: 5)
         yourBookingLabel.layer.masksToBounds = false
     }
-
+    
+    //MARK: Done Button Tapped
+    @IBAction func doneButtonTapped(_ sender: Any) {
+        performSegue(withIdentifier: "review_segue", sender: self)
+    }
+    
 }
 
 //MARK: - Table View DataSource and DataDelegate
@@ -56,6 +61,13 @@ extension UserBookingsViewController: UITableViewDelegate, UITableViewDataSource
         }
         
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            self.tradesmanImages.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
     }
     
 }

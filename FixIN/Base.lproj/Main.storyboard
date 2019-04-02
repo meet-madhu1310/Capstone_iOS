@@ -936,6 +936,9 @@
                                                     <state key="normal" title="Done">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="doneButtonTapped:" destination="oAX-xF-mnC" eventType="touchUpInside" id="xFd-uC-Wes"/>
+                                                    </connections>
                                                 </button>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3UY-a4-nc5">
                                                     <rect key="frame" x="10" y="20" width="70" height="70"/>
@@ -981,11 +984,47 @@
                     </view>
                     <connections>
                         <outlet property="yourBookingLabel" destination="Iur-So-ErV" id="mGx-XL-Q35"/>
+                        <segue destination="zXC-Jm-eev" kind="presentation" identifier="review_segue" id="2RZ-YU-oYQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pcy-bZ-vXF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="9248.7999999999993" y="3214.5427286356826"/>
+        </scene>
+        <!--Review Tradesman View Controller-->
+        <scene sceneID="T7K-HW-DTv">
+            <objects>
+                <viewController id="zXC-Jm-eev" customClass="ReviewTradesmanViewController" customModule="FixIN" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kf8-CN-8oB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fnl-z6-n4Y">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem id="ovz-Gi-fEA">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="stop" id="CO6-MX-JLM">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="crossItemTapped:" destination="zXC-Jm-eev" id="n8Z-cd-ZCJ"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fnl-z6-n4Y" firstAttribute="leading" secondItem="pQi-n9-xQE" secondAttribute="leading" id="a3z-hG-XxS"/>
+                            <constraint firstItem="fnl-z6-n4Y" firstAttribute="top" secondItem="pQi-n9-xQE" secondAttribute="top" id="kMY-iY-SaT"/>
+                            <constraint firstItem="fnl-z6-n4Y" firstAttribute="trailing" secondItem="pQi-n9-xQE" secondAttribute="trailing" id="xAh-t9-lhw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pQi-n9-xQE"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iSV-9b-462" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="9249" y="3915"/>
         </scene>
         <!--User Chat List Table View Controller-->
         <scene sceneID="WpE-Yf-6sJ">

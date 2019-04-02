@@ -15,6 +15,7 @@
 		153207C3222629700029F4BF /* TradesmanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153207C2222629700029F4BF /* TradesmanTableViewCell.swift */; };
 		153207C522262A120029F4BF /* TradesmanDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153207C422262A120029F4BF /* TradesmanDetailViewController.swift */; };
 		153207CE222685050029F4BF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153207CD222685050029F4BF /* ProfileViewController.swift */; };
+		153DB5E522530FEC007295BB /* ReviewTradesmanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153DB5E422530FEC007295BB /* ReviewTradesmanViewController.swift */; };
 		15422A4B222B58560085BC1D /* PendingCustomersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15422A4A222B58560085BC1D /* PendingCustomersViewController.swift */; };
 		15422A4D222B58E40085BC1D /* CustomersPendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15422A4C222B58E40085BC1D /* CustomersPendingTableViewCell.swift */; };
 		15422A4F222B624D0085BC1D /* ChatWithCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15422A4E222B624D0085BC1D /* ChatWithCustomerViewController.swift */; };
@@ -62,6 +63,7 @@
 		153207C2222629700029F4BF /* TradesmanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradesmanTableViewCell.swift; sourceTree = "<group>"; };
 		153207C422262A120029F4BF /* TradesmanDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradesmanDetailViewController.swift; sourceTree = "<group>"; };
 		153207CD222685050029F4BF /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		153DB5E422530FEC007295BB /* ReviewTradesmanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTradesmanViewController.swift; sourceTree = "<group>"; };
 		15422A4A222B58560085BC1D /* PendingCustomersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingCustomersViewController.swift; sourceTree = "<group>"; };
 		15422A4C222B58E40085BC1D /* CustomersPendingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomersPendingTableViewCell.swift; sourceTree = "<group>"; };
 		15422A4E222B624D0085BC1D /* ChatWithCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatWithCustomerViewController.swift; sourceTree = "<group>"; };
@@ -300,6 +302,7 @@
 			children = (
 				15789A45224F08650023F608 /* UserBookingsViewController.swift */,
 				1599CF1F224F1249001BBF31 /* ViewUserBookingTableViewCell.swift */,
+				153DB5E422530FEC007295BB /* ReviewTradesmanViewController.swift */,
 			);
 			path = UsersBookings;
 			sourceTree = "<group>";
@@ -541,6 +544,7 @@
 				157EF6BA2229355200DC02EC /* ConfirmCustomerListViewController.swift in Sources */,
 				1599CF20224F1249001BBF31 /* ViewUserBookingTableViewCell.swift in Sources */,
 				151FB2B7223B309000B9FC83 /* SideMenuViewController.swift in Sources */,
+				153DB5E522530FEC007295BB /* ReviewTradesmanViewController.swift in Sources */,
 				153207C3222629700029F4BF /* TradesmanTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
