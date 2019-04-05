@@ -15,11 +15,12 @@ class ChatTradesmanViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var messageTextField: UITextField!
+    @IBOutlet var messageCollectionView: UICollectionView!
     
     var toTradesmanName: String!
-    var activeTextField: UITextField?
-    
     var userId: String?
+    
+    var messages = [Message]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +32,7 @@ class ChatTradesmanViewController: UIViewController, UITextFieldDelegate {
         messageTextField.layer.cornerRadius = 20.0
         messageTextField.layer.borderWidth = 0.5
         
-        self.userId = Auth.auth().currentUser?.uid
+        observeMessages()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,51 +61,42 @@ class ChatTradesmanViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    //MARK: - Keyboard Listeners
-    func registerForKeyboardNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-
-    func deregisterFromKeyboardNotification() {
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-
-    @objc func keyboardWasShown(notification: NSNotification) {
-        self.scrollView.isScrollEnabled = true
-        var info = notification.userInfo!
-        let keyboardSize = (info[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
-        let contentInsets: UIEdgeInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize!.height, right: 0.0)
-
-        self.scrollView.contentInset = contentInsets
-        self.scrollView.scrollIndicatorInsets = contentInsets
-
-        var aRect: CGRect = self.view.frame
-        aRect.size.height -= keyboardSize!.height
-
-        if let activeField = self.activeTextField {
-            if (!aRect.contains(activeField.frame.origin)) {
-                self.scrollView.scrollRectToVisible(activeField.frame, animated: true)
+    //MARK: - Load Messages
+    func observeMessages() {
+        let messageRef = Database.database().reference().child("messages")
+        messageRef.observe(.childAdded, with: { (snapshot) in
+            guard let dict = snapshot.value as? [String: Any] else {
+                return
             }
+            let message = Message(dict: dict)
+            self.messages.append(message)
+            self.messageCollectionView.reloadData()
+        }, withCancel: nil)
+    }
+    
+}
+
+//MARK: CollectionView
+extension ChatTradesmanViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return messages.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ChatCell", for: indexPath) as? ChatCollectionViewCell {
+            
+            let text = messages[indexPath.row].textMessage
+            cell.showChatLabel.text = text
+            
+            return cell
         }
+        
+        return UICollectionViewCell()
     }
-
-    @objc func keyboardWillBeHidden(notification: NSNotification) {
-        var info = notification.userInfo!
-        let keyboardSize = (info[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
-        let contentInsets: UIEdgeInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: -keyboardSize!.height, right: 0.0)
-        self.scrollView.contentInset = contentInsets
-        self.scrollView.scrollIndicatorInsets = contentInsets
-        self.view.endEditing(true)
-        self.scrollView.isScrollEnabled = false
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: view.frame.width, height: 40)
     }
-
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        activeTextField = textField
-    }
-
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        activeTextField = nil
-    }
+    
 }

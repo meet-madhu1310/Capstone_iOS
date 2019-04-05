@@ -22,6 +22,7 @@ class UserChatListTableViewController: UITableViewController {
     
     var messages = [Message]()
     var messagesDict = [String: Message]()
+    var selectedTradesmanName: String?
     
     //MARK: - Get Messages
     func observeMessages() {
@@ -72,6 +73,11 @@ class UserChatListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedTradesmanName = messages[indexPath.row].toName
+        performSegue(withIdentifier: "load_chat_segue", sender: self)
     }
 
  }

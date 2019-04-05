@@ -10,17 +10,22 @@ import UIKit
 
 class ReviewTradesmanViewController: UIViewController {
 
+    @IBOutlet var reviewTradesmanImage: UIImageView!
+    @IBOutlet var tradesmanNameLabel: UILabel!
+    var selectedTradesman: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Haha"
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         
-        title = "Hello"
+        if let name = selectedTradesman {
+            print("Tradesman Name: ",selectedTradesman as Any)
+            tradesmanNameLabel.text = "How did you like \(name)'s work?"
+        } else {
+            tradesmanNameLabel.text = "Can't fetch Tradesman's name."
+        }
     }
     
+    //MARK: Stop Item Tapped
     @IBAction func crossItemTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }

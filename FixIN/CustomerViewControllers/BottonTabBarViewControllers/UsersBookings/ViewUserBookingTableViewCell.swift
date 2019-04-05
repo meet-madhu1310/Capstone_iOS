@@ -12,6 +12,8 @@ class ViewUserBookingTableViewCell: UITableViewCell {
 
     @IBOutlet var tradesmanImage: UIImageView!
     @IBOutlet var doneButton: UIButton!
+    @IBOutlet var tradesmanNameLabel: UILabel!
+    @IBOutlet var tradesmanProfessionLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
