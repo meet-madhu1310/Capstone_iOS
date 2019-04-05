@@ -33,6 +33,8 @@ class ChatTradesmanViewController: UIViewController, UITextFieldDelegate {
         messageTextField.layer.borderWidth = 0.5
         
         observeMessages()
+        messageCollectionView.alwaysBounceVertical = true
+        print("Name: ", toTradesmanName)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -68,9 +70,13 @@ class ChatTradesmanViewController: UIViewController, UITextFieldDelegate {
             guard let dict = snapshot.value as? [String: Any] else {
                 return
             }
+            
             let message = Message(dict: dict)
-            self.messages.append(message)
-            self.messageCollectionView.reloadData()
+            
+            if self.toTradesmanName == message.toName {
+                self.messages.append(message)
+                self.messageCollectionView.reloadData()
+            }
         }, withCancel: nil)
     }
     

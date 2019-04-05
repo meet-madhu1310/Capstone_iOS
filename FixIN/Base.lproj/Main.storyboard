@@ -1173,6 +1173,9 @@
                             <outlet property="delegate" destination="oqO-84-P1O" id="5jb-vP-nVT"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="ZqG-kK-2Bm" kind="show" identifier="load_chat_segue" id="Kv5-Sn-cKC"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hTe-Mg-aBZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1935,6 +1938,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="L0P-gC-5Pc"/>
         <segue reference="DkG-a1-UMX"/>
+        <segue reference="Kv5-Sn-cKC"/>
         <segue reference="DJe-C7-VQq"/>
     </inferredMetricsTieBreakers>
 </document>

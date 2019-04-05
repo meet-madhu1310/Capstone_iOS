@@ -16,7 +16,6 @@ class UserChatListTableViewController: UITableViewController {
 
         title = "All Chats"
         
-        self.hideKeyboard()
         observeMessages()
     }
     
@@ -78,6 +77,14 @@ class UserChatListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedTradesmanName = messages[indexPath.row].toName
         performSegue(withIdentifier: "load_chat_segue", sender: self)
+    }
+    
+    //MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "load_chat_segue" {
+            let dvc = segue.destination as! ChatTradesmanViewController
+            dvc.toTradesmanName = selectedTradesmanName
+        }
     }
 
  }
