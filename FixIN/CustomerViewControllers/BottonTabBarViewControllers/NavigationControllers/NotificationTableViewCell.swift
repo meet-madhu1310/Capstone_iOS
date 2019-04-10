@@ -12,6 +12,7 @@ class NotificationTableViewCell: UITableViewCell {
     
     @IBOutlet var tradespersonImageView: UIImageView!
     @IBOutlet var tradespersonNameLabel: UILabel!
+    @IBOutlet var notificationDetailLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -22,16 +22,18 @@ class NotificationViewController: UIViewController {
         UIImage(named: "Emma")!,
         UIImage(named: "John")!
     ]
+    var tradespersonDetailsIndexOne = ["has accepted your booking request", "has declined your booking request", "is scheduled to come at 5:00PM today", "has accepted your booking request", "has accepted your booking request"]
     
     ///For index two - SEGEMENTED SWITCH
-    var tradespersonNamesIndexTwo = ["Morgun Benzies", "Terra Carlyon", "Jessamine Dearl", "Anatol Midner", "Holly Anne"]
+    var tradespersonNamesIndexTwo = ["Aldus Asman", "Chas Choppin", "Shelba Geradin", "Holly Anne", "Anatol Midner"]
     var tradespersonImagesIndexTwo: [UIImage] = [
-        UIImage(named: "Sim")!,
-        UIImage(named: "Smith")!,
-        UIImage(named: "Dani")!,
+        UIImage(named: "man1")!,
+        UIImage(named: "man2")!,
+        UIImage(named: "woman1")!,
         UIImage(named: "Emma")!,
         UIImage(named: "John")!
     ]
+    var tradespersonDetailsIndexTwo = ["has accepted your booking request", "has declined your booking request", "is scheduled to come at 5:00PM today", "has accepted your booking request", "has accepted your booking request"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +68,9 @@ extension NotificationViewController: UITableViewDataSource, UITableViewDelegate
         let tradespersonNameIndexTwo = tradespersonNamesIndexTwo[indexPath.row]
         let tradespersonImageIndexTwo = tradespersonImagesIndexTwo[indexPath.row]
         
+        let tradespersonDetailIndexOne = tradespersonDetailsIndexOne[indexPath.row]
+        let tradespersonDetailIndexTwo = tradespersonDetailsIndexTwo[indexPath.row]
+        
         if let cell = tableView.dequeueReusableCell(withIdentifier: "NotificationCell") as? NotificationTableViewCell {
             
             let index = self.notificationSegmentSwitch.selectedSegmentIndex
@@ -73,6 +78,7 @@ extension NotificationViewController: UITableViewDataSource, UITableViewDelegate
             if index == 0 {
                 cell.tradespersonNameLabel.text = tradespersonNameIndexOne
                 cell.tradespersonImageView.image = tradespersonImageIndexOne
+                cell.notificationDetailLabel.text = tradespersonDetailIndexOne
                 
                 cell.tradespersonImageView.layer.cornerRadius = cell.tradespersonImageView.frame.width / 2
                 cell.tradespersonImageView.clipsToBounds = true
@@ -81,6 +87,7 @@ extension NotificationViewController: UITableViewDataSource, UITableViewDelegate
             } else {
                 cell.tradespersonNameLabel.text = tradespersonNameIndexTwo
                 cell.tradespersonImageView.image = tradespersonImageIndexTwo
+                cell.notificationDetailLabel.text = tradespersonDetailIndexTwo
                 
                 cell.tradespersonImageView.layer.cornerRadius = cell.tradespersonImageView.frame.width / 2
                 cell.tradespersonImageView.clipsToBounds = true
