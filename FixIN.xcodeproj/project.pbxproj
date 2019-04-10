@@ -48,6 +48,7 @@
 		1599CF20224F1249001BBF31 /* ViewUserBookingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1599CF1F224F1249001BBF31 /* ViewUserBookingTableViewCell.swift */; };
 		15B0AF832238924200234675 /* CategoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B0AF822238924200234675 /* CategoryList.swift */; };
 		15BC5B7B2256CB7300A11C28 /* ChatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BC5B7A2256CB7300A11C28 /* ChatCollectionViewCell.swift */; };
+		15BFCC73225D71C5003EA6C1 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BFCC72225D71C5003EA6C1 /* NotificationTableViewCell.swift */; };
 		15CD5E1C2239CB93004F88DC /* Test_&_Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CD5E1B2239CB93004F88DC /* Test_&_Sample.swift */; };
 		15F1A8E9221931D00075B0AF /* ShowCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F1A8E8221931D00075B0AF /* ShowCategory.swift */; };
 		15FCA70722442AC70000F813 /* UserChatListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FCA70622442AC70000F813 /* UserChatListTableViewController.swift */; };
@@ -99,6 +100,7 @@
 		1599CF1F224F1249001BBF31 /* ViewUserBookingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUserBookingTableViewCell.swift; sourceTree = "<group>"; };
 		15B0AF822238924200234675 /* CategoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryList.swift; sourceTree = "<group>"; };
 		15BC5B7A2256CB7300A11C28 /* ChatCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCollectionViewCell.swift; sourceTree = "<group>"; };
+		15BFCC72225D71C5003EA6C1 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
 		15CD5E1B2239CB93004F88DC /* Test_&_Sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Test_&_Sample.swift"; sourceTree = "<group>"; };
 		15F1A8E8221931D00075B0AF /* ShowCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCategory.swift; sourceTree = "<group>"; };
 		15FCA70622442AC70000F813 /* UserChatListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserChatListTableViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				158DD629222F33F20017A692 /* NotificationNavigationViewController.swift */,
 				158DD62B222F347C0017A692 /* SearchNavigationViewController.swift */,
 				1594815C2241923500ED94D7 /* SearchTradesmanTableViewCell.swift */,
+				15BFCC72225D71C5003EA6C1 /* NotificationTableViewCell.swift */,
 			);
 			path = NavigationControllers;
 			sourceTree = "<group>";
@@ -509,6 +512,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15BFCC73225D71C5003EA6C1 /* NotificationTableViewCell.swift in Sources */,
 				158DD628222F333D0017A692 /* ProfileNavigationViewController.swift in Sources */,
 				15422A4B222B58560085BC1D /* PendingCustomersViewController.swift in Sources */,
 				157EF6AC22292F8700DC02EC /* PendingNavigationViewController.swift in Sources */,

@@ -16,11 +16,14 @@ class ChatTradesmanViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var messageTextField: UITextField!
     @IBOutlet var messageCollectionView: UICollectionView!
+    @IBOutlet var sendChatViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet var myView: UIScrollView!
     
     var toTradesmanName: String!
     var userId: String?
     
     var messages = [Message]()
+    var screenHeight: CGFloat!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,15 +35,44 @@ class ChatTradesmanViewController: UIViewController, UITextFieldDelegate {
         messageTextField.layer.cornerRadius = 20.0
         messageTextField.layer.borderWidth = 0.5
         
-        observeMessages()
         messageCollectionView.alwaysBounceVertical = true
-        print("Name: ", toTradesmanName)
+        messageCollectionView.keyboardDismissMode = .interactive
+        messageCollectionView.isScrollEnabled = true
+        
+        observeMessages()
+        setupKeyboardObserver()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         self.navigationController?.navigationBar.prefersLargeTitles = false
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    //MARK: - Interactive Keyboard
+    func setupKeyboardObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func handleKeyboardWillShow(notification: NSNotification) {
+        let userInfo = notification.userInfo!
+        let keyboardFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+        
+        self.myView.frame.origin.y = -keyboardFrame!.height + 65
+        UIView.animate(withDuration: 3) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    @objc func handleKeyboardWillHide(notification: NSNotification ) {
+        self.myView.frame.origin.y = 65
     }
     
     //MARK: - Send Button Pressed
@@ -95,6 +127,8 @@ extension ChatTradesmanViewController: UICollectionViewDelegate, UICollectionVie
             let text = messages[indexPath.row].textMessage
             cell.showChatLabel.text = text
             
+            cell.chatBackgroundView.layer.cornerRadius = 10.0
+            
             return cell
         }
         
@@ -102,7 +136,20 @@ extension ChatTradesmanViewController: UICollectionViewDelegate, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: 40)
+        var height: CGFloat = 50
+        
+        if let text = messages[indexPath.row].textMessage {
+            height = estimateFrameForText(text: text).height + 50
+        }
+        
+        return CGSize(width: view.frame.width, height: height)
     }
     
+    ///Dynamic Cell Height
+    private func estimateFrameForText(text: String) -> CGRect {
+        let size = CGSize(width: 200, height: 1500)
+        let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
+        
+        return NSString(string: text).boundingRect(with: size, options: options, attributes: [kCTFontAttributeName as NSAttributedString.Key: UIFont.systemFont(ofSize: 17.0)], context: nil)
+    }
 }

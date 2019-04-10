@@ -33,6 +33,8 @@ class SearchTableViewController: UITableViewController, UISearchResultsUpdating 
             
             self.tradesmanList.append(snapshot.value as! NSDictionary)
             self.findTradesmanTable.insertRows(at: [IndexPath(row: self.tradesmanList.count - 1, section: 0)], with: .automatic)
+            self.findTradesmanTable.reloadData()
+            
         }) { (error) in
             print(error.localizedDescription)
         }

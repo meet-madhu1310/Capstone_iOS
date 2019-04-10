@@ -11,5 +11,6 @@ import UIKit
 class ChatCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var showChatLabel: UILabel!
+    @IBOutlet var chatBackgroundView: UIView!
     
 }
